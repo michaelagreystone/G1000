@@ -1,0 +1,13 @@
+# Environment variables - never commit this
+.env
+
+# Granola inbox (working files, not for version control)
+granola/inbox/*.txt
+granola/inbox/*.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
