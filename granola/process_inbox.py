@@ -20,10 +20,12 @@ SAVE_DIR    = os.path.join(BASE_DIR, "meeting docs")
 # ── Date parsing ─────────────────────────────────────────────────────────────
 
 DATE_PATTERNS = [
-    (r"\b(\d{4}-\d{2}-\d{2})\b",                                                          "%Y-%m-%d"),
-    (r"\b(\d{1,2}/\d{1,2}/\d{4})\b",                                                      "%m/%d/%Y"),
+    (r"\b(\d{4}-\d{2}-\d{2})\b",                                                                "%Y-%m-%d"),
+    (r"\b(\d{1,2}/\d{1,2}/\d{4})\b",                                                            "%m/%d/%Y"),
     (r"\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},?\s+\d{4})\b", None),
     (r"\b(\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{4})\b",   None),
+    # Granola format: "Feb 18 - 12:20..." or "Feb 18" with no year — uses current year
+    (r"\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2})\b(?:\s*[-–])", "granola_no_year"),
 ]
 
 MONTH_FMTS = ["%B %d %Y", "%b %d %Y", "%B %d, %Y", "%b %d, %Y",
@@ -31,12 +33,26 @@ MONTH_FMTS = ["%B %d %Y", "%b %d %Y", "%B %d, %Y", "%b %d, %Y",
 
 
 def parse_date(text):
+    # First check for a "Date:" label line to target the right part of the text
+    date_line_match = re.search(r"^Date:\s*(.+)$", text, re.IGNORECASE | re.MULTILINE)
+    search_text = date_line_match.group(1) if date_line_match else text
+
     for pattern, fmt in DATE_PATTERNS:
-        match = re.search(pattern, text, re.IGNORECASE)
+        match = re.search(pattern, search_text, re.IGNORECASE)
         if not match:
             continue
         raw = re.sub(r",", "", match.group(1)).strip()
-        if fmt:
+
+        if fmt == "granola_no_year":
+            # Append current year and parse
+            current_year = datetime.now().year
+            raw_with_year = f"{raw} {current_year}"
+            for f in ["%b %d %Y", "%B %d %Y"]:
+                try:
+                    return datetime.strptime(raw_with_year, f).strftime("%Y-%m-%d")
+                except ValueError:
+                    continue
+        elif fmt:
             try:
                 return datetime.strptime(raw, fmt).strftime("%Y-%m-%d")
             except ValueError:
@@ -59,15 +75,20 @@ SKIP_PREFIXES = re.compile(
 
 
 def parse_title(lines):
+    # Prefer explicit "Meeting Title:" label from Granola
+    for line in lines:
+        match = re.match(r"^Meeting Title:\s*(.+)", line.strip(), re.IGNORECASE)
+        if match:
+            return match.group(1).strip()
+
+    # Fallback: first meaningful non-metadata line
     for line in lines:
         line = line.strip()
         if not line:
             continue
         if SKIP_PREFIXES.match(line):
             continue
-        # Strip markdown headings
         line = re.sub(r"^#+\s*", "", line)
-        # Skip lines that are purely a date/time stamp
         if parse_date(line) and len(line) < 30:
             continue
         if line:
