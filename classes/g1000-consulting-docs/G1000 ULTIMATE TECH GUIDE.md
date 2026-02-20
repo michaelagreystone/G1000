@@ -1,10 +1,11 @@
-﻿TEAMS
-  
+TEAMS
 
-  
+
+
+
 
 CONTACT SHEET
-  
+
 
 Doc1: Discovery Guide
 G1000 Discovery Cheat Sheet
@@ -34,7 +35,8 @@ Doc
 	🆓 Doc 4
 	Free Tools & Access Guide
 	Anytime. Every free AI tool, API, and student benefit you can use right now.
-	
+
+
 
 
 
@@ -89,7 +91,7 @@ What the business owner says
 	D3 — Compliance / Legal
 	"Flying blind on decisions" / "Don't know what competitors charge"
 	E1–E3 — Strategic Intel
-	
+
 
 Don't tell the owner the category code — this is for YOUR notes. Write down the letter-number (e.g., "B1, B2") next to your discovery notes so you can match later in Doc 2.
 
@@ -144,7 +146,7 @@ During the Call: Do's and Don'ts
 	Stay in your head matching categories
 	Ask about their day, their team, their stress
 	Jump straight to "have you tried AI?"
-	
+
 
 ________________
 
@@ -206,7 +208,7 @@ Approach
 	Custom semantic search
 	Exa.ai search API, or build with embeddings + Supabase pgvector
 	Med
-	
+
 
 Real example: Wealth advisors spend 20 min/meeting pulling notes. RAG system: "What did we tell the Silvas about savings rate last quarter?" — exact answer with source in seconds.
 
@@ -236,7 +238,7 @@ Approach
 	Lightweight AI-native CRM
 	Attio (AI-native, auto-builds from emails/calls) or HubSpot free tier
 	Low-Med
-	
+
 
 Real example: Landscaping company — zero data on job duration vs. estimates. Custom app revealed 30% undercharge on commercial jobs.
 
@@ -266,7 +268,7 @@ Approach
 	Scraping when no API exists
 	Firecrawl (search + extract in one API call), Playwright, Apify
 	Med
-	
+
 
 Real example: Vacation rental — bookings, guest comms, maintenance, owner reporting all separate. n8n syncs all four.
 
@@ -299,7 +301,7 @@ Approach
 	Voice → text → structured data
 	Whisper (free, local) or Granola → LLM extraction
 	Low-Med
-	
+
 
 Real example: Real estate photos — 200+ per property, manual labeling. Vision model classifies by room type, generates descriptions. 2 hours → 15 min.
 
@@ -330,7 +332,7 @@ Approach
 	Durable long-running workflows
 	Temporal (used by Netflix/Uber/Stripe teams — for complex multi-step jobs that can't fail)
 	High
-	
+
 
 Real example: Print shop — orders via email → manual entry → job ticket → confirmation. n8n + LLM: parses email, creates ticket, sends confirmation, logs it.
 
@@ -357,7 +359,7 @@ Approach
 	Living wiki with AI search
 	Custom RAG over internal docs (LangGraph + pgvector) or Notion AI for quick wins
 	Low-Med
-	
+
 
 ________________
 
@@ -381,7 +383,7 @@ Approach
 	AI meeting summaries
 	Granola/Otter → n8n posts summary + action items to Slack
 	Low
-	
+
 
 ________________
 
@@ -405,7 +407,7 @@ Approach
 	Route optimization
 	Google OR-Tools (free, programmable)
 	Med
-	
+
 
 Real example: Car wash, 700+ daily. ML forecast (POS + weather + events) predicts within 10%. Labor waste down 20%.
 
@@ -442,7 +444,7 @@ Approach
 	Website chatbot / lead capture
 	Voiceflow, or custom with Claude API + embeddable widget
 	Med
-	
+
 
 Real example: HVAC contractor — 40% inquiries went cold. n8n: form → SMS via Twilio → Cal.com link → 48-hr follow-up. Close rate up 25%.
 
@@ -472,7 +474,7 @@ Approach
 	Production support agent
 	Build with LangGraph + n8n + Vapi — multi-channel (chat + voice), grounded in their docs, full ownership
 	High
-	
+
 
 Real example: Property management — same 15 tenant questions. Retell phone agent + RAG chatbot handles 70% autonomously.
 
@@ -508,7 +510,7 @@ Approach
 	Website builder
 	v0.dev (Vercel AI site builder), Framer, or vibe-code with Cursor + Next.js
 	Low-Med
-	
+
 
 ________________
 
@@ -529,7 +531,7 @@ Approach
 	Quote automation
 	Typeform/Tally intake → n8n → LLM applies pricing rules → generates quote
 	Med
-	
+
 
 ________________
 
@@ -586,7 +588,7 @@ Approach
 	Deadline tracking
 	Supabase/Airtable + n8n alert pipeline
 	Low
-	
+
 
 ________________
 
@@ -623,7 +625,7 @@ Approach
 	Meta Business API + Google Analytics → LLM identifies segments, purchase drivers
 	Interview → insights
 	Granola/Otter → Claude extracts themes, quotes, action items
-	
+
 
 ________________
 
@@ -694,7 +696,7 @@ ________________
 How to use this doc: You've identified pain points (Doc 1) and mapped them to solvable categories (Doc 2). Now you're here to understand the technology deeply enough to scope and build. This is your engineering reference.
 
 
-This doc covers THE HOW. Part 1 (Business Problems) lives in Doc 2. The split is intentional — you shouldn't be reading tech specs during discovery. Look here when ideating on a solution. What tech is right for the problem and its data? 
+This doc covers THE HOW. Part 1 (Business Problems) lives in Doc 2. The split is intentional — you shouldn't be reading tech specs during discovery. Look here when ideating on a solution. What tech is right for the problem and its data?
 
 
 DISCOVERY (Doc 1)          →  MAPPING (Doc 2)           →  IMPLEMENTATION (Doc 3)
@@ -1325,7 +1327,7 @@ Problem Category
 	Extraction (6c), Automation (5a)
 	E1–E3 Strategic Intel
 	Forecasting (2a), Scraping (6b), Extraction (6c)
-	
+
 
 ________________
 
@@ -1395,7 +1397,7 @@ How to get started:
 2. Navigate to Azure AI Foundry (ai.azure.com)
 3. For grants, apply at foundry.babson.edu/azure-ai-grants
 4. Copilot should already be in your M365 apps
-5. Questions → metropoulosinstitute@babson.edu
+5. Questions → metropoulousinstitute@babson.edu
 
 
 ________________
@@ -1427,7 +1429,7 @@ Model
 	Free tier
 	AI search with citations
 	perplexity.ai
-	
+
 
 ⚠️ DeepSeek: Servers in China. Prompts may be used for training, no opt-out. Don't enter sensitive/client data.
 Tier 2: Free API Access (for building)
@@ -1485,7 +1487,7 @@ Tool
 	Windsurf (Google)
 	Agent-style editor with autonomous multi-file workflows
 	Limited free; Google Cloud credits help
-	
+
 
 Common 2026 stack: Cursor + Claude Code combo.
 Automation & Workflow
@@ -1519,7 +1521,7 @@ Tool
 	Open-source, free tier
 	RAGFLOW
 	SOTA. works great with AWS S3 buckets
-	Open source SOTA. 
+	Open source SOTA.
 	Databases & Backend
 Tool
 	What It Is
@@ -1546,7 +1548,7 @@ Tool
 	Helicone
 	Drop-in proxy for OpenAI/Anthropic. Cost optimization + monitoring
 	Free tier — helicone.ai
-	
+
 
 Start with both from day one. You'll thank yourself later.
 Voice & Phone Agents
@@ -1608,7 +1610,7 @@ Tool
 	Cal.com
 	Open-source Calendly alternative
 	Free self-hosted or hosted free tier — cal.com
-	
+
 
 ________________
 
@@ -1661,14 +1663,14 @@ Tool
 	Namecheap
 	Free .me domain + SSL (via GitHub Pack)
 	KAGGLE
-	Endless datasets. Public. 
+	Endless datasets. Public.
 	________________
 
 
 🛠️ RECOMMENDED STACKS
 Tonight (30 min)
 1. Claude free tier — claude.ai
-2. ChatGPT free tier — chatgpt.com (we assume most of you pay for one of chatgpt or claude already). 
+2. ChatGPT free tier — chatgpt.com (we assume most of you pay for one of chatgpt or claude already).
 3. GitHub Student Pack — education.github.com/pack (unlocks Copilot + dozens of tools)
 4. NVIDIA NIM account — build.nvidia.com (free frontier model APIs)
 This Week (Builder Stack)
@@ -1762,7 +1764,7 @@ Tool
 	Context engineering framework for making AI coding assistants actually work. Claude Code centered.
 	🟢 Free / open-source
 	github.com/coleam00
-	
+
 
 Builder consensus: Claude Code + Cursor + MCP skills is the most common daily stack on X. For task management, claude-task-master or ai-dev-tasks.
 
@@ -1802,7 +1804,7 @@ Tool
 	macOS CLI + MCP server for AI agents to capture screenshots with optional visual QA.
 	🟢 Free / open-source
 	github.com/steipete/Peekaboo
-	
+
 
 Builder consensus: MCP is the new USB-C for agents. Build custom MCP servers for each client's tools. golf-mcp for production, official servers for quick prototypes.
 
@@ -1830,7 +1832,7 @@ Tool
 	Code-first automation platform (scripts + flows in one UI). Tighter than n8n for complex internal tools.
 	🟢 Free / open-source
 	windmill.dev
-	
+
 
 Builder consensus: n8n for quick agent pipelines, Temporal for anything that can't fail. Most student projects should start with n8n.
 
@@ -1866,7 +1868,7 @@ Tool
 	Fast, small, fully autonomous AI assistant infrastructure. Deploy anywhere, swap anything. Rust.
 	🟢 Free / open-source
 	github.com/zeroclaw-labs
-	
+
 
 Builder consensus: Computer use agents are how you automate legacy systems with no API. Run on a $5/mo VPS or the client's machine.
 
@@ -1898,7 +1900,7 @@ Tool
 	Screens behavior, auto-generates SOPs, then scripts to automate the SOP.
 	🟢 Free / open-source
 	github.com/mzc6101
-	
+
 
 Builder consensus: screenpipe + Claude for SOP generation is the fastest path to documenting a client's workflows automatically.
 
@@ -1930,7 +1932,7 @@ Tool
 	Programmable GTM workflows + scraping. Visual but code-extensible.
 	Free tier
 	gumloop.com
-	
+
 
 Builder consensus: Firecrawl + n8n + LLM enrichment is the composable stack most builders use. Clay for teams that need scale.
 
@@ -1966,7 +1968,7 @@ Tool
 	API-first intelligent document processing. Invoices, contracts, forms. High accuracy.
 	Free tier + usage
 	nanonets.com
-	
+
 
 Builder consensus: Marker + Claude Vision + structured output handles most SMB document needs. Docuseal replaces DocuSign for free.
 
@@ -1990,7 +1992,7 @@ Tool
 	Open-source Jira/Linear/Monday alternative. Tasks, sprints, docs, triage.
 	🟢 Free / open-source
 	plane.so
-	
+
 
 Builder consensus: Attio for client-facing CRM. For project management, Plane is the open-source winner. Or build custom with Supabase + n8n.
 
@@ -2022,7 +2024,7 @@ Tool
 	Contact database + outreach. 1,200 free credits/year.
 	Free tier
 	apollo.io
-	
+
 
 Builder consensus: n8n + Firecrawl + Exa + LLM enrichment is what most advanced teams build. Clay when you need scale fast.
 
@@ -2050,7 +2052,7 @@ Tool
 	High-volume outbound with compliance tooling. Enterprise-grade scale.
 	Pay-per-minute
 	bland.ai
-	
+
 
 Builder consensus: Retell for quality, Vapi for customization, Bland for volume. All three consistently praised in X tests.
 
@@ -2074,7 +2076,7 @@ Tool
 	Knowledge-grounded agents that reduce tickets via self-serve + human handoff.
 	Paid; free trial
 	eesel.ai
-	
+
 
 Builder consensus: Build it yourself with LangGraph + n8n + Vapi for multi-channel (chat + voice). This is the dominant X pattern.
 
@@ -2110,7 +2112,7 @@ Tool
 	Fast visuals + video for non-designers.
 	🟢 Free edu tier
 	canva.com
-	
+
 
 Builder consensus: Build API pipelines in n8n calling these tools. Own the whole stack instead of paying per-seat.
 
@@ -2138,7 +2140,7 @@ Tool
 	Custom categorization, cash flow forecasting, invoice chasing workflows.
 	🟢 Free self-hosted
 	n8n.io
-	
+
 
 Builder consensus: Composable stack: Marker for extraction + LLM for categorization + n8n for automation. Legacy tools still dominate; builders are replacing them piece by piece.
 
@@ -2166,7 +2168,7 @@ Tool
 	Voice agent conducts initial phone screens, scores responses.
 	Pay-per-minute
 	vapi.ai / retellai.com
-	
+
 
 Builder consensus: Build it yourself with LlamaIndex/LangGraph + embeddings. No platform dominates builder Twitter yet.
 
@@ -2190,7 +2192,7 @@ Tool
 	Claude + POS data + weather API + Google Trends for demand forecasting.
 	API costs only
 	Build with n8n/Temporal
-	
+
 
 Builder consensus: Cal.com for booking + custom LLM agents in n8n/Temporal for smart optimization.
 
@@ -2222,7 +2224,7 @@ Tool
 	Memory-enhanced RAG for persistent agent context.
 	🟢 Free / open-source
 	github.com/qhjqhj00
-	
+
 
 Builder consensus: pgvector on Supabase/Neon + LlamaIndex/LangGraph is the 2026 prototyping standard.
 
@@ -2254,7 +2256,7 @@ Tool
 	Distributed vector DB that learns. Embeddings + Cypher + Raft consensus + GNN self-improvement.
 	🟢 Free / open-source
 	github.com/ruvnet
-	
+
 
 Builder consensus: Supabase is the default for student prototypes. Neon for branching, Convex for real-time apps.
 
@@ -2282,7 +2284,7 @@ Tool
 	CLI tool for analyzing Claude Code/Codex CLI usage from local JSONL files.
 	🟢 Free / open-source
 	github.com/ryoppippi/ccusage
-	
+
 
 Builder consensus: Start with Langfuse + Helicone. Free, self-hostable, and what most X builders actually run in production.
 
@@ -2314,7 +2316,7 @@ Tool
 	Free local transcription. Pair with LLM for extraction.
 	🟢 Free / open-source
 	github.com/openai/whisper
-	
+
 
 Builder consensus: Granola + MCP is the builder favorite for piping meeting context into Claude. Whisper for local/private.
 
@@ -2346,7 +2348,7 @@ Tool
 	Production durability when agents need to wait days for human input.
 	🟢 Free / open-source
 	temporal.io
-	
+
 
 Builder consensus: Build it yourself with LangGraph + n8n + MCP. This is genuinely better than any single platform.
 
@@ -2382,7 +2384,7 @@ Tool
 	Discord to Claude Code bridge. Talk to Claude through Discord.
 	🟢 Free / open-source
 	github.com/alexknowshtml/cord
-	
+
 
 ________________
 
@@ -2419,7 +2421,7 @@ Tool
 	Connect agent to client's tools
 	🟢 Free / open-source
 	github.com/modelcontextprotocol
-	
+
 
 Builder consensus: Don't buy 15 tools — build composable agents on n8n/LangGraph + Supabase + best-in-class models. This covers ~90% of SMB workflow pain points.
 
@@ -2488,7 +2490,7 @@ Pain Code
 	E3
 	Customer understanding
 	6 (Enrichment), 19 (Meetings), 16 (RAG)
-	
+
 
 ________________
 
