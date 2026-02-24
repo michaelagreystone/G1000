@@ -1,0 +1,17 @@
+Charlotte Multifamily Development — South End District
+Project Overview: 180-Unit Class A Apartment Community
+
+Site Description:
+The project is located on a 2.1-acre parcel along South Boulevard in Charlotte's South End neighborhood, directly adjacent to the LYNX Blue Line light rail station. South End has transformed over the past decade from a warehouse district into Charlotte's densest urban neighborhood, with a concentration of young professionals, tech workers, and creative industry tenants. The site was a former industrial building acquired through a negotiated purchase at $4.2M ($2.0M/acre), which represented a significant discount to recent comparable land trades in the corridor at $2.8-3.2M/acre due to an existing environmental remediation requirement that we underwrote at $650K.
+
+Underwriting Assumptions:
+We underwrote average rents at $1.78/sf monthly ($1,548/mo on 870sf average units), reflecting a modest premium to submarket averages based on the project's light rail adjacency and modern amenity package. Hard construction costs were projected at $262/sf for a 5-story wood-frame Type III-A construction. Total development budget was $58.4M including land, with soft costs at 21% of hard. We assumed 65% LTC construction financing at SOFR + 295bps, requiring $20.4M in LP equity at a 90/10 split. Exit was underwritten at a 5.50% cap rate in year 5.
+
+Construction Cost Overruns:
+Actual hard costs came in at $289/sf — a 10.3% overrun against the $262/sf budget. The primary drivers were: (1) lumber price spikes during 2021-2022 added approximately $1.8M; (2) the environmental remediation scope expanded from $650K to $1.1M after discovering additional contamination during excavation; (3) Charlotte's rapid construction activity created subcontractor scarcity, particularly in MEP trades, adding $800K in labor premiums. Total project cost increased from $58.4M to $63.1M. We funded the overage through a combination of construction loan modification ($1.2M) and a GP capital call ($3.5M).
+
+Lease-Up Timeline vs Projection:
+We projected 18-month lease-up to 93% stabilized occupancy. Actual lease-up took 21 months — 3 months longer than projected — due to a surge of competing deliveries in South End during 2022-2023 (approximately 2,800 units delivered within a 1-mile radius during our lease-up window). We responded by offering 6 weeks of free rent on 12-month leases during months 8-14, which accelerated absorption but reduced effective Year 1 revenue by approximately $380K.
+
+Exit Cap Rate and Returns:
+We exited at a 5.35% cap rate — 15bps tighter than the 5.50% underwriting assumption — driven by improving Charlotte multifamily fundamentals as supply deliveries began tapering. Stabilized NOI was $3.45M. Final LP IRR delivered was 13.2% with a 1.72x equity multiple, below the 15.5% IRR and 1.88x multiple underwritten. The shortfall was attributable to the construction cost overrun (which increased the equity base) and the extended lease-up (which delayed cash flow). Despite the miss vs underwriting, the deal was accretive to LP capital and demonstrated the strength of the South End location thesis. Post-exit occupancy has remained above 94%, validating the long-term fundamentals.

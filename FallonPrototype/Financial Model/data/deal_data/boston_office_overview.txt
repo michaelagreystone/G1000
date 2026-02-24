@@ -1,0 +1,20 @@
+Boston Office Development — Seaport District
+Project Overview: 80,000 SF Class A Office Building
+
+Site Description:
+The project is an 8-story, 80,000 rentable square foot Class A office building located in Boston's Seaport Innovation District on a 0.6-acre site along Congress Street. The Seaport has become Boston's premier commercial district over the past decade, attracting headquarters from companies including Amazon, PTC, Vertex Pharmaceuticals, and numerous biotech and fintech firms. The site was part of a larger Fallon-controlled development parcel, with the land allocated at $12.5M based on an internal residual land value analysis. The building features floor-to-ceiling glass, 14-foot slab heights, and a rooftop terrace — all designed to compete with the newest Seaport product.
+
+Business Plan Rationale — Post-COVID Office Strategy:
+We made the decision to proceed with speculative office development in Seaport in mid-2021, a period when office sentiment was deeply negative nationally. Our thesis was contrarian: Boston's life science and tech tenants require in-person collaboration, Seaport's Class A vacancy was only 8% even during COVID (vs 15%+ in suburban markets), and new office construction had nearly stopped in Boston — meaning supply would be extremely limited by 2024 when our building delivered. We also structured the project with a pre-lease gate: construction would not commence until 40% of the building was pre-leased, ensuring downside protection.
+
+Pre-Lease Achievement:
+We secured a 35,000 SF anchor tenant (a Series C biotech company) at $72/sf NNN on a 10-year lease with 3% annual escalations, representing 44% of the building. This exceeded our 40% gate and de-risked the construction start. The anchor lease included a $90/sf TI allowance and 10 months of free rent — aggressive concessions but justified by the lease term and credit quality.
+
+Tenant Improvement Costs and Financing:
+Total TI commitment across the building averaged $82/sf including both the anchor and subsequent spec suites. Hard construction cost was $435/sf, reflecting Boston's union labor requirements and premium materials specifications. Soft costs were 29% of hard — elevated by the city's extensive permitting process and design review requirements. Total development cost was $62.8M. We secured a $34.5M construction facility (55% LTC) from a regional bank at SOFR + 310bps, with a $28.3M equity requirement.
+
+Return on Cost Achieved:
+The building was 92% leased within 16 months of delivery — significantly ahead of the 20-month projection — as Seaport office demand surged through 2024. Weighted average lease rate achieved was $67/sf NNN across all tenants. Stabilized NOI (year 2 of operations) reached $4.1M after accounting for free rent burn-off and operating expenses. Return on cost was 6.5% ($4.1M NOI / $62.8M total cost), which represented a 75 basis point development spread over the 5.75% prevailing Class A Seaport cap rate.
+
+Final Returns:
+The project is currently in its third year of operations and has not yet been sold. Based on current NOI of $4.3M and a projected 5.50% exit cap rate (reflecting Seaport's tightening trajectory), the projected exit value is $78.2M. Against total project cost of $62.8M, this implies a profit on cost of 24.5%. Projected levered LP IRR at a year-5 exit is 14.8% with a 1.65x equity multiple. These returns are modest by development standards but exceptional for a post-COVID office project, validating the contrarian thesis. The pre-lease requirement was the key structural protection that made this risk-return profile acceptable.
