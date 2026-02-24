@@ -67,9 +67,9 @@
         "source": "Typical construction LTC for multifamily, Q4 2025 lending environment"
       },
       "construction_loan_rate_pct": {
-        "value": 7.75,
+        "value": 6.66,
         "unit": "%",
-        "source": "SOFR + 275-325bps spread, Q4 2025 lending environment"
+        "source": "SOFR (3.66%) + 300bps spread, Feb 2026 lending environment — rates declining with Fed cuts"
       },
       "construction_loan_term_months": {
         "value": 36,
@@ -92,9 +92,9 @@
         "source": "GP promote above preferred return, Fallon standard, Q4 2025"
       },
       "exit_cap_rate_pct": {
-        "value": 5.25,
+        "value": 4.74,
         "unit": "%",
-        "source": "Charlotte multifamily exit cap rate, Marcus & Millichap Q4 2025"
+        "source": "Charlotte Class A multifamily cap rate, CBRE Q1 2025 — compressed 7bps, flat since Q4 2024"
       },
       "exit_sale_cost_pct": {
         "value": 2.5,
