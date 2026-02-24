@@ -20,8 +20,8 @@ from FallonPrototype.shared.vector_store import add_documents, DEAL_DATA_COLLECT
 
 # Check both possible data locations
 _DEAL_DATA_DIRS = [
-    os.path.join(_PROTO_DIR, "data", "deal_data"),
     os.path.join(_PROTO_DIR, "Financial Model", "data", "deal_data"),
+    os.path.join(_PROTO_DIR, "data", "deal_data"),
 ]
 
 # Metadata mapping: filename prefix -> deal metadata

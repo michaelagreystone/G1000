@@ -1,0 +1,150 @@
+DEAL MEMO: Boston Seaport Life Science/Office Development
+Project: Innovation Tower at Seaport
+Location: D Street & Summer Street, Boston Seaport District
+===============================================================
+
+EXECUTIVE SUMMARY
+-----------------
+Innovation Tower is a 425,000 SF Class A office/life science building in 
+Boston's Seaport Innovation District. The project is designed for flexible 
+lab/office conversion to capture biotech demand while maintaining traditional 
+office optionality.
+
+PROJECT SPECIFICATIONS
+----------------------
+Gross Building Area: 425,000 SF
+Rentable SF: 382,500 SF (90% efficiency)
+Floors: 18 stories + 3 below-grade parking
+Parking: 425 spaces (1:1,000 SF ratio)
+Lab-Ready Infrastructure: Floors 2-10
+Traditional Office: Floors 11-18
+Ground Floor Retail: 15,000 SF
+
+Sustainability: LEED Platinum target, Fitwel 3-Star
+
+DEVELOPMENT COSTS
+-----------------
+Land (Ground Lease): $45,000,000 (prepaid 99-year)
+Hard Costs: $233,750,000 ($550/SF)
+Soft Costs: $70,125,000 (30% of hard - Boston premium)
+Contingency: $23,375,000 (10% of hard)
+Developer Fee: $14,890,000 (4%)
+Tenant Improvements: $32,212,500 ($85/SF allowance)
+Leasing Commissions: $9,562,500 (5% of 5-yr rent)
+Pre-Leasing Interest: $28,000,000
+Total Development Cost: $456,915,000 ($1,075/unit or $1,195/rentable SF)
+
+FINANCING STRUCTURE
+-------------------
+Construction Loan:
+- Amount: $251,303,250 (55% LTC)
+- Rate: SOFR + 325 bps (all-in 7.25%)
+- Term: 42 months + 12 month extension
+- Lender: Consortium - Life Co + Regional Bank
+
+Equity Required: $205,611,750
+- LP Equity (90%): $185,050,575
+- GP Equity (10%): $20,561,175
+
+REVENUE PROJECTIONS
+-------------------
+Lab Space (191,250 SF):
+- NNN Rent: $95/SF/year
+- Annual Revenue: $18,168,750
+
+Office Space (176,250 SF):
+- NNN Rent: $72/SF/year
+- Annual Revenue: $12,690,000
+
+Retail (15,000 SF):
+- NNN Rent: $55/SF/year
+- Annual Revenue: $825,000
+
+Total Gross Revenue: $31,683,750
+Vacancy/Credit Loss: 10%
+Effective Gross Revenue: $28,515,375
+Operating Expenses (NNN pass-through): -
+Management Fee (3%): $855,461
+Net Operating Income: $27,659,914
+
+RETURN METRICS
+--------------
+Yield on Cost: 6.05%
+Stabilized Cap Rate: 5.75%
+Implied Value: $481,042,000
+Development Spread: 30 bps
+
+Year 7 Exit Analysis:
+- NOI (2% growth): $30,922,000
+- Exit Cap: 6.00%
+- Gross Value: $515,367,000
+- Net Value: $502,483,000
+
+Total Profit: $45,568,000
+Profit on Cost: 10.0%
+
+LP Returns (90/10 split, 9% pref, 20% promote):
+- LP IRR: 13.2%
+- LP Multiple: 1.72x
+
+GP Returns:
+- GP IRR: 28.5%
+- GP Multiple: 2.95x
+
+PRE-LEASING STATUS
+------------------
+Committed:
+- Biotech Tenant A: 85,000 SF (10-year lease, $98/SF)
+- Life Science Startup B: 35,000 SF (7-year, $92/SF)
+
+Pipeline:
+- Pharma Company C: 120,000 SF (LOI stage)
+- Tech Company D: 45,000 SF (touring)
+
+Current Pre-Lease: 31% (target 40% for construction start)
+
+MARKET CONTEXT
+--------------
+Seaport Lab Market:
+- Vacancy: 8.5% (vs 18% overall Boston office)
+- Asking Rents: $90-110/SF NNN
+- Lab conversion premium: 25-35% over traditional office
+
+Recent Comparable Trades:
+1. 101 Seaport: $1,150/SF (2024)
+2. One Harbor Point: $1,025/SF (2023)
+3. Pier 4 Life Science: $985/SF (2024)
+
+RISK ASSESSMENT
+---------------
+High Risks:
+1. Union labor costs (+35% vs national)
+2. Permitting timeline (12-18 months typical)
+3. Interest rate exposure on floating debt
+4. Life science demand cyclicality
+
+Medium Risks:
+1. Competition from lab conversions
+2. NNN expense recovery collection
+3. Tenant credit quality
+4. Construction cost escalation
+
+Mitigants:
+1. Pre-lease requirement before start
+2. Experienced Boston GC relationship
+3. Lab-flexible design reduces obsolescence
+4. Ground lease reduces basis
+
+RECOMMENDATION
+--------------
+Proceed to final pre-development. The 13.2% LP IRR is acceptable for 
+gateway market office given the life science premium and institutional
+quality. Key milestones:
+
+1. Achieve 40% pre-lease commitment
+2. Lock GMP contract with 3% escalation cap
+3. Secure construction loan commitment
+4. Finalize ground lease terms with BPDA
+
+Investment Committee approval required for final commitment of 
+$20.5M GP equity.

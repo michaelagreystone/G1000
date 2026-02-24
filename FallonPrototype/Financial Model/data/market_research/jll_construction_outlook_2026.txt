@@ -1,0 +1,98 @@
+JLL 2026 U.S. Construction Perspective - Key Insights
+Source: JLL Research, December 2025
+===============================================================
+
+CONSTRUCTION COST TRENDS
+------------------------
+The construction market faces deepening divisions with rising complexity.
+
+Cost Indices (2026 Forecast):
+- National construction cost index: +3.5-4.5% YoY
+- Labor costs: +4.0-5.0% YoY (skilled trades shortage)
+- Materials: +2.0-3.5% YoY (supply chain normalized)
+- Concrete/steel: Stable to +2%
+- Lumber: Volatile, +/-5%
+
+Regional Construction Cost Factors (vs National Avg):
+- Boston Metro: 1.35x (union labor, permitting)
+- Charlotte Metro: 0.92x (right-to-work, efficient permitting)
+- Nashville Metro: 0.95x (moderate labor costs)
+
+DEVELOPMENT COSTS BY PRODUCT TYPE
+---------------------------------
+
+Multifamily (Wood-Frame, 4-5 Story):
+- National Average: $285-325/SF
+- Southeast Markets: $250-290/SF
+- Northeast Markets: $350-425/SF
+- Excludes land, soft costs
+
+Multifamily (Concrete/Steel High-Rise):
+- National Average: $425-525/SF
+- Gateway Markets: $500-650/SF
+
+Office (Class A):
+- National Average: $350-450/SF
+- Boston/NYC: $550-700/SF
+- Southeast: $325-400/SF
+
+Select-Service Hotel:
+- National Average: $175,000-225,000/key
+- Urban Markets: $225,000-300,000/key
+- Limited-Service: $125,000-175,000/key
+
+SUPPLY PIPELINE STATUS
+----------------------
+- U.S. office under construction: 20% below 2011 historic lows
+- Groundbreakings declined from 2024's record lows
+- Multifamily starts Q4 2025: Lowest since 2019
+- Hotel construction subdued due to financing challenges
+
+FINANCING ENVIRONMENT
+---------------------
+Construction Loan Rates (Q1 2026):
+- SOFR: 3.75-4.00%
+- Multifamily Spread: 250-325 bps (all-in 6.25-7.25%)
+- Office Spread: 325-400 bps (all-in 7.00-8.00%)
+- Hotel Spread: 375-450 bps (all-in 7.50-8.50%)
+
+Lender Activity:
+- Regional banks returning cautiously
+- Life companies active for stabilized assets
+- Debt funds filling gaps for construction
+- Agency lending (Fannie/Freddie) at 20% market share
+
+Underwriting Standards:
+- Debt yield minimum: 8-9%
+- DSCR minimum: 1.25x (multifamily), 1.30x (office)
+- LTC: Down 5-10% from peak
+- Recourse increasingly required for sponsors without track record
+
+TIMELINE CONSIDERATIONS
+-----------------------
+Typical Development Timeline (Ground-Up):
+- Entitlements: 6-18 months (market dependent)
+- Design/Permits: 4-8 months
+- Construction (Multifamily 200 units): 18-24 months
+- Construction (Office 150K SF): 20-26 months
+- Construction (Hotel 200 keys): 18-22 months
+- Lease-Up (Multifamily): 12-18 months
+- Lease-Up (Office): 18-30 months
+- Hotel Ramp-Up: 12-18 months to stabilization
+
+LABOR MARKET
+------------
+- Skilled trades shortage continues nationwide
+- Electricians, plumbers in highest demand
+- Immigration policy impacting workforce availability
+- Wage pressure expected to persist through 2026
+- Productivity gains from technology adoption modest
+
+RECOMMENDATIONS FOR DEVELOPERS
+------------------------------
+1. Lock in pricing early with GMP contracts
+2. Build contingency buffers of 8-10%
+3. Consider modular/prefab for cost efficiency
+4. Prioritize markets with favorable permitting
+5. Maintain strong lender relationships
+6. Prepare for extended timelines in gateway markets

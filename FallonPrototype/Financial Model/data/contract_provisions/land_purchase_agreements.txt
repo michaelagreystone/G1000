@@ -1,0 +1,76 @@
+LAND PURCHASE AND ACQUISITION AGREEMENT PROVISIONS
+Reference Guide for Real Estate Development Deals
+
+═══════════════════════════════════════════════════════════════════
+SECTION 1: EARNEST MONEY AND DEPOSIT STRUCTURE
+═══════════════════════════════════════════════════════════════════
+
+Earnest money (also called a deposit or good faith deposit) is the buyer's initial financial commitment that signals serious intent to purchase. In commercial real estate development land transactions, earnest money structures are more complex than residential deals due to extended due diligence periods and contingency requirements.
+
+Initial Deposit: Typically 1-3% of the purchase price, deposited within 3-5 business days of contract execution. Held in escrow by a third-party title company or escrow agent. The deposit is fully refundable during the due diligence period (also called the feasibility period or inspection period).
+
+Additional Deposits (Hard Money): After the due diligence period expires, the buyer is often required to deposit additional earnest money that goes "hard" (becomes non-refundable). Going hard is the most significant risk commitment in a land acquisition. Common structure: 5-10% of purchase price goes hard at the expiration of due diligence, with the remainder due at closing. In competitive situations, aggressive buyers may go hard on a portion of the deposit earlier to demonstrate commitment.
+
+Day-One Hard Money: In competitive bid situations (multiple interested developers), some sellers require the entire deposit to go hard on day one (at contract execution). This is high-risk for the buyer and is typically only accepted when the buyer has already completed preliminary due diligence informally. Day-one hard money commands a meaningful discount to the purchase price (typically 5-15% below market) because the seller receives certainty of close.
+
+Escrow Release Conditions: The agreement should specify exactly when the escrow agent releases funds to the seller. Common triggers include: (a) mutual written authorization, (b) closing occurs, or (c) buyer default after earnest money goes hard. Disputes over deposit release are among the most common land transaction litigation issues.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 2: DUE DILIGENCE PERIOD AND CONTINGENCIES
+═══════════════════════════════════════════════════════════════════
+
+The due diligence period is the buyer's window to investigate the property and determine whether to proceed with the purchase. During this period, the buyer can typically terminate the agreement for any reason and receive a full refund of earnest money.
+
+Standard Due Diligence Period: 60-120 days for development land. Longer periods (120-180 days) are common for large parcels or complex entitlement situations. Shorter periods (30-45 days) are used when the buyer has already conducted preliminary investigation.
+
+Environmental Contingency: The buyer has the right to conduct Phase I and Phase II Environmental Site Assessments. If contamination is discovered, the buyer can terminate or negotiate a purchase price reduction to account for remediation costs. Key terms to define: (a) what level of contamination triggers the contingency (any contamination, or only contamination above regulatory action levels); (b) who pays for remediation (seller credit, purchase price reduction, or seller-funded remediation before closing); (c) whether the buyer accepts the property "as-is" after the environmental contingency period expires.
+
+Phase I ESA: Desktop review and site inspection identifying potential environmental concerns. Cost: $2,000-$5,000. Timeframe: 2-4 weeks.
+
+Phase II ESA: Subsurface sampling (soil borings, groundwater monitoring wells) to confirm or deny Phase I findings. Cost: $10,000-$100,000+ depending on scope. Timeframe: 4-8 weeks.
+
+Brownfield Sites: Properties with known contamination that require remediation. Developers sometimes target brownfield sites intentionally because they can be acquired at significant discounts, and state voluntary cleanup programs (VCPs) offer liability protection and sometimes tax incentives. Charlotte, Nashville, and Boston all have active VCP programs.
+
+Entitlement Contingency: The buyer's obligation to close is contingent on obtaining required zoning approvals, site plan approvals, and building permits. This is the most extended contingency — entitlement processes can take 6-24 months depending on the jurisdiction.
+
+Rezoning Contingency: If the existing zoning does not permit the intended development, the buyer has the right to apply for a rezoning. The agreement specifies: (a) the buyer's obligation to diligently pursue the rezoning, (b) the time limit for obtaining approval, (c) what constitutes an acceptable zoning outcome (e.g., minimum density, allowable uses, height limits), and (d) extension rights if the rezoning process extends beyond the initial contingency period.
+
+Financing Contingency: Less common in institutional land purchases (most development land is acquired with equity, not financing), but sometimes included when the buyer intends to use a land banking facility or acquisition line of credit. The contingency allows termination if financing is not obtained within a specified period.
+
+Geotechnical Contingency: The buyer has the right to conduct geotechnical borings and soil analysis to assess foundation requirements. Unexpected subsurface conditions (rock, unsuitable soils, high water table) can add millions to construction costs. Key terms: who bears the cost of additional foundation work if soil conditions are worse than expected.
+
+Survey Contingency: The buyer has the right to obtain an ALTA/NSPS survey and object to any survey defects (encroachments, easements, boundary discrepancies). The seller has a cure period (typically 30 days) to address objections. If the seller cannot cure, the buyer can terminate.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 3: SELLER FINANCING AND GROUND LEASE STRUCTURES
+═══════════════════════════════════════════════════════════════════
+
+Seller Financing (Purchase Money Mortgage): The seller provides a loan to the buyer for a portion of the purchase price. Common in situations where the land value is high and the buyer's equity is concentrated in construction capital. Typical terms: 50-70% of purchase price, 5-7 year term, interest-only payments, subordinated to the construction loan. The subordination is critical — without it, the construction lender will not fund because they need a first-priority lien.
+
+Ground Lease: The landowner retains ownership of the land and leases it to the developer for a long term (typically 49-99 years). The developer owns the improvements (buildings) built on the leased land. Ground leases are common in high-value urban markets (Boston Seaport, for example, where Massport controls substantial land through ground leases).
+
+Ground Lease Key Terms:
+- Base Rent: Fixed annual payment, typically 4-6% of the land value, with CPI or fixed escalations (2-3% per year)
+- Percentage Rent: Some ground leases add a percentage of the tenant's gross revenue above a breakpoint
+- Purchase Option: Developer has the right to purchase the fee interest (land) at a specified price or fair market value at specified intervals (e.g., every 10 years)
+- Leasehold Mortgage: The developer's right to mortgage their leasehold interest (required for construction financing). The ground lessor must consent and provide a recognition agreement (SNDA) to the construction lender
+- Improvement Reversion: At lease expiration, ownership of improvements typically reverts to the landowner. Some leases require the developer to demolish improvements and return the land to its original condition
+- Casualty/Condemnation: Allocation of insurance proceeds and condemnation awards between landowner and developer
+
+Option Agreements: The buyer pays the seller a non-refundable option fee for the exclusive right to purchase the property at a specified price within a specified period. Option fees are typically 1-5% of the purchase price and may or may not be credited against the purchase price at closing. Options are used when the developer needs time to secure entitlements or financing before committing to the full purchase. The option agreement specifies: (a) option term and extension rights, (b) exercise procedure, (c) whether the option price is fixed or subject to escalation, and (d) the developer's rights to access the property during the option period for testing and due diligence.
+
+Right of First Refusal on Adjacent Parcels: In multi-phase developments, the developer often negotiates a ROFR on adjacent parcels owned by the same seller. If the seller receives a bona fide third-party offer for the adjacent parcel, the developer has 30-45 days to match the offer. This prevents a competing developer from assembling a competing project next door.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 4: CLOSING CONDITIONS AND TITLE REQUIREMENTS
+═══════════════════════════════════════════════════════════════════
+
+Title Insurance: The seller is required to deliver marketable fee simple title, insured by a title insurance policy from a nationally recognized title company. The buyer typically requires an ALTA Owner's Policy with extended coverage endorsements. Common endorsements for development land include: zoning endorsement (3.1), survey endorsement (9), access endorsement, utility endorsement, and contiguity endorsement (for multi-parcel assemblages).
+
+Permitted Exceptions: The agreement must define which title exceptions the buyer will accept at closing. Common permitted exceptions include: (a) real estate taxes not yet due and payable, (b) utility easements that do not materially interfere with the intended development, (c) recorded covenants and restrictions that are compatible with the intended use, and (d) matters shown on the approved survey. All other exceptions must be removed by the seller before closing.
+
+Closing Prorations: Property taxes, special assessments, and any existing income (if the land has interim uses) are prorated between buyer and seller as of the closing date. The proration method (cash basis vs. accrual basis) and the proration date (closing date vs. date of possession) should be specified.
+
+Representations and Warranties: The seller typically represents and warrants: (a) they have authority to sell, (b) there are no undisclosed environmental conditions, (c) there are no pending or threatened litigation affecting the property, (d) there are no undisclosed liens or encumbrances, (e) there are no undisclosed contracts affecting the property (management agreements, leases, service contracts), and (f) the property is in compliance with all applicable laws and regulations. These representations survive closing for a specified period (typically 12-24 months) and are the buyer's basis for a breach of contract claim if defects are discovered post-closing.
+
+Assignment Rights: The buyer typically reserves the right to assign the purchase agreement to a related entity (the project LLC) before closing. This is standard practice — the developer signs the initial contract in their own name or through a holding company, then assigns to a single-purpose entity (SPE) formed specifically for the project. The seller usually requires the original buyer to remain liable (a "recourse carve-out") even after assignment.

@@ -19,8 +19,8 @@ from FallonPrototype.shared.vector_store import add_documents, MARKET_DEFAULTS_C
 
 # Check both possible locations
 _DEFAULTS_PATHS = [
-    os.path.join(_PROTO_DIR, "data", "market_defaults", "market_defaults.json"),
     os.path.join(_PROTO_DIR, "Financial Model", "data", "market_defaults", "market_defaults.json"),
+    os.path.join(_PROTO_DIR, "data", "market_defaults", "market_defaults.json"),
 ]
 
 _LABELS = {

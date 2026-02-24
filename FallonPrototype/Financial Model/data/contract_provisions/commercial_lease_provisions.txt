@@ -1,0 +1,107 @@
+COMMERCIAL LEASE PROVISIONS
+Reference Guide for Office, Retail, and Industrial Tenancies in Development Projects
+
+═══════════════════════════════════════════════════════════════════
+SECTION 1: LEASE STRUCTURE TYPES
+═══════════════════════════════════════════════════════════════════
+
+Triple Net (NNN) Lease: The tenant pays base rent plus their pro rata share of all operating expenses — property taxes, insurance, and common area maintenance (CAM). The landlord receives a "net" rent payment with virtually no operating expense exposure. NNN leases are standard for office and industrial properties. The key advantage for developers is predictable NOI for underwriting and valuation purposes.
+
+Full Service Gross (FSG) Lease: The tenant pays a single gross rent amount that includes base rent plus a "base year" or "expense stop" for operating expenses. The landlord pays operating expenses up to the base year/stop amount; the tenant pays any expenses above that threshold. FSG leases are common for multi-tenant office buildings where tenants share common areas. The base year is typically the first full calendar year of the lease term.
+
+Modified Gross Lease: A hybrid where the tenant pays base rent plus some (but not all) operating expenses. Common modification: tenant pays their pro rata share of property taxes and insurance, but the landlord pays CAM. Modified gross leases are negotiated case-by-case.
+
+Expense Stop: A fixed dollar amount per square foot per year that caps the landlord's obligation for operating expenses. Example: $12.00/sf expense stop means the landlord pays the first $12.00/sf of operating expenses; the tenant pays any excess. If actual expenses are $14.50/sf, the tenant pays $2.50/sf in additional rent. Expense stops are set at or slightly above the projected first-year operating expenses.
+
+Base Year Stop: Instead of a fixed dollar amount, the stop is set equal to actual operating expenses during a specified base year (usually the first full calendar year of occupancy). The tenant pays their pro rata share of increases above the base year amount in subsequent years. Base year stops are more common than fixed stops because they automatically adjust to actual expense levels.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 2: CAM RECONCILIATION AND OPERATING EXPENSE PROVISIONS
+═══════════════════════════════════════════════════════════════════
+
+CAM (Common Area Maintenance) charges are the tenant's pro rata share of the costs of maintaining common areas — lobbies, elevators, hallways, parking structures, landscaping, security, management fees, and building systems maintenance. CAM reconciliation is the annual process of comparing estimated CAM charges (paid monthly by the tenant) to actual CAM expenses.
+
+Estimated vs. Actual CAM: Tenants pay estimated CAM monthly (typically 1/12 of the annual estimated amount). After year-end, the landlord reconciles estimated payments against actual expenses. If the tenant overpaid, they receive a credit; if they underpaid, they owe additional rent. The reconciliation statement must be delivered within a specified period (typically 90-120 days after year-end).
+
+CAM Caps: Tenants often negotiate a cap on annual CAM increases — commonly 3-5% cumulative or non-cumulative. A cumulative cap means unused cap amount carries forward (if CAM increases 2% in year 1 and the cap is 5%, the year 2 cap is effectively 8%). A non-cumulative cap resets each year. Controllable expense caps exclude property taxes, insurance, and utilities (which are uncontrollable and therefore uncapped).
+
+Gross-Up Provision: If a building is less than fully occupied, the landlord "grosses up" variable operating expenses to what they would be at full occupancy (typically 95%). Without gross-up, tenants in a partially occupied building would pay a disproportionate share of variable costs. Example: if a building is 60% occupied and actual variable CAM is $100,000, the landlord grosses up to $100,000 / 0.60 × 0.95 = $158,333, and each tenant pays their pro rata share of the grossed-up amount.
+
+Audit Rights: Sophisticated tenants negotiate the right to audit the landlord's operating expense records (typically once per year, within 180 days of receiving the reconciliation statement). If the audit reveals overcharges exceeding a threshold (commonly 3-5%), the landlord must reimburse the tenant for the overcharge plus the cost of the audit. Audit rights are a critical tenant protection in NNN and base year stop leases.
+
+Management Fee: The landlord's property management fee is typically included as an operating expense passed through to tenants. Standard management fees are 3-5% of gross revenue for office buildings. Tenants should cap the management fee at a specific percentage and require that if the landlord self-manages, the management fee does not exceed what an arm's-length third-party manager would charge.
+
+Capital Expenditure Exclusions: Tenants should negotiate exclusions from CAM for capital expenditures. Standard exclusions include: (a) capital improvements that expand the building, (b) capital repairs that extend the building's useful life beyond the lease term (or these are amortized over their useful life with only the current-year amortization passed through), (c) costs of initial construction defects, (d) costs of bringing the building into compliance with laws that existed at the time of construction. Without these exclusions, the landlord could pass through the cost of a new roof or HVAC system replacement as a CAM expense in a single year.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 3: TENANT IMPROVEMENT ALLOWANCES
+═══════════════════════════════════════════════════════════════════
+
+Tenant Improvement (TI) Allowance: A dollar-per-square-foot amount the landlord contributes toward the cost of building out the tenant's space. TI allowances are the largest upfront cost for the landlord in office leasing and are a primary negotiation point. Current market TI allowances (Q4 2025):
+- Charlotte Class A Office: $55-75/sf
+- Nashville Class A Office: $50-70/sf
+- Boston Seaport Class A Office: $75-100/sf
+- National Average Class A Office: $60-80/sf
+
+TI allowances are higher in markets with more competition for tenants and in buildings where the landlord needs to achieve higher rents to make the development economics work.
+
+Delivery Conditions: The agreement must specify what condition the landlord delivers the space in:
+- Shell Condition: Bare structure — concrete floors, exposed ceiling, no HVAC distribution, no walls. Tenant builds everything. TI allowance is higher to compensate.
+- Warm Shell: Structure plus base building HVAC, electrical panels, fire sprinklers to shell coverage, restroom cores, and a finished lobby/common areas. Tenant builds interior partitions, finishes, and supplemental HVAC. Most common for office leases.
+- Turn-Key/Build-to-Suit: Landlord builds the space to the tenant's specifications. The tenant may contribute costs above the TI allowance. Common for anchor tenants and credit tenants.
+
+TI Disbursement Mechanics: The TI allowance is typically disbursed to the tenant (or directly to the tenant's contractor) upon completion of the tenant's build-out, subject to: (a) the tenant has submitted paid invoices and lien waivers, (b) a certificate of occupancy has been issued, (c) the tenant has taken occupancy and commenced paying rent, and (d) the tenant is not in default under the lease. Some landlords disburse TI in installments tied to construction milestones.
+
+Unused TI: If the tenant's actual build-out cost is less than the TI allowance, the treatment of the unused TI varies: (a) the unused amount is forfeited (most landlord-friendly), (b) the unused amount is applied as a rent credit (most tenant-friendly), or (c) the unused amount can be applied to other tenant costs (furniture, equipment, moving costs). The treatment should be explicitly stated in the lease.
+
+TI Over-Allowance: If the tenant's build-out cost exceeds the TI allowance, the excess is the tenant's responsibility. The tenant typically pays the over-allowance amount directly to their contractor or reimburses the landlord. Some leases allow the tenant to amortize the over-allowance into the rent (increasing the base rent to cover the additional cost over the lease term at an agreed interest rate, typically 7-9%).
+
+═══════════════════════════════════════════════════════════════════
+SECTION 4: CO-TENANCY, EXCLUSIVITY, AND CONTINUOUS OPERATION
+═══════════════════════════════════════════════════════════════════
+
+Co-Tenancy Clause (Retail): A provision allowing the tenant to pay reduced rent or terminate the lease if certain other tenants (typically an anchor tenant or a specified number/percentage of the total tenants) cease operating in the project. Co-tenancy clauses are most common in retail leases where tenant mix drives foot traffic. Example: a restaurant tenant in a mixed-use project may negotiate that if the anchor grocery store closes, the restaurant's rent is reduced to 50% of base rent until a replacement anchor opens, and if no replacement opens within 12 months, the restaurant can terminate.
+
+Opening Co-Tenancy: Requires that specified co-tenants be open and operating before the tenant is required to open and commence paying full rent. This protects tenants who signed leases based on a promised tenant mix that hasn't materialized.
+
+Ongoing Co-Tenancy: Protects against co-tenant closures during the lease term. Typically provides for a rent reduction period followed by a termination right if the co-tenancy condition is not restored.
+
+Exclusivity Clause: The landlord agrees not to lease space in the same project (or within a specified radius) to a competing business. Example: a fitness studio tenant negotiates that the landlord will not lease to another fitness or gym operator within the project. The exclusivity should be specifically defined — vague exclusivity clauses ("no competing uses") are difficult to enforce and frequently litigated.
+
+Radius Restriction: The reverse of exclusivity — the tenant agrees not to open another location within a specified radius (typically 3-5 miles). This protects the landlord against the tenant cannibalizing the project's sales by opening a nearby competing location.
+
+Continuous Operation Clause: The tenant is required to remain open and operating during specified hours throughout the lease term. This is critical for retail projects where dark storefronts harm the project's appeal. The clause typically specifies: minimum hours of operation, staffing requirements, and consequences for violation (which may include rent escalation, liquidated damages, or lease termination).
+
+Go-Dark Provision: The tenant's negotiated exception to continuous operation. A go-dark provision allows the tenant to cease operations while continuing to pay rent. This gives the tenant flexibility if the location becomes unprofitable — they can stop incurring operating costs while maintaining their leasehold position. Go-dark provisions are strongly resisted by landlords in retail projects because dark stores reduce foot traffic and harm co-tenants.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 5: SUBORDINATION, NON-DISTURBANCE, AND ATTORNMENT (SNDA)
+═══════════════════════════════════════════════════════════════════
+
+An SNDA agreement is a three-party agreement between the landlord, tenant, and landlord's lender (mortgagee) that addresses what happens to the lease if the landlord defaults on their mortgage and the lender forecloses.
+
+Subordination: The tenant agrees that their lease is subordinate to (ranked below) the landlord's mortgage. Without subordination, a lease that was recorded before the mortgage would have priority, meaning the lender's foreclosure would not extinguish the lease. Lenders require subordination to ensure they can foreclose free and clear.
+
+Non-Disturbance: The lender agrees that if it forecloses on the landlord's property, it will not disturb the tenant's possession — meaning the tenant's lease will survive the foreclosure and remain in effect. This is the tenant's critical protection. Without non-disturbance, a subordinated tenant could lose their lease if the landlord defaults on the mortgage. A non-disturbance agreement typically provides that the lease survives foreclosure as long as the tenant is not in default.
+
+Attornment: The tenant agrees that if the lender forecloses, the tenant will recognize the lender (or the lender's successor) as the new landlord and continue to perform all lease obligations. This ensures continuity of the landlord-tenant relationship after foreclosure.
+
+SNDA Negotiation Points: (a) The definition of "default" that would allow the lender to disturb the tenant — should be limited to material monetary defaults, not technical violations. (b) The lender's obligation to honor the landlord's obligations under the lease, including TI allowances not yet disbursed and options (renewal, expansion, purchase). (c) The lender's right to receive copies of tenant default notices and an opportunity to cure landlord defaults. (d) Limitation on the lender's liability for landlord defaults that occurred before the lender took ownership.
+
+Estoppel Certificate: A signed statement by the tenant confirming the terms and status of the lease — commencement date, rent amount, security deposit held, whether the landlord is in default, and any claims the tenant has against the landlord. Estoppel certificates are required by buyers and lenders during due diligence. The lease should require the tenant to deliver an estoppel within 10-15 days of the landlord's request. Failure to respond within the specified period is deemed confirmation that the lease is in full force and effect with no landlord defaults.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 6: RENEWAL, EXPANSION, AND TERMINATION OPTIONS
+═══════════════════════════════════════════════════════════════════
+
+Renewal Option: The tenant's right to extend the lease for one or more additional terms. Key provisions: (a) notice period (typically 6-12 months before lease expiration), (b) renewal term length (typically 5-10 years), (c) renewal rent — either at fair market value (FMV) at the time of renewal, a fixed rate, or a fixed percentage increase over the expiring rate. FMV renewal is most common, with a "floor" at the expiring rent (the renewal rate cannot be less than the current rate) and sometimes a "ceiling" cap.
+
+FMV Determination Process: If the parties cannot agree on FMV, the lease typically provides for a three-broker appraisal process: each party selects one broker, the two brokers select a third, and the three brokers independently determine FMV. The FMV is the average of the two closest values (or the middle value of the three). This process typically takes 60-90 days.
+
+Expansion Option: The tenant's right to lease additional space in the building as it becomes available. Options include: (a) Right of First Offer (ROFO) — when space becomes available, the landlord must offer it to the tenant before marketing it to third parties; (b) Right of First Refusal (ROFR) — if the landlord receives a third-party offer for available space, the tenant can match the offer; (c) Must-Take — the tenant is obligated to take specified additional space at a specified future date. ROFO is most tenant-friendly because the tenant sees available space first. ROFR is less favorable because the tenant must match a competitive offer.
+
+Termination Option (Kick-Out): The tenant's right to terminate the lease early, typically on a specified anniversary (e.g., after year 5 of a 10-year lease). The termination right usually requires: (a) advance notice (6-12 months), (b) payment of a termination fee (commonly the unamortized TI allowance plus leasing commissions plus a percentage of remaining rent). Landlords resist termination options because they reduce the certainty of future cash flow, but they are often required to attract tenants to new development where the lease-up risk is perceived as higher.
+
+Assignment and Subletting: The tenant's ability to transfer their lease obligations to a third party. Standard lease language requires the landlord's prior written consent, which "shall not be unreasonably withheld, conditioned, or delayed." The landlord may impose conditions: (a) the assignee/subtenant must be creditworthy, (b) the use must be compatible with the building, (c) the landlord is entitled to a share of any profit (excess rent) the tenant receives from the sublease (typically 50%), and (d) the original tenant remains liable for lease obligations (a "recourse assignment").
+
+Recapture Right: The landlord's right to recapture (take back) the space if the tenant requests consent to assign or sublet. This allows the landlord to re-lease the space at current market rates if rents have increased since the original lease was signed. Tenants should negotiate to exclude certain transfers from the recapture right: intra-company transfers (to affiliates or subsidiaries), transfers in connection with a merger or acquisition, and transfers of less than 25% of the premises.

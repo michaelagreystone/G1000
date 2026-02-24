@@ -1,0 +1,163 @@
+REAL ESTATE JOINT VENTURE - WATERFALL DISTRIBUTION PROVISIONS
+Standard Structure for Fallon Development Deals
+===============================================================
+
+ARTICLE 8: DISTRIBUTIONS
+
+8.1 PRIORITY OF DISTRIBUTIONS
+
+All Distributable Cash shall be distributed in the following order of 
+priority (the "Waterfall"):
+
+TIER 1 - RETURN OF CAPITAL
+--------------------------
+First, 100% to the Members pro rata in accordance with their respective 
+Capital Contributions, until each Member has received cumulative 
+distributions equal to its total Capital Contributions.
+
+TIER 2 - PREFERRED RETURN
+-------------------------
+Second, 100% to the Investor Member (LP) until the Investor Member has 
+received cumulative distributions (including amounts distributed under 
+Tier 1 attributable to the Investor Member's Capital Contributions) 
+sufficient to provide the Investor Member with an Internal Rate of Return 
+equal to the Preferred Return (8.0% per annum, compounded annually) on 
+its Capital Contributions.
+
+TIER 3 - GP CATCH-UP
+-------------------
+Third, 100% to the Operating Member (GP) until the Operating Member has 
+received cumulative distributions equal to twenty percent (20%) of the 
+sum of (i) the amounts distributed to the Investor Member under Tier 2, 
+plus (ii) the amounts distributed to the Operating Member under this 
+Tier 3 (the "Catch-Up").
+
+TIER 4 - RESIDUAL SPLIT (80/20)
+-------------------------------
+Fourth, the balance, if any, shall be distributed eighty percent (80%) 
+to the Investor Member and twenty percent (20%) to the Operating Member.
+
+===============================================================
+
+8.2 ALTERNATIVE TIERED PROMOTE STRUCTURE
+
+For larger institutional deals, the following tiered promote may apply:
+
+TIER 1 - RETURN OF CAPITAL
+First, 100% to Members pro rata until capital returned.
+
+TIER 2 - FIRST HURDLE (8% IRR)
+Second, to LP until 8% IRR achieved on LP capital.
+
+TIER 3 - FIRST PROMOTE (80/20)
+Third, 80% to LP / 20% to GP until 12% IRR achieved.
+
+TIER 4 - SECOND PROMOTE (70/30)
+Fourth, 70% to LP / 30% to GP until 15% IRR achieved.
+
+TIER 5 - THIRD PROMOTE (60/40)
+Fifth, 60% to LP / 40% to GP until 18% IRR achieved.
+
+TIER 6 - FINAL SPLIT (50/50)
+Sixth, all remaining distributions 50% to LP / 50% to GP.
+
+===============================================================
+
+8.3 DEFINITIONS
+
+"Capital Contribution" means, with respect to any Member, the aggregate 
+amount of cash or property contributed by such Member to the Company 
+pursuant to Article 4.
+
+"Distributable Cash" means, for any period, the excess of (i) cash 
+receipts from operations, capital events, and refinancings over 
+(ii) operating expenses, debt service, capital expenditures, and 
+reasonable reserves as determined by the Operating Member.
+
+"Internal Rate of Return" or "IRR" means the annual rate of return that, 
+when used to discount all Capital Contributions and distributions to 
+their present values as of the date of the initial Capital Contribution, 
+causes the sum of the present values of all distributions to equal the 
+sum of the present values of all Capital Contributions. IRR shall be 
+calculated using the XIRR function methodology.
+
+"Preferred Return" means a cumulative, compounded annual return of 
+eight percent (8.0%) on unreturned Capital Contributions.
+
+===============================================================
+
+8.4 TIMING OF DISTRIBUTIONS
+
+(a) Operating Distributions: The Operating Member shall cause the Company 
+to distribute available Distributable Cash from operations within 
+forty-five (45) days following the end of each calendar quarter.
+
+(b) Capital Event Distributions: Distributable Cash from any capital 
+event (sale, refinancing, or recapitalization) shall be distributed 
+within ten (10) business days following receipt by the Company.
+
+(c) Tax Distributions: Notwithstanding the foregoing, the Company shall 
+distribute to each Member, within thirty (30) days following the end of 
+each taxable year, an amount sufficient to enable such Member to pay 
+federal and state income taxes on its allocable share of Company taxable 
+income for such year, calculated at the assumed rate of forty percent 
+(40%).
+
+===============================================================
+
+8.5 CLAWBACK PROVISIONS
+
+(a) GP Clawback: Upon final liquidation of the Company, if the Operating 
+Member has received aggregate distributions in excess of the amounts to 
+which it would have been entitled had all distributions been made in a 
+single distribution upon liquidation in accordance with Section 8.1, the 
+Operating Member shall promptly return such excess to the Company for 
+redistribution to the Investor Member.
+
+(b) LP Clawback: To the extent the Investor Member has received 
+distributions in excess of the amounts to which it would have been 
+entitled pursuant to Section 8.1 upon final liquidation, such excess 
+amounts (net of taxes paid by the Investor Member attributable to such 
+excess) shall be returned to the Company.
+
+===============================================================
+
+8.6 SAMPLE CALCULATION
+
+Assumptions:
+- Total Equity: $25,000,000
+- LP Contribution (90%): $22,500,000
+- GP Contribution (10%): $2,500,000
+- Hold Period: 5 years
+- Total Distributions: $45,000,000
+
+Waterfall Application:
+
+Tier 1 - Return of Capital:
+LP: $22,500,000
+GP: $2,500,000
+Remaining: $20,000,000
+
+Tier 2 - Preferred Return (8%):
+LP receives until 8% IRR achieved
+Cumulative to LP needed for 8% IRR: ~$32,100,000
+Amount from Tier 2: $9,600,000 to LP
+Remaining: $10,400,000
+
+Tier 3 - GP Catch-Up:
+GP receives until GP total = 20% of (Tier 2 + Tier 3)
+GP Catch-Up = $9,600,000 × 20% / 80% = $2,400,000
+Remaining: $8,000,000
+
+Tier 4 - Residual Split:
+LP: $8,000,000 × 80% = $6,400,000
+GP: $8,000,000 × 20% = $1,600,000
+
+FINAL DISTRIBUTIONS:
+LP Total: $22,500,000 + $9,600,000 + $6,400,000 = $38,500,000
+GP Total: $2,500,000 + $2,400,000 + $1,600,000 = $6,500,000
+
+LP Multiple: 1.71x
+GP Multiple: 2.60x
+LP IRR: ~13.5%
+GP IRR: ~21.2%

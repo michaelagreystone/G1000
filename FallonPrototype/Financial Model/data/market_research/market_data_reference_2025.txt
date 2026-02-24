@@ -1,0 +1,277 @@
+FALLON COMPANY — MARKET DATA REFERENCE COMPENDIUM
+Updated: Q4 2025 | Sources: CBRE, JLL, Marcus & Millichap, Avison Young, FRED, Zillow Research
+
+═══════════════════════════════════════════════════════════════════
+SECTION 1: CHARLOTTE, NC — MULTIFAMILY MARKET DATA
+═══════════════════════════════════════════════════════════════════
+
+Market Overview:
+Charlotte experienced record-breaking supply in 2024 with 16,700 units delivered — a 25% increase from the prior year. Approximately 22,000 units were under construction at end of 2024, representing a 9.6% expansion of inventory. However, construction starts declined 40% year-over-year, signaling a supply tapering that should tighten the market by late 2026. Annual absorption reached approximately 12,700 units in 2024 — robust but insufficient to fully absorb the supply wave.
+
+Rent Data (Q4 2025):
+- Average asking rent: $1,578/month (metro-wide, trailing 3-month average)
+- Class A effective rent per unit: $1,928 (Avison Young Q2 2025)
+- Rent per square foot: approximately $1.82/sf/month (on ~870sf average Class A unit)
+- Year-over-year rent growth: -0.3% (metro-wide, November 2025 — still digesting supply wave)
+- Projected 2026 rent growth: 2.5-3.5% as supply pipeline dries up
+- Zillow ZORI: Charlotte experienced one of the largest monthly drops in multifamily rents at -0.8% in November 2025
+
+Occupancy/Vacancy:
+- Overall metro occupancy: 91.6% (end of 2024)
+- Class A occupancy: 85.5% (peak oversupply impact, 2024) → recovering toward 94.5% (Q2 2025)
+- Class B occupancy: 92.3% (more resilient)
+- Stabilized projection: 93-94% as supply absorption catches up
+
+Cap Rates:
+- Class A: 4.74% (CBRE Q1 2025, flat since Q4 2024)
+- Class B: 5.25-5.50%
+- Class C: 5.75-6.25%
+- Median sale price per unit: approximately $200,000-$220,000 (varies by submarket)
+
+Construction Costs:
+- Wood-frame (Type III-A): $265-285/sf (Southeast region below national average)
+- Concrete (Type I): $350-400/sf
+- National average multifamily: $310/sf (Willowdale Equity, 2025)
+- Charlotte has seen 36%+ construction cost appreciation since 2012 (outlier vs. national)
+
+Key Submarkets for Development:
+- South End: highest rent premiums, transit-adjacent, most competitive for land
+- NoDa (North Davidson): emerging arts district, lower land costs, strong absorption
+- Uptown: CBD, mixed-use focus, higher construction costs
+- University City: UNCC area, student-adjacent demand
+- Ballantyne: suburban office/mixed-use corridor
+
+═══════════════════════════════════════════════════════════════════
+SECTION 2: CHARLOTTE, NC — OFFICE MARKET DATA
+═══════════════════════════════════════════════════════════════════
+
+Rent Data:
+- Class A asking rent: $32-36/sf/year NNN (Uptown/South End)
+- Class B asking rent: $24-28/sf/year NNN
+- Effective rents lower after free rent and TI amortization
+
+Vacancy/Occupancy:
+- Overall office vacancy: 14-16% (post-COVID adjustment ongoing)
+- Class A vacancy: 12-14% (Uptown) — new construction absorbing better than older stock
+- Class B/C vacancy: 18-22% — significant flight-to-quality dynamics
+
+Concessions:
+- Free rent: 6-8 months on 10-year leases
+- TI allowance: $55-75/sf for Class A new construction
+- Leasing commissions: 4-6% of aggregate lease value
+
+Cap Rates:
+- Class A: 6.25-6.75%
+- Class B: 7.00-7.50%
+
+═══════════════════════════════════════════════════════════════════
+SECTION 3: NASHVILLE, TN — MULTIFAMILY MARKET DATA
+═══════════════════════════════════════════════════════════════════
+
+Market Overview:
+Nashville's multifamily market is following a similar pattern to Charlotte — significant supply delivery followed by starts declining 781 permits year-over-year. New starts are concentrated in suburban submarkets where developers can build cost-effective, attainable housing. Elevated construction costs and higher interest rates continue to constrain new development.
+
+Rent Data (Q4 2025):
+- Average asking rent: $1,550-1,600/month (metro-wide)
+- Class A effective rent: $1,725-1,800/month
+- Rent per square foot: approximately $1.75/sf/month (on ~900sf average)
+- Year-over-year rent growth: Nashville saw the largest monthly drops in single-family rents at -0.9% (November 2025)
+- Projected 2026 rent growth: 3.0-4.0% as supply pipeline contracts
+
+Occupancy/Vacancy:
+- Stabilized occupancy: 92-93%
+- Supply overhang still being absorbed, but improving trajectory
+
+Cap Rates:
+- Overall multifamily: 5.1% (Marcus & Millichap, Q4 2025)
+- Class A: 4.75-5.10%
+- Median sale price per unit: $203,100 (down approximately 7% from 2024)
+
+Construction Costs:
+- Wood-frame: $270-290/sf
+- Nashville labor costs favorable relative to coastal markets but increasing
+- Subcontractor scarcity in MEP trades (consistent with Charlotte experience)
+
+Key Submarkets:
+- The Gulch: premium mixed-use district, highest rent premiums
+- 12 South: walkable residential, strong young professional demand
+- Germantown: emerging urban neighborhood
+- Green Hills: established affluent submarket
+- East Nashville: gentrifying arts/restaurant district
+
+═══════════════════════════════════════════════════════════════════
+SECTION 4: NASHVILLE, TN — HOTEL MARKET DATA
+═══════════════════════════════════════════════════════════════════
+
+Supply Pipeline (Q3 2025):
+- 524 rooms delivered in Q3 2025
+- 2,587 rooms under construction (4.2% of existing supply — roughly 2x national average)
+- Nashville's hotel pipeline is one of the most active in the country
+
+Performance Metrics:
+- ADR (Average Daily Rate): $185-200 (select-service/upscale)
+- Stabilized occupancy: 70-74%
+- RevPAR: $130-148 (select-service), $160-180 (full-service)
+- Nashville benefits from strong tourism/entertainment demand driver (300+ events/year at major venues)
+
+Cap Rates:
+- Select-service hotel: 7.0-7.5%
+- Full-service hotel: 6.5-7.0%
+- US hotel cap rates overall trending slightly upward in 2025 due to elevated interest rates
+
+Construction Costs:
+- Select-service: $175,000-225,000 per key (or $350-375/sf at 500sf/key)
+- Full-service/lifestyle: $275,000-350,000 per key
+- FF&E (furniture, fixtures & equipment): 15-20% of total hard cost
+- Replacement cost per key is very high in 2025 — supporting existing asset values
+
+═══════════════════════════════════════════════════════════════════
+SECTION 5: BOSTON, MA — MULTIFAMILY MARKET DATA
+═══════════════════════════════════════════════════════════════════
+
+Market Overview:
+Boston remains one of the most supply-constrained major markets in the US. Permitting and construction timelines are significantly longer than Southeast markets (Charlotte, Nashville) due to union labor requirements, extensive design review processes, and complex environmental regulations (particularly for waterfront development in Seaport).
+
+Rent Data (Q4 2025):
+- Seaport/South Boston Class A: $3.00-3.50/sf/month ($2,700-3,200/month on 800-900sf units)
+- Metro-wide Class A: $2.75-3.25/sf/month
+- Year-over-year rent growth: flat to +1.5% (Yardi Matrix forecast: 2.4% on A/B, 1.7% on C)
+- Zillow forecast: "seems inevitable rents will start to fall in greater Boston in 2026"
+
+Occupancy/Vacancy:
+- Class A: 94-96% (supply-constrained)
+- Class B: 93-95%
+- Class C: 91-93%
+
+Cap Rates (Marcus & Millichap Q1 2025):
+- Class A: 4.74% (compressed 7bps in Q1 2025, trend expected to continue through Q3 2025)
+- Class B: 4.92%
+- Class C: 5.38%
+
+Construction Costs:
+- Wood-frame: $365-390/sf (union labor premium)
+- Concrete: $450-525/sf (Seaport waterfront premium — deep pile foundations, environmental)
+- Boston construction costs 20-35% higher than Southeast markets
+- Soft costs: 28-32% of hard (permitting complexity, union, design review)
+
+Key Submarkets for Development:
+- Seaport Innovation District: highest rents, most constrained supply, Fallon home turf
+- South Boston: adjacent to Seaport, value alternative, rapidly gentrifying
+- Cambridge/Kendall Square: biotech demand driver, extremely competitive
+- Jamaica Plain: emerging urban market, transit-accessible
+- Dorchester: development opportunity, lower land costs
+
+═══════════════════════════════════════════════════════════════════
+SECTION 6: BOSTON, MA — OFFICE MARKET DATA
+═══════════════════════════════════════════════════════════════════
+
+Rent Data:
+- Seaport Class A: $62-72/sf/year NNN (premium submarket)
+- Back Bay/Financial District Class A: $55-65/sf/year NNN
+- Cambridge Class A (life science): $80-100/sf/year NNN (lab/office hybrid)
+
+Vacancy:
+- Overall office vacancy: 15-18% (significant post-COVID adjustment)
+- Seaport Class A vacancy: 8-12% (more resilient due to tech/biotech tenants)
+- Suburban office: 22-28% (significant flight-to-quality and flight-to-city)
+
+Concessions:
+- Free rent: 8-12 months on 10-year leases (aggressive due to vacancy)
+- TI allowance: $75-100/sf (Seaport Class A) — among highest in the country
+- Leasing commissions: 4-6% of aggregate lease value
+
+Cap Rates:
+- Seaport Class A: 5.50-6.00%
+- Financial District Class A: 6.00-6.50%
+
+Construction Costs:
+- Class A office: $430-475/sf (union labor, premium finishes)
+- Lab/office conversion: $500-600/sf (specialized HVAC, power, vibration requirements)
+
+═══════════════════════════════════════════════════════════════════
+SECTION 7: NATIONAL FINANCING MARKET DATA (Q4 2025)
+═══════════════════════════════════════════════════════════════════
+
+Benchmark Rate:
+- SOFR: 3.66% (as of February 20, 2026)
+- Federal Funds Rate: 3.50-3.75% (current target range)
+- Rate trajectory: 2 additional cuts expected in 2026
+
+Construction Loan Terms by Product Type:
+- Multifamily: SOFR + 250-325bps (total rate: 6.16-6.91%), 60-70% LTC
+- Office: SOFR + 300-375bps (total rate: 6.66-7.41%), 55-65% LTC
+- Hotel: SOFR + 325-400bps (total rate: 6.91-7.66%), 50-60% LTC
+- Mixed-Use: SOFR + 275-350bps (total rate: 6.41-7.16%), 55-65% LTC
+- Construction loan terms: 3-4 years with 1-2 year extensions
+
+Permanent Debt (Post-Stabilization):
+- Agency (Fannie/Freddie, multifamily only): 5.25-5.75% fixed, 10-year term, 30-year amortization
+- CMBS: 5.50-6.25% fixed, 5-10 year term, 30-year amortization
+- Life Company: 5.00-5.50% fixed, 7-15 year term (best terms for quality credit)
+- Bank: 5.75-6.50% floating, 3-5 year term
+
+Equity Market Terms (LP/GP Structures):
+- LP preferred return: 8% (most common), range 6-12% depending on risk profile
+- GP co-invest: 5-20% of total equity (most common: 10%)
+- GP promote: 20% above preferred return (single-tier), escalating to 30-40% at higher hurdle rates
+- LP/GP split: 90/10 (most common), 80/20 (for experienced GPs with strong track records)
+- Typical development deal LP target: 14-18% net IRR, 1.7-2.1x equity multiple
+
+═══════════════════════════════════════════════════════════════════
+SECTION 8: OPERATING EXPENSE BENCHMARKS
+═══════════════════════════════════════════════════════════════════
+
+Multifamily Operating Expenses (as % of Effective Gross Income):
+- Total operating expense ratio: 35-45% of EGI (varies by market and property class)
+- Property management fee: 3-4% of EGI
+- Property taxes: 8-12% of EGI (varies significantly by state — North Carolina and Tennessee have lower rates than Massachusetts)
+- Insurance: 3-5% of EGI (increasing rapidly due to climate risk repricing, especially for coastal properties)
+- Repairs & maintenance: 5-8% of EGI
+- Utilities: 5-8% of EGI (higher where landlord pays water/sewer)
+- Administrative/payroll: 5-8% of EGI
+- Marketing/turnover: 2-3% of EGI
+- Reserves for replacement: 3-4% of EGI ($250-$350/unit/year)
+
+Office Operating Expenses (NNN — tenant-reimbursable):
+- Total NNN expenses: $12-18/sf/year (varies by market)
+- Charlotte: $12-14/sf/year
+- Nashville: $13-15/sf/year
+- Boston: $16-20/sf/year (union janitorial, higher utility costs)
+
+Hotel Operating Expenses (as % of Total Revenue):
+- Total GOP (Gross Operating Profit) margin: 35-42%
+- Total operating expenses: 58-65% of revenue
+- Rooms department: 20-25% of rooms revenue
+- Food & beverage: 65-75% of F&B revenue (high cost department)
+- Undistributed operating expenses: 20-25% of total revenue
+- Management fee: 2-4% of total revenue
+- Franchise fee: 4-6% of rooms revenue (brand-dependent)
+- FF&E reserve: 4-5% of total revenue
+
+═══════════════════════════════════════════════════════════════════
+SECTION 9: FREE DATA SOURCES FOR ONGOING MODEL UPDATES
+═══════════════════════════════════════════════════════════════════
+
+Government/Public Data:
+- FRED (fred.stlouisfed.org): SOFR rate (daily), mortgage rates, CPI shelter, building permits by MSA
+- Census Bureau (data.census.gov): Median rent by zip (ACS B25064), housing characteristics (DP04), building permits
+- HUD (huduser.gov): Fair Market Rents, income limits (for LIHTC underwriting), USPS vacancy data
+- BLS (bls.gov): CPI shelter inflation, PPI construction cost index, employment by MSA
+
+Private/Free Data:
+- Zillow Research (zillow.com/research/data): ZORI rent index, ZHVI home values — downloadable CSV, monthly updates
+- Redfin Data Center (redfin.com/news/data-center): Sale prices, days on market, price trends by metro/zip
+- Inside Airbnb (insideairbnb.com): Nashville and Boston STR data — nightly rates, occupancy proxies
+- Apartment List (apartmentlist.com/research): National rent estimates, vacancy, rent growth
+
+Brokerage Research (free with registration):
+- CBRE (cbre.com/research-and-reports): Quarterly market reports for Charlotte, Nashville, Boston
+- JLL (jll.com/trends-and-insights/research): Office and multifamily market outlooks
+- Cushman & Wakefield (cushmanwakefield.com/insights): Market stat reports
+- Marcus & Millichap (marcusmillichap.com/research): Cap rate reports, multifamily/office/retail/hotel outlooks
+- Avison Young: Charlotte multifamily quarterly reports
+
+Local/Regional Data:
+- Charlotte: data.charlottenc.gov (permits, parcels), Mecklenburg County GIS
+- Nashville: data.nashville.gov (permits, zoning, assessments)
+- Boston: data.boston.gov (permits, assessments), MassGIS (parcels, zoning)

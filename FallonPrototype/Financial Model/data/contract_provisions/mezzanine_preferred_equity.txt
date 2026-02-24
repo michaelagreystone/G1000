@@ -1,0 +1,104 @@
+MEZZANINE DEBT AND PREFERRED EQUITY PROVISIONS
+Reference Guide for Real Estate Development Capital Structures
+
+═══════════════════════════════════════════════════════════════════
+SECTION 1: MEZZANINE DEBT STRUCTURE AND MECHANICS
+═══════════════════════════════════════════════════════════════════
+
+Mezzanine debt is a form of subordinated financing that sits between the senior mortgage (first lien) and common equity in the capital stack. Unlike a traditional mortgage that is secured by a lien on the real property, mezzanine debt is secured by a pledge of the borrower's equity interests (membership interests in the LLC that owns the property). This distinction has profound legal implications: foreclosure on mezzanine debt is a UCC foreclosure on the equity interests (which can be completed in weeks), not a judicial mortgage foreclosure (which can take months or years depending on the state).
+
+Typical Mezzanine Debt Terms (Q4 2025 Development Deals):
+- Position in capital stack: 60-80% of total capitalization (senior loan at 55-65% LTC, mezzanine filling the gap to 75-80% LTC)
+- Interest rate: 12-18% (reflecting subordinated risk position)
+- Term: Co-terminus with the senior construction loan, typically 3-4 years with 1-2 year extension options
+- Payment structure: Current pay (monthly interest) or PIK (payment-in-kind, where interest accrues and compounds). PIK is more common during construction when the project has no cash flow
+- Origination fee: 1-3% of the mezzanine loan amount
+- Exit fee: 0.5-1.0% of the mezzanine loan amount, payable at maturity or prepayment
+- Prepayment: Typically locked out for 12-24 months, then freely prepayable. Some mezzanine loans include yield maintenance or minimum interest provisions
+
+Pledge Agreement: The core security instrument for mezzanine debt. The borrower (usually the upper-tier entity that owns the property-owning LLC) pledges its membership interests in the property-owning LLC to the mezzanine lender. Key provisions:
+- The borrower cannot transfer, encumber, or dilute the pledged interests without the mezzanine lender's consent
+- Upon default, the mezzanine lender has the right to foreclose on the pledged interests through a UCC sale, effectively taking ownership of the entity that owns the property
+- The mezzanine lender holds a first-priority security interest in the pledged interests (there can be only one mezzanine lender per tier of the ownership structure)
+
+═══════════════════════════════════════════════════════════════════
+SECTION 2: INTERCREDITOR AGREEMENTS
+═══════════════════════════════════════════════════════════════════
+
+The intercreditor agreement (ICA) governs the relationship between the senior lender and the mezzanine lender. It is one of the most complex and heavily negotiated documents in real estate finance. Without a satisfactory ICA, the senior lender will not consent to the mezzanine loan.
+
+Standstill Provisions: The mezzanine lender agrees not to exercise remedies (including UCC foreclosure) for a specified period (typically 60-120 days) after a default under the mezzanine loan. This standstill gives the senior lender time to work with the borrower to cure the default or take its own enforcement action. During the standstill, the mezzanine lender may not accelerate the mezzanine loan, declare a default, or commence foreclosure proceedings.
+
+Cure Rights: The mezzanine lender has the right (but not the obligation) to cure defaults under the senior loan. This is a critical mezzanine lender protection — if the borrower defaults on the senior loan, the mezzanine lender can step in and cure the default to prevent a senior loan foreclosure that would wipe out the mezzanine lender's position. The ICA specifies the cure period (typically matching the borrower's cure period plus an additional 30 days) and the types of defaults that are curable vs. non-curable.
+
+Subordination: The mezzanine loan is subordinate to the senior loan. Key subordination provisions:
+- Payment subordination: In a bankruptcy or liquidation, the senior lender is paid in full before the mezzanine lender receives any payment
+- Lien subordination: The senior lender's mortgage is senior to the mezzanine lender's pledge (though they are different types of collateral — real property vs. equity interests)
+- Remedies subordination: The mezzanine lender cannot exercise remedies during the standstill period and must provide notice to the senior lender before commencing foreclosure
+
+Purchase Option: The mezzanine lender has the right to purchase the senior loan at par (outstanding principal plus accrued interest and fees) if the borrower defaults on the senior loan. This gives the mezzanine lender the ability to take control of the entire debt stack and work out the situation directly. The purchase option typically must be exercised within 30-60 days of the senior loan default.
+
+Modification Restrictions: Neither the senior loan nor the mezzanine loan can be materially modified without the other lender's consent. Material modifications include: changes to interest rate, maturity date, principal amount, amortization schedule, and collateral. Non-material modifications (administrative changes, immaterial waivers) do not require consent.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 3: PREFERRED EQUITY STRUCTURE
+═══════════════════════════════════════════════════════════════════
+
+Preferred equity is an equity investment that has priority over common equity for distributions and return of capital. Unlike mezzanine debt, preferred equity is not a loan — it is an ownership interest in the property-owning entity with preferential distribution rights. This distinction matters for tax purposes (equity returns are taxed differently than debt interest), accounting purposes (equity vs. liability classification), and legal purposes (equity holders have different rights than creditors in bankruptcy).
+
+Hard Preferred Equity: Functions economically like mezzanine debt but is structured as equity. The preferred equity investor receives a fixed preferred return (similar to an interest rate) and has redemption rights (the ability to force the company to repurchase their interest at a specified price). Hard preferred equity has a stated maturity date and may include default provisions that look very similar to debt default provisions. The key question: is the investment "really" equity or "really" debt? The IRS, courts, and accountants may re-characterize hard preferred equity as debt if it has too many debt-like characteristics. Re-characterization can have significant tax consequences.
+
+Soft Preferred Equity: Functions more like traditional equity. The preferred equity investor receives a preferred distribution from available cash flow, but there is no fixed maturity date and no redemption right. If the project does not generate sufficient cash flow, the preferred return accrues but is not a default. This is truly equity — the investor participates in the upside (through a promote or profit participation above the preferred return) and bears downside risk (loss of invested capital if the project fails).
+
+Typical Preferred Equity Terms (Q4 2025):
+- Preferred return: 10-15% (higher than common equity preferred returns of 8-10% because preferred equity is senior in the waterfall)
+- Position in capital stack: 70-85% of total capitalization (senior loan at 55-65% LTC, preferred equity filling the gap to 80-85%)
+- Participation: Some preferred equity includes an "equity kicker" — a share of profits above the preferred return (typically 10-25% of profits above the preferred return hurdle)
+- Term: 3-5 years for development deals, with extension options
+- Redemption: The sponsor has the right to redeem (repay) the preferred equity at par plus accrued preferred return after a lockout period (typically 12-24 months)
+
+Conversion Rights: Some preferred equity includes the right to convert to common equity under specified circumstances (typically a default or a change of control). Upon conversion, the preferred equity investor becomes a common equity partner and participates in all future distributions on a pari-passu basis with the existing common equity. Conversion is the preferred equity investor's "nuclear option" — it gives them control of the project if things go wrong.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 4: PAYMENT-IN-KIND (PIK) AND ACCRUAL MECHANICS
+═══════════════════════════════════════════════════════════════════
+
+PIK Interest/Return: Instead of receiving cash payments, the investor's return is "paid" by increasing the outstanding principal balance (for debt) or the unreturned capital account (for equity). PIK is common during the construction phase of development deals when the project has no cash flow.
+
+PIK Compounding: PIK interest compounds — interest accrues on previously accrued interest. Over a multi-year construction period, PIK compounding can significantly increase the total return obligation. Example: $10M mezzanine loan at 15% PIK for 3 years compounds to $10M × (1.15)^3 = $15.21M. The borrower must repay $15.21M, not $14.5M (which would be simple interest).
+
+PIK Toggle: Some instruments allow the borrower to elect PIK or cash pay on each payment date. This gives the borrower flexibility to conserve cash during construction and switch to cash pay once the project stabilizes. The PIK toggle typically expires after the construction period, and all subsequent payments must be cash pay.
+
+Current Pay vs. PIK Split: A hybrid structure where a portion of the return is paid in cash and the remainder accrues as PIK. Example: 15% total return = 8% cash pay + 7% PIK. This reduces the borrower's cash burden during construction while providing the investor with some current income.
+
+Catch-Up Payment: Upon refinancing, sale, or maturity, all accrued PIK amounts become immediately due and payable. The catch-up payment is calculated as the difference between the current outstanding balance (including compounded PIK) and the original principal amount.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 5: EQUITY KICKERS AND PARTICIPATION FEATURES
+═══════════════════════════════════════════════════════════════════
+
+Equity Kicker: An additional return component that gives the mezzanine lender or preferred equity investor a share of the project's profits beyond their fixed return. Equity kickers align the investor's interests with the sponsor because the investor benefits from the project's success, not just from receiving a fixed rate.
+
+Common Equity Kicker Structures:
+- Profit Participation: The investor receives a specified percentage of profits (typically 5-25%) after all senior obligations (senior debt, preferred returns) are satisfied. Profits are defined as net sale proceeds minus total project cost minus senior debt repayment minus preferred returns
+- Exit Fee: A percentage of sale proceeds or refinancing proceeds (typically 1-3%) paid to the investor at the exit event
+- Warrant/Option: The investor has the right to acquire a specified percentage of common equity in the project at a specified exercise price. This is effectively a call option on the project's equity value
+- Revenue Participation: The investor receives a percentage of gross revenue (typically 1-5%) above a specified threshold. Less common than profit participation but sometimes used in hotel and retail deals where revenue is more predictable than profits
+
+Crystallization Events: The events that trigger the equity kicker payment. Common crystallization events include: (a) sale of the property, (b) refinancing that generates excess proceeds, (c) expiration of the investment term, and (d) change of control of the sponsor entity. The crystallization event definition is heavily negotiated because it determines when the investor receives their upside participation.
+
+Dilution Protection: If the sponsor issues additional equity after the mezzanine or preferred equity closing, the existing investor's equity kicker should be protected against dilution. Anti-dilution provisions typically require that the investor's percentage participation remains constant regardless of subsequent equity issuances, or that the investor has the right to participate in future equity offerings on a pro rata basis.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 6: DEFAULT AND REMEDY PROVISIONS
+═══════════════════════════════════════════════════════════════════
+
+Events of Default (Mezzanine Debt): (a) failure to make interest payments when due (typically with a 5-10 day grace period), (b) failure to maintain required financial ratios (debt service coverage, loan-to-value), (c) transfer of the pledged interests without lender consent, (d) default under the senior loan, (e) bankruptcy of the borrower or any guarantor, (f) material misrepresentation, (g) failure to comply with material covenants.
+
+Events of Default (Preferred Equity): Because preferred equity is equity, not debt, default triggers are typically narrower: (a) failure to make preferred distributions when the project has distributable cash flow (a "bad boy" provision), (b) fraud or material misrepresentation, (c) bankruptcy, (d) unauthorized transfer of the sponsor's interest, (e) failure to meet performance milestones (construction completion, lease-up targets). A shortfall in preferred returns due to legitimate project underperformance is typically NOT a default under soft preferred equity.
+
+Foreclosure (Mezzanine): The mezzanine lender forecloses on the pledged equity interests through a UCC Article 9 sale. The process: (a) the lender sends a notice of default and acceleration, (b) after the cure period expires, the lender sends a notice of disposition (sale), (c) the lender conducts a commercially reasonable sale of the pledged interests (typically 30-60 days after notice), (d) the lender or a third party purchases the interests at the sale, (e) the purchaser becomes the new owner of the property-owning LLC. The entire UCC foreclosure process can be completed in 60-90 days — much faster than a mortgage foreclosure, which can take 6-24 months depending on the state.
+
+Sponsor Guarantees: Both mezzanine lenders and preferred equity investors typically require limited guarantees from the sponsor principals. Common guarantee provisions include: (a) completion guarantee (for development deals — the sponsor personally guarantees that the project will be completed), (b) bad boy guarantee (the sponsor is personally liable if they commit specified bad acts — fraud, misappropriation of funds, environmental contamination, voluntary bankruptcy filing), (c) carry guarantee (the sponsor guarantees operating shortfalls during a specified period).
+
+Non-Recourse Carve-Outs: Even in "non-recourse" mezzanine or preferred equity structures, certain actions by the sponsor trigger full personal recourse. These "bad boy" carve-outs typically include: (a) fraud or intentional misrepresentation, (b) misapplication or misappropriation of rents, insurance proceeds, or condemnation awards, (c) waste of the property, (d) voluntary bankruptcy filing, (e) violation of transfer restrictions, (f) failure to maintain required insurance. If any carve-out is triggered, the sponsor's personal liability is unlimited — they are fully responsible for the investor's entire loss.

@@ -1,0 +1,86 @@
+CONSTRUCTION CONTRACT PROVISIONS
+Reference Guide for Real Estate Development — GMP, Lump Sum, and Design-Build Contracts
+
+═══════════════════════════════════════════════════════════════════
+SECTION 1: CONTRACT TYPES AND PRICING STRUCTURES
+═══════════════════════════════════════════════════════════════════
+
+Guaranteed Maximum Price (GMP) Contract: The contractor guarantees that the total construction cost will not exceed a specified maximum price. The owner pays the actual cost of the work plus a contractor fee, up to the GMP ceiling. If actual costs come in under the GMP, the savings are shared between owner and contractor (commonly 50/50 or 75/25 in favor of the owner). If costs exceed the GMP, the contractor absorbs the overage — this is the contractor's risk. The GMP is the most common contract type for large-scale real estate development because it provides cost certainty while allowing the owner to benefit from cost savings.
+
+GMP Key Provisions:
+- GMP Amount: The guaranteed ceiling price, including all hard costs, general conditions, contractor overhead, contractor fee, and contingency
+- Cost of the Work: Defined categories of reimbursable costs — labor, materials, subcontractor costs, equipment, temporary facilities, insurance, bonds, permits
+- Contractor Fee: Typically 3-5% of the cost of the work (excludes contingency). The fee covers the contractor's profit and home office overhead
+- General Conditions: The contractor's on-site project management costs — superintendent, project engineer, project manager, office trailer, temporary utilities, safety equipment, cleanup. Typically 6-10% of hard costs for large projects
+- GMP Contingency: A line item within the GMP owned by the contractor for unforeseen conditions. Typically 3-5% of hard costs. Distinct from the owner's contingency (which is outside the GMP and owned by the owner)
+- Savings Split: How cost underruns are divided. Common: owner receives 75% of savings, contractor receives 25%. The contractor's share of savings incentivizes efficient construction
+- GMP Amendments: Formal modifications to the GMP that add scope or address changed conditions. Requires mutual written agreement. Distinguish from change orders (which add scope but may or may not increase the GMP)
+
+Lump Sum (Stipulated Sum) Contract: The contractor agrees to perform the entire scope of work for a fixed price. All risk of cost overruns is on the contractor. The owner's cost is certain, but the price typically includes a higher contractor fee (5-8%) to compensate for the additional risk. Lump sum contracts are most appropriate when the design is 100% complete before bidding and the scope is well-defined. They are less common for ground-up development because construction documents are rarely 100% complete at contract signing.
+
+Cost-Plus Contract: The owner pays the actual cost of the work plus a percentage fee or fixed fee. No cost ceiling. The contractor has no financial risk for cost overruns. This structure is rarely used for development deals except in fast-track situations where construction must begin before design is complete. Institutional LPs and construction lenders generally will not accept cost-plus contracts due to the lack of cost certainty.
+
+Design-Build Contract: A single entity is responsible for both design and construction. The design-builder provides a GMP or lump sum price that covers both A/E design fees and construction costs. Advantages: single point of responsibility, faster delivery (design and construction overlap), potentially lower cost through value engineering during design. Disadvantages: less design control for the owner, potential conflicts of interest (the design-builder may favor cost-effective solutions over design quality).
+
+═══════════════════════════════════════════════════════════════════
+SECTION 2: CHANGE ORDER PROCEDURES
+═══════════════════════════════════════════════════════════════════
+
+A change order is a written modification to the construction contract that changes the scope of work, contract sum, or contract time. Change orders are the primary source of disputes and cost overruns in development projects. A well-drafted change order procedure is critical.
+
+Owner-Initiated Changes: The owner (or the architect on behalf of the owner) issues a Change Order Request (COR) describing the desired modification. The contractor must respond within a specified period (typically 10-15 business days) with a detailed cost proposal including: (a) itemized labor and material costs, (b) subcontractor quotes, (c) impact on the construction schedule, and (d) contractor markup (typically 10-15% on subcontractor work and 5-10% on self-performed work). The owner reviews and either approves, negotiates, or withdraws the COR.
+
+Contractor-Initiated Changes: The contractor may identify unforeseen conditions (concealed conditions, design errors, or code changes) that require additional work. The contractor submits a Request for Information (RFI) to the architect, who issues a response. If the response requires work outside the original scope, the contractor submits a change order proposal. The key issue: distinguishing between legitimately unforeseen conditions and conditions the contractor should have reasonably anticipated from the contract documents.
+
+Concealed Conditions: AIA A201 (General Conditions) defines concealed conditions as conditions "not ordinarily found to exist" or conditions "of an unusual nature, differing materially from those ordinarily found to exist." If discovered, the contractor must give prompt written notice (typically within 21 days). If the architect agrees the condition qualifies, the contract sum and time are adjusted equitably. Common examples in development: unexpected subsurface contamination, undisclosed underground utilities, different rock conditions than indicated in the geotechnical report.
+
+Disputed Change Orders: If the owner and contractor cannot agree on the cost or time impact of a change, the owner can issue a Construction Change Directive (CCD) ordering the contractor to proceed with the work while the cost is resolved. The contractor must proceed — refusal to perform directed work is a contract default. The cost is determined later through negotiation, mediation, or arbitration.
+
+Markup Caps: The agreement should cap the contractor's markup on change orders. Common caps: 10% on self-performed work, 5% on subcontractor work, no markup on sub-sub work. Without caps, change order costs can escalate rapidly because markups compound at each tier.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 3: RETAINAGE
+═══════════════════════════════════════════════════════════════════
+
+Retainage is the percentage of each progress payment that the owner withholds until the work is substantially complete. It serves as financial leverage to ensure the contractor completes all work, including punch list items.
+
+Standard Retainage: 10% of each progress payment is withheld. For a $50M project, this means $5M is held back over the course of construction. Retainage is typically reduced to 5% when the project reaches 50% completion, as an incentive for the contractor to maintain schedule.
+
+Subcontractor Retainage: The general contractor holds retainage from subcontractor payments at the same rate the owner holds from the GC. When a subcontractor completes their scope, their retainage should be released (reduced to 0%) even if the overall project is not yet complete. Holding subcontractor retainage after their work is complete and accepted is a common contractor abuse and is prohibited by statute in many states.
+
+Retainage Release Conditions: Retainage is released in two phases: (1) 50% of retainage is released at Substantial Completion (when the building is occupiable and the owner can use it for its intended purpose), and (2) the remaining 50% is released at Final Completion (when all punch list items are complete, all closeout documents are submitted, and all liens are released). The owner should withhold 150-200% of the estimated cost to complete any remaining punch list items from the final retainage release.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 4: SCHEDULE, LIQUIDATED DAMAGES, AND SUBSTANTIAL COMPLETION
+═══════════════════════════════════════════════════════════════════
+
+Construction Schedule: The contractor is required to prepare and maintain a Critical Path Method (CPM) schedule showing the sequence and duration of all construction activities. The schedule must be updated monthly and submitted with each pay application. Schedule slippage of more than a specified threshold (typically 14-30 days behind the baseline schedule) triggers a recovery plan requirement.
+
+Liquidated Damages (LDs): A pre-agreed daily or weekly penalty the contractor pays for each day beyond the contractual completion date that the project remains incomplete. LDs must be a reasonable estimate of the owner's actual damages from the delay — not a penalty (penalties are unenforceable). Common LD rates for development projects:
+- Multifamily: $500-$2,000 per day (based on lost rental income)
+- Office: $1,000-$5,000 per day (based on lost rent and tenant improvement deadlines)
+- Hotel: $2,000-$10,000 per day (based on lost room revenue)
+
+To calculate a defensible LD rate: estimate the daily net revenue lost from the delay. For a 200-unit multifamily project at $1,650/unit/month average rent × 93% occupancy = $307,000/month ÷ 30 = approximately $10,200/day in potential gross revenue. A reasonable LD rate might be 30-50% of this figure ($3,000-$5,000/day) accounting for the fact that not all revenue would be lost on day one due to phased lease-up.
+
+Bonus for Early Completion: Some contracts include a bonus payment for completing ahead of schedule, typically at the same daily rate as the liquidated damages. This incentivizes the contractor to accelerate the schedule. The bonus is capped at a maximum number of days (typically 30-60 days).
+
+Substantial Completion: Defined as the date when the work (or a designated portion) is sufficiently complete that the owner can occupy and use it for its intended purpose. The architect issues a Certificate of Substantial Completion. Key consequences: (a) the owner takes possession and assumes risk of loss, (b) warranties begin to run, (c) liquidated damages cease, (d) retainage is partially released, and (e) the contractor's maintenance obligation for completed work ends.
+
+Punch List: A list of minor defects, incomplete items, and touch-ups identified during the substantial completion inspection. The contractor must complete all punch list items within a specified period (typically 30-60 days). The owner withholds 150-200% of the estimated punch list completion cost from the retainage release.
+
+Final Completion: Achieved when all punch list items are complete, all closeout documents are delivered (as-built drawings, operation manuals, warranty letters, lien releases), and all financial reconciliation is complete. The remaining retainage is released at final completion.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 5: CONTRACTOR DEFAULT AND TERMINATION
+═══════════════════════════════════════════════════════════════════
+
+Contractor Default Events: (a) abandonment of the work, (b) failure to perform the work in accordance with the contract documents, (c) failure to maintain the construction schedule, (d) failure to pay subcontractors, (e) persistent safety violations, (f) bankruptcy or insolvency, (g) failure to maintain required insurance or bonds.
+
+Owner's Remedies Upon Default: The owner must provide written notice of default and a cure period (typically 7-14 days). If the contractor fails to cure, the owner may: (a) terminate the contract, (b) take possession of the work and all materials, (c) complete the work using another contractor (with costs charged to the original contractor), (d) draw on the performance bond, and (e) pursue damages for delay and additional costs.
+
+Performance Bond: A surety bond (typically 100% of the contract amount) that guarantees the contractor will complete the work. If the contractor defaults, the surety (bonding company) has three options: (a) finance the original contractor to complete the work, (b) hire a replacement contractor to complete the work, or (c) pay the owner the penal sum of the bond (limited to the bond amount minus amounts already paid to the contractor). Performance bonds typically cost 0.5-2.0% of the contract amount and are required by all institutional construction lenders.
+
+Payment Bond: A surety bond that guarantees the contractor will pay all subcontractors, material suppliers, and laborers. If the contractor fails to pay, the surety pays the unpaid parties directly. The payment bond protects the owner from mechanic's liens (claims by unpaid subcontractors against the owner's property). Payment bonds are required in most states for public projects and are standard practice for private development projects above $5-10M.
+
+Termination for Convenience: The owner's right to terminate the contract without cause. The contractor is entitled to payment for work completed, plus a reasonable profit on completed work, but NOT lost profit on unperformed work. This is an important distinction from termination for cause (where the contractor may owe the owner damages). Termination for convenience provisions are controversial — contractors resist them because they can lose a profitable project at the owner's whim.

@@ -1,0 +1,175 @@
+DEAL MEMO: Nashville Gulch Hotel & Residential Mixed-Use
+Project: The Soundstage at The Gulch
+Location: 11th Avenue South, The Gulch, Nashville TN
+===============================================================
+
+EXECUTIVE SUMMARY
+-----------------
+The Soundstage is a mixed-use development featuring a 225-key upscale 
+select-service hotel (Marriott AC brand) over ground-floor retail, with an 
+adjacent 165-unit multifamily tower. The project leverages Nashville's 
+exceptional population growth and tourism economy.
+
+PROJECT COMPONENTS
+------------------
+Hotel Component:
+- Keys: 225
+- Brand: AC Hotel by Marriott (franchise)
+- Floors: 12 stories
+- Meeting Space: 4,500 SF
+- Restaurant/Bar: 5,200 SF (hotel-operated)
+- Fitness/Pool: 3,800 SF
+
+Multifamily Component:
+- Units: 165
+- Mix: 70% 1BR (800 SF avg), 30% 2BR (1,150 SF avg)
+- Rentable SF: 149,175 SF
+- Amenities: Rooftop deck, co-working, fitness
+
+Retail Component:
+- Ground Floor: 12,000 SF
+- Tenants: F&B focus (3-4 spaces)
+
+DEVELOPMENT COSTS
+-----------------
+Hotel:
+- Land Allocation: $11,250,000
+- Hard Costs: $50,625,000 ($225,000/key)
+- Soft Costs: $12,150,000 (24%)
+- FF&E: $6,750,000 ($30,000/key)
+- Pre-Opening: $2,250,000
+- Contingency: $4,050,000 (8%)
+- Developer Fee: $3,480,000 (4%)
+- Hotel Total: $90,555,000 ($402,467/key)
+
+Multifamily:
+- Land Allocation: $8,250,000
+- Hard Costs: $41,770,875 ($280/SF)
+- Soft Costs: $9,189,593 (22%)
+- Contingency: $2,923,961 (7%)
+- Developer Fee: $2,485,377 (4%)
+- MF Total: $64,619,806 ($391,635/unit)
+
+Retail:
+- Included in hotel podium costs
+- TI Allowance: $600,000 ($50/SF)
+
+Total Project Cost: $155,774,806
+
+FINANCING STRUCTURE
+-------------------
+Hotel Construction Loan:
+- Amount: $49,805,250 (55% LTC)
+- Rate: SOFR + 400 bps (8.00% all-in)
+- Term: 36 months
+
+Multifamily Construction Loan:
+- Amount: $42,002,874 (65% LTC)
+- Rate: SOFR + 300 bps (7.00% all-in)
+- Term: 36 months
+
+Total Debt: $91,808,124
+Total Equity: $63,966,682
+- LP Equity (90%): $57,570,014
+- GP Equity (10%): $6,396,668
+
+HOTEL REVENUE PROJECTIONS
+-------------------------
+Year 1 (Ramp-Up):
+- ADR: $185
+- Occupancy: 58%
+- RevPAR: $107.30
+- Rooms Revenue: $8,807,438
+- F&B Revenue: $2,200,000
+- Other: $440,000
+- Total Revenue: $11,447,438
+- GOP (32%): $3,663,180
+- NOI: $2,750,000
+
+Stabilized (Year 3):
+- ADR: $205
+- Occupancy: 72%
+- RevPAR: $147.60
+- Rooms Revenue: $12,122,550
+- F&B Revenue: $3,000,000
+- Other: $600,000
+- Total Revenue: $15,722,550
+- GOP (40%): $6,289,020
+- NOI: $4,950,000
+
+MULTIFAMILY REVENUE PROJECTIONS
+-------------------------------
+Rent PSF: $2.05/month
+Monthly Rent: $305,809
+Annual Gross: $3,669,708
+Other Income: $247,500 ($125/unit/month)
+Vacancy: 7%
+EGI: $3,642,803
+OpEx (35%): $1,274,981
+NOI: $2,367,822
+
+COMBINED RETURN ANALYSIS
+------------------------
+Stabilized Combined NOI: $7,317,822
+Blended Yield on Cost: 4.70%
+
+Year 7 Exit:
+Hotel NOI (Y7): $5,692,000
+Hotel Value @ 7.25% cap: $78,510,345
+MF NOI (Y7, 3% growth): $2,841,000  
+MF Value @ 5.15% cap: $55,165,049
+Total Value: $133,675,394
+Net Proceeds: $130,333,509
+
+Total Profit: -$25,441,297
+Profit on Cost: -16.3%
+
+ISSUE: Deal does not pencil at current assumptions.
+
+SENSITIVITY ANALYSIS
+--------------------
+To achieve 14% LP IRR:
+Option A: Reduce total costs by $18M (12% reduction)
+Option B: Increase hotel ADR to $225 at stabilization
+Option C: Reduce hotel cap rate to 6.75%
+Option D: Extend hold to Year 10 with higher rent growth
+
+REVISED SCENARIO (Cost Reduction + ADR Increase)
+------------------------------------------------
+Assumptions:
+- Hard costs reduced 8% through VE
+- Hotel ADR at $215 stabilized
+- Exit cap 7.00% (hotel), 5.00% (MF)
+
+Revised Total Cost: $143,112,823
+Year 7 Combined Value: $152,450,000
+Total Profit: $9,337,177
+LP IRR: 11.8%
+LP Multiple: 1.52x
+
+MARKET CONTEXT
+--------------
+Nashville Hotel Market:
+- YTD RevPAR: $142 (+2.1% YoY)
+- New supply pipeline: 3,200 keys under construction
+- Convention center expansion: +1.2M SF by 2028
+- Airport: 22M passengers (record)
+
+Nashville Multifamily:
+- Class A rent: $1.85/SF/month
+- Occupancy: 93.5%
+- New supply moderating
+- 27,000 net new households annually
+
+RECOMMENDATION
+--------------
+HOLD for further analysis. Current returns are below threshold. 
+Recommend exploring:
+
+1. Alternative hotel flag with lower fee structure
+2. Condo component instead of rental apartments
+3. Reduced hotel key count (175 keys)
+4. Ground lease structure to reduce basis
+5. EB-5 or tax increment financing
+
+Do not proceed to LOI without revised proforma showing 13%+ LP IRR.

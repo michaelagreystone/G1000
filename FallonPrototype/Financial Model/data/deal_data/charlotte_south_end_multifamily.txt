@@ -1,0 +1,111 @@
+DEAL MEMO: South End Charlotte Multifamily Development
+Project: The Railyard at South End
+Location: South Blvd & Remount Rd, Charlotte, NC
+===============================================================
+
+EXECUTIVE SUMMARY
+-----------------
+The Railyard at South End is a 280-unit Class A multifamily development 
+targeting Charlotte's premier urban live-work-play submarket. The project 
+capitalizes on South End's transformation into Charlotte's most desirable 
+rental market, with direct Blue Line light rail access and walkable amenities.
+
+PROJECT DETAILS
+---------------
+Unit Count: 280 units
+Unit Mix:
+- Studios (15%): 42 units @ 550 SF avg
+- 1BR (50%): 140 units @ 750 SF avg
+- 2BR (30%): 84 units @ 1,100 SF avg
+- 3BR (5%): 14 units @ 1,350 SF avg
+
+Total Rentable SF: 226,800 SF
+Building Type: 5-story wood-frame over 1-level podium parking
+Parking: 1.2 spaces/unit (336 spaces)
+
+FINANCIAL ASSUMPTIONS
+---------------------
+Land Cost: $12,500,000 ($44,642/unit)
+Hard Costs: $62,370,000 ($275/SF)
+Soft Costs: $13,721,400 (22% of hard)
+Contingency: $4,365,900 (7% of hard)
+Developer Fee: $3,858,492 (4% of total)
+Total Development Cost: $96,815,792 ($345,771/unit)
+
+REVENUE PROJECTIONS
+-------------------
+Stabilized Rent PSF: $2.15/SF/month
+Monthly Rent Roll: $487,620
+Annual Gross Potential: $5,851,440
+Other Income: $420,000/year ($125/unit/month)
+Vacancy/Loss: 7%
+Effective Gross Income: $5,832,399
+Operating Expenses: $2,040,000 (35% ratio)
+Net Operating Income: $3,792,399
+
+RETURN METRICS
+--------------
+Yield on Cost: 3.92%
+Exit Cap Rate: 4.75%
+Gross Exit Value: $79,840,000
+Net Exit Value: $77,844,000 (2.5% sale costs)
+Total Profit: -$18,971,792
+Profit on Cost: -19.6%
+
+Wait - this deal doesn't work at these assumptions. Let's recalculate with
+more realistic exit timing and rent growth.
+
+REVISED WITH YEAR 5 EXIT
+------------------------
+Year 5 NOI (3% annual growth): $4,269,558
+Exit Value @ 4.75% cap: $89,885,432
+Net Proceeds: $87,638,296
+
+Total Equity Required: $33,885,527 (35% of cost)
+LP Equity (90%): $30,496,974
+GP Equity (10%): $3,388,553
+
+LP Returns:
+- Profit Share (80% after pref): $33,601,003 * 0.72 = $24,192,722
+- Total Distributions: $54,689,696
+- LP IRR: 12.8%
+- LP Multiple: 1.79x
+
+GP Returns:
+- Promote: $6,720,201
+- Co-invest Return: $5,854,411
+- GP Multiple: 3.71x
+
+MARKET COMPARABLES
+------------------
+Recent South End Trades:
+1. Novel South End: $385,000/unit @ 4.85% cap (2024)
+2. Optimist Hall Apartments: $392,000/unit @ 4.65% cap (2024)
+3. The Luna: $365,000/unit @ 5.10% cap (2023)
+
+Construction Comps:
+1. 1700 South Blvd: $268/SF hard cost (2024 start)
+2. Crescent South End: $285/SF hard cost (2023 completion)
+
+RISK FACTORS
+------------
+1. Supply pipeline in South End historically elevated
+2. Light rail extension may shift demand to new stations
+3. Construction cost escalation pressure
+4. Interest rate sensitivity on refi
+
+MITIGANTS
+---------
+1. Construction starts at multi-year lows
+2. In-migration continues from higher-cost markets
+3. Employer expansion (Truist, Honeywell)
+4. Limited developable sites remaining in core South End
+
+RECOMMENDATION
+--------------
+Proceed with due diligence. The 12.8% projected LP IRR falls below our
+14-15% target for development deals in secondary markets. Consider:
+- Negotiating land price reduction
+- Value engineering to reduce hard costs
+- Seeking more favorable debt terms
+- Adjusting unit mix for higher rent premium

@@ -1,0 +1,118 @@
+JOINT VENTURE AND LP-GP AGREEMENT PROVISIONS
+Reference Guide for Real Estate Private Equity Development Deals
+
+═══════════════════════════════════════════════════════════════════
+SECTION 1: WATERFALL DISTRIBUTION STRUCTURES
+═══════════════════════════════════════════════════════════════════
+
+A waterfall distribution structure governs how cash flows and profits from a real estate investment are allocated between the Limited Partners (LPs, who provide the majority of equity capital) and the General Partner (GP, who manages the investment and typically co-invests a smaller share). The waterfall defines a tiered sequence of distribution priorities that must be satisfied in order.
+
+Standard Four-Tier Waterfall:
+
+Tier 1 — Return of Capital: 100% of distributable proceeds are paid to LPs until they have received back their entire initial capital contribution. In some structures, the GP's co-investment is returned pari passu (pro rata alongside LP capital). In others, LP capital is returned first. The distinction matters significantly: pari-passu return of capital means the GP gets their money back at the same rate as LPs, while LP-first return means the GP bears more downside risk.
+
+Tier 2 — Preferred Return: After capital is returned, 100% of distributions go to the LP until the LP has received a cumulative annualized return on their invested capital equal to the preferred return rate. The most common preferred return in 2025 real estate development deals is 8% IRR (internal rate of return), though it can range from 6% for lower-risk deals (core-plus) to 12% for opportunistic strategies. The preferred return can be calculated as a simple return, compounded annually, or compounded quarterly. Compounding method matters: an 8% preferred return compounded quarterly is effectively 8.24% annually. Most institutional LPs require compounded preferred return calculated on unreturned capital.
+
+Tier 3 — GP Catch-Up: Once the LP preferred return is satisfied, the GP receives 100% (or a specified percentage, commonly 50% or 80%) of subsequent distributions until the GP has received a specified share of total profits distributed to that point. This "catch-up" provision ensures the GP starts receiving their promote allocation once the LP's minimum return threshold has been met. For example, with a 20% promote and a 100% catch-up, the GP would receive 100% of distributions after the LP pref is met until the GP has received 20% of all profits distributed. Without a catch-up, the GP would only receive 20% of incremental profits above the preferred return, missing out on a share of the profits distributed as preferred return.
+
+Tier 4 — Residual Split: After the catch-up is complete, remaining distributions are split between LP and GP according to the promote percentage. A typical structure is 80/20 (80% to LP, 20% to GP). Multi-tier promotes escalate the GP's share at higher return thresholds: for example, 80/20 up to a 15% IRR, then 70/30 up to a 20% IRR, then 60/40 above 20% IRR. The higher tiers incentivize the GP to maximize returns because their marginal profit share increases at each hurdle.
+
+European vs. American Waterfall:
+
+European (Whole-of-Fund) Waterfall: The GP cannot receive any promote until the aggregate of all distributions across ALL investments in the fund has returned all contributed capital plus the preferred return. This is LP-protective because underperforming deals must be offset by outperforming deals before the GP earns carry. Most institutional LP funds require European waterfalls.
+
+American (Deal-by-Deal) Waterfall: The promote is calculated on each investment individually. The GP can begin earning carry on a successful deal even if other deals in the portfolio are underwater. This is GP-favorable and more common in single-asset joint ventures and smaller fund structures. The trade-off is that LPs typically require a clawback provision (see below) to protect against overpayment of promote if later deals underperform.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 2: PROMOTE / CARRIED INTEREST MECHANICS
+═══════════════════════════════════════════════════════════════════
+
+The promote (also called carried interest or "carry") is the GP's share of profits above the preferred return. It is the primary economic incentive for the GP and the primary negotiation point in any JV agreement.
+
+Typical Promote Structures in 2025:
+
+Single-Tier Promote: The simplest structure. After return of capital and preferred return, profits are split at a fixed ratio. Common: 80/20 (LP/GP). The GP receives 20% of all profits above the preferred return hurdle. This structure is typical for deals where the GP is a smaller or first-time operator.
+
+Multi-Tier Promote (IRR-Based): Profits are split at escalating ratios based on achieved IRR hurdles:
+- Tier 1: Return of capital + 8% preferred return → 100% to LP
+- Tier 2: 8% to 12% IRR → 80/20 (LP/GP)
+- Tier 3: 12% to 18% IRR → 70/30 (LP/GP)
+- Tier 4: Above 18% IRR → 60/40 (LP/GP)
+
+This structure is common for experienced GPs with strong track records. The escalating promote rewards outsized performance.
+
+Multi-Tier Promote (MOIC-Based): Same concept but hurdles are based on Multiple on Invested Capital (MOIC) rather than IRR:
+- Below 1.5x MOIC → no promote
+- 1.5x to 2.0x MOIC → 20% promote
+- 2.0x to 2.5x MOIC → 30% promote
+- Above 2.5x MOIC → 40% promote
+
+MOIC-based promotes are less sensitive to hold period timing than IRR-based promotes. An investment that returns 2.0x over 3 years has a very different IRR than one returning 2.0x over 7 years, but the MOIC promote is the same. Some LPs prefer MOIC hurdles because they cannot be gamed by accelerating exits.
+
+Lookback Provision: At the end of the fund's life or upon dissolution, all cumulative distributions are recalculated as if the fund operated under a European waterfall. If the GP received more promote than they would have under a European calculation, they must return the excess. This is a compromise between American (deal-by-deal) and European (whole-of-fund) structures.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 3: CLAWBACK PROVISIONS
+═══════════════════════════════════════════════════════════════════
+
+A clawback provision requires the GP to return previously distributed promote if the fund's overall performance fails to meet the minimum return threshold. This is a critical LP protection, especially in American waterfall structures.
+
+Standard GP Clawback: If total fund distributions, when aggregated across all investments, result in the LP receiving less than the preferred return on aggregate invested capital, the GP must return promote distributions until the LP's preferred return is satisfied. The clawback is typically calculated at the earlier of (a) fund termination or (b) the final distribution.
+
+Interim Clawback: More aggressive LP provision that requires periodic (usually annual) recalculation of the waterfall. If the recalculation shows the GP has been overpaid, an immediate clawback is triggered. This prevents GPs from receiving and spending promote from early exits before later losses are realized.
+
+GP Guarantee of Clawback: LPs often require the individual principals of the GP to personally guarantee the clawback obligation, since the GP entity may lack sufficient assets. Common structures include: (a) personal guarantees from key principals, (b) an escrow holdback (10-30% of promote distributions held in escrow until fund termination), or (c) a GP letter of credit.
+
+Tax Implications: Clawbacks create tax complications because the GP may have already paid taxes on promote income that must be returned. The agreement should specify whether the clawback amount is gross (pre-tax) or net (after-tax). Most modern agreements use a net-of-tax clawback formula to avoid requiring the GP to return more after-tax dollars than they actually received.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 4: CAPITAL CALL AND DEFAULT PROVISIONS
+═══════════════════════════════════════════════════════════════════
+
+Capital Call Mechanics: The agreement specifies how capital is called from investors. Key provisions include:
+
+Notice Period: Typically 10-15 business days' advance notice for a capital call. The notice must specify the amount, purpose, and funding deadline. Some agreements require 30 days for large calls (above a specified threshold).
+
+Frequency Limits: Some agreements limit the number or frequency of capital calls (e.g., no more than one per quarter, or no more than 4 per year). This prevents the GP from making excessive calls that strain LP cash management.
+
+Overcall Rights: If one LP defaults on a capital call, other LPs may have the right (but not obligation) to fund the defaulting LP's share. The overcalling LP receives the defaulting LP's share at a discount (typically 20-50% discount to NAV) as compensation for providing the additional capital.
+
+LP Default Remedies: If an LP fails to fund a capital call within the specified notice period, the agreement typically provides a cascade of escalating remedies:
+
+1. Interest Penalty: The defaulting LP's unfunded amount accrues interest at a penalty rate (commonly the greater of 18% per annum or prime + 5%).
+
+2. Forfeiture of Distributions: All distributions otherwise payable to the defaulting LP are applied first to the unpaid capital call plus accrued interest.
+
+3. Dilution/Squeeze-Down: The defaulting LP's ownership percentage is reduced by a punitive factor. Common: 150% dilution (if you default on $1M, your ownership is reduced as if you contributed $1.5M less than you actually did).
+
+4. Forced Sale: The GP has the right to sell the defaulting LP's interest to a third party or to other LPs at a discounted valuation.
+
+5. Full Forfeiture: In extreme cases, the defaulting LP forfeits their entire interest in the partnership. This is the nuclear option and is rarely enforced but serves as a powerful deterrent.
+
+═══════════════════════════════════════════════════════════════════
+SECTION 5: GP REMOVAL AND KEY PERSON PROVISIONS
+═══════════════════════════════════════════════════════════════════
+
+GP Removal for Cause: LPs can typically remove the GP for cause, defined as: (a) fraud, gross negligence, or willful misconduct; (b) felony conviction of a key person; (c) bankruptcy of the GP; (d) material breach of the partnership agreement that is not cured within a specified cure period (typically 30-60 days). Removal for cause usually results in the GP forfeiting all or a significant portion of their unrealized promote.
+
+GP Removal Without Cause: More controversial provision. Some agreements allow a supermajority of LPs (typically 75-80% of LP interests) to remove the GP without cause upon a specified notice period (usually 90-180 days). If removed without cause, the GP typically retains their co-invested capital and a reduced promote on investments made during their tenure (commonly 50% of the promote they would have otherwise earned).
+
+Key Person Clause: Identifies specific individuals at the GP whose continued involvement is critical to the investment. If a key person dies, becomes disabled, or leaves the GP firm, the agreement triggers a "key person event." Typical consequences include: (a) suspension of the investment period (no new capital calls or new investments), (b) LPs vote on whether to reinstate the investment period with a replacement key person, or (c) if LPs do not approve a replacement within a specified period (90-180 days), the fund enters wind-down mode.
+
+GP Co-Investment Requirement: Most institutional JVs require the GP to co-invest alongside the LP, typically 5-20% of total equity. This "skin in the game" aligns the GP's interests with the LP's. The co-investment is funded at the same time as LP capital calls and is at risk on the same basis as LP capital (though often subordinated in the waterfall, meaning LP capital is returned before GP co-invest). In development deals, a common structure is 10% GP co-invest, with the GP's co-invest funded from deferred developer fees (the developer fee is earned but not paid in cash until the project generates sufficient cash flow or is sold).
+
+═══════════════════════════════════════════════════════════════════
+SECTION 6: TRANSFER RESTRICTIONS AND LIQUIDITY
+═══════════════════════════════════════════════════════════════════
+
+Right of First Refusal (ROFR): If an LP wishes to sell their interest, the GP and other LPs typically have a ROFR to purchase the interest at the same price and on the same terms offered by the third-party buyer. The ROFR exercise period is typically 30-45 days.
+
+Right of First Offer (ROFO): Before soliciting third-party offers, the selling LP must first offer their interest to the GP and existing LPs. The ROFO price is typically based on a mutually agreed valuation or a formula defined in the agreement (e.g., trailing 12-month NOI divided by an agreed cap rate).
+
+Tag-Along Rights: If the GP sells their interest, LPs have the right to sell their interests on the same terms (pro rata). This prevents the GP from negotiating a favorable exit for themselves while leaving LPs trapped.
+
+Drag-Along Rights: If a supermajority of LPs (typically 75-80%) approve a sale of the entire investment, the GP can force all remaining LPs to sell on the same terms. This prevents a small minority from blocking a liquidity event.
+
+Lock-Up Period: Most development JVs prohibit transfers during a lock-up period (typically the construction + lease-up period, or 2-3 years from initial closing). This ensures capital stability during the most critical phase of the investment.
+
+Buy-Sell (Shotgun) Provisions: Either party can trigger a buy-sell by naming a price for the entire investment. The other party must either buy at that price or sell at that price. This mechanism resolves deadlocks but can be weaponized by the party with more liquidity. Some agreements include a minimum holding period before the buy-sell can be triggered and require a premium (5-10%) over the named price for the buying party to discourage frivolous triggers.
