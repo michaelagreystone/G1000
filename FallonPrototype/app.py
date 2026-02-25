@@ -121,10 +121,11 @@ with st.sidebar:
         col1, col2 = st.columns(2)
         with col1:
             st.metric("Deal Memos", counts.get("fallon_deal_data", 0))
+            st.metric("Market Research", counts.get("fallon_market_research", 0))
         with col2:
             st.metric("Market Defaults", counts.get("fallon_market_defaults", 0))
-    except Exception as e:
-        st.warning(f"Could not load collection counts: {e}")
+    except Exception:
+        st.warning("Could not load data counts")
     
     st.markdown("---")
     
@@ -159,7 +160,7 @@ with st.sidebar:
 # Main Area — Mode Selection
 # ═══════════════════════════════════════════════════════════════════════════════
 
-main_tab1, main_tab2 = st.tabs(["Pro Forma Generator", "Contract Q&A"])
+main_tab1, main_tab2 = st.tabs(["Pro Forma Generator", "Market & Deal Q&A"])
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # TAB 1: Pro Forma Generator
@@ -201,9 +202,7 @@ if generate_clicked and query.strip():
                 params = normalize_parameters(extract_parameters(query))
                 st.session_state.params = params
         except Exception as e:
-            st.error(f"Error generating model: {e}")
-            import traceback
-            st.code(traceback.format_exc())
+            st.error(f"Something went wrong generating your model. Please try rephrasing your request or check that all data has been indexed.")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -618,30 +617,34 @@ if st.session_state.response and not st.session_state.needs_clarification:
         st.info(response.answer)
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# TAB 2: Contract Q&A
+# TAB 2: Market & Deal Q&A
 # ═══════════════════════════════════════════════════════════════════════════════
 
 with main_tab2:
-    st.header("Contract & Deal Structure Q&A")
-    st.caption("Ask questions about JV agreements, waterfall structures, lease terms, and more.")
+    st.header("Market & Deal Q&A")
+    st.caption("Ask about Boston, Charlotte, Nashville markets, JV structures, contracts, and deal terms.")
     
     # Sample questions
     with st.expander("Example Questions"):
         st.markdown("""
+        **Market Questions:**
+        - What are current cap rates in Charlotte for multifamily?
+        - What's the rent outlook for Boston Seaport?
+        - How are construction costs trending in Nashville?
+        - What's the supply/demand situation in Charlotte multifamily?
+        
+        **Contract Questions:**
         - How does a typical waterfall distribution work?
         - What is a standard LP preferred return?
         - Explain the GP catch-up provision
         - What are typical promote structures for development deals?
-        - What's the difference between cumulative and non-cumulative preferred returns?
-        - How do tiered promotes work in institutional JVs?
-        - What are standard construction contract provisions?
         - Explain NNN vs gross lease structures
         """)
     
     # Question input
     contract_question = st.text_area(
         "Your question:",
-        placeholder="e.g., How does a 90/10 JV waterfall with 8% preferred return work?",
+        placeholder="e.g., What are cap rates in Charlotte? or How does a 90/10 JV waterfall work?",
         height=100,
         key="contract_question",
     )
@@ -655,8 +658,8 @@ with main_tab2:
             try:
                 contract_response = answer_contract_question(contract_question)
                 st.session_state.contract_response = contract_response
-            except Exception as e:
-                st.error(f"Error: {e}")
+            except Exception:
+                st.error("Something went wrong. Please try rephrasing your question.")
     
     # Display contract response
     if st.session_state.contract_response:

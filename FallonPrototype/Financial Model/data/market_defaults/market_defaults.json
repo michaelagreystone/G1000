@@ -1,9 +1,9 @@
 {
   "charlotte": {
     "_meta": {
-      "last_updated": "2025-12-01",
+      "last_updated": "2025-02-24",
       "data_quality": "estimated",
-      "update_notes": "Based on public CBRE and Marcus & Millichap Q3-Q4 2025 reports. Replace with broker confirmation."
+      "update_notes": "Based on CBRE, Cushman & Wakefield, Marcus & Millichap Q4 2025 reports. Office segmented by Class A/B/C."
     },
     "multifamily": {
       "rent_psf_monthly": {
@@ -67,9 +67,9 @@
         "source": "Typical construction LTC for multifamily, Q4 2025 lending environment"
       },
       "construction_loan_rate_pct": {
-        "value": 6.66,
+        "value": 7.75,
         "unit": "%",
-        "source": "SOFR (3.66%) + 300bps spread, Feb 2026 lending environment — rates declining with Fed cuts"
+        "source": "SOFR + 275-325bps spread, Q4 2025 lending environment"
       },
       "construction_loan_term_months": {
         "value": 36,
@@ -92,9 +92,9 @@
         "source": "GP promote above preferred return, Fallon standard, Q4 2025"
       },
       "exit_cap_rate_pct": {
-        "value": 4.74,
+        "value": 5.25,
         "unit": "%",
-        "source": "Charlotte Class A multifamily cap rate, CBRE Q1 2025 — compressed 7bps, flat since Q4 2024"
+        "source": "Charlotte multifamily exit cap rate, Marcus & Millichap Q4 2025"
       },
       "exit_sale_cost_pct": {
         "value": 2.5,
@@ -107,31 +107,32 @@
         "source": "Typical merchant developer hold period, Fallon standard"
       }
     },
-    "office": {
+    "office_class_a": {
+      "_description": "Trophy/Class A office — new construction, premium finishes, Uptown/South End locations",
       "rent_psf_annual_nnn": {
-        "value": 32,
+        "value": 45,
         "unit": "$/sf/year NNN",
-        "source": "Charlotte Class A office asking rent, Uptown/South End, Q4 2025"
+        "source": "Charlotte Class A trophy office rent, Uptown/South End new construction, Q4 2025"
       },
       "stabilized_occupancy_pct": {
-        "value": 88,
+        "value": 90,
         "unit": "%",
-        "source": "Charlotte office market occupancy, post-COVID recovery, Q4 2025"
+        "source": "Charlotte Class A office occupancy, flight to quality trend, Q4 2025"
       },
       "lease_up_months": {
-        "value": 24,
+        "value": 20,
         "unit": "months",
-        "source": "Charlotte office lease-up timeline for new construction, Q4 2025"
+        "source": "Charlotte Class A office lease-up timeline for new construction, Q4 2025"
       },
       "free_rent_months": {
-        "value": 6,
+        "value": 8,
         "unit": "months",
-        "source": "Charlotte Class A office concession package, Q4 2025"
+        "source": "Charlotte Class A office concession package, competitive market, Q4 2025"
       },
       "ti_allowance_psf": {
-        "value": 65,
+        "value": 75,
         "unit": "$/sf",
-        "source": "Charlotte Class A office TI allowance, Q4 2025"
+        "source": "Charlotte Class A office TI allowance for new tenants, Q4 2025"
       },
       "leasing_commission_pct": {
         "value": 5,
@@ -139,9 +140,9 @@
         "source": "Standard office leasing commission, Charlotte market, Q4 2025"
       },
       "hard_cost_psf": {
-        "value": 350,
+        "value": 380,
         "unit": "$/sf",
-        "source": "Charlotte Class A office construction cost, Q4 2025"
+        "source": "Charlotte Class A office construction cost, premium finishes, Q4 2025"
       },
       "soft_cost_pct_of_hard": {
         "value": 25,
@@ -159,19 +160,19 @@
         "source": "Standard contingency for office construction, Q4 2025"
       },
       "carry_cost_months": {
-        "value": 42,
+        "value": 38,
         "unit": "months",
-        "source": "18-month construction + 24-month lease-up, Charlotte office, Q4 2025"
+        "source": "18-month construction + 20-month lease-up, Charlotte Class A office, Q4 2025"
       },
       "construction_loan_ltc_pct": {
-        "value": 60,
+        "value": 55,
         "unit": "%",
-        "source": "Office LTC slightly lower than multifamily due to risk profile, Q4 2025"
+        "source": "Class A office LTC conservative due to market uncertainty, Q4 2025"
       },
       "construction_loan_rate_pct": {
-        "value": 8.0,
+        "value": 8.25,
         "unit": "%",
-        "source": "SOFR + 300-350bps spread for office construction, Q4 2025"
+        "source": "SOFR + 350-400bps spread for Class A office construction, Q4 2025"
       },
       "construction_loan_term_months": {
         "value": 42,
@@ -194,9 +195,318 @@
         "source": "GP promote above preferred return, Fallon standard, Q4 2025"
       },
       "exit_cap_rate_pct": {
-        "value": 6.5,
+        "value": 6.0,
         "unit": "%",
-        "source": "Charlotte Class A office exit cap rate, Q4 2025 — post-COVID adjustment"
+        "source": "Charlotte Class A office exit cap rate, Q4 2025 — flight to quality supports tighter cap"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period, Fallon standard"
+      }
+    },
+    "office_class_b": {
+      "_description": "Class B office — 1990s-2010s vintage, good locations, needs renovation/repositioning",
+      "rent_psf_annual_nnn": {
+        "value": 32,
+        "unit": "$/sf/year NNN",
+        "source": "Charlotte Class B office rent, secondary locations or older vintage, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 82,
+        "unit": "%",
+        "source": "Charlotte Class B office occupancy, elevated vacancy due to flight to quality, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 28,
+        "unit": "months",
+        "source": "Charlotte Class B office longer lease-up due to competition from Class A, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 10,
+        "unit": "months",
+        "source": "Charlotte Class B office higher concessions to compete, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 55,
+        "unit": "$/sf",
+        "source": "Charlotte Class B office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 6,
+        "unit": "%",
+        "source": "Slightly higher commission to incentivize Class B leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 275,
+        "unit": "$/sf",
+        "source": "Charlotte Class B office renovation/repositioning cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 22,
+        "unit": "%",
+        "source": "Lower soft costs for renovation vs new construction, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher contingency for renovation unknowns, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 40,
+        "unit": "months",
+        "source": "12-month renovation + 28-month lease-up, Charlotte Class B office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 55,
+        "unit": "%",
+        "source": "Class B office LTC conservative, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.5,
+        "unit": "%",
+        "source": "SOFR + 400-450bps spread for Class B office repositioning, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "Construction loan term for Class B repositioning, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher preferred return for Class B risk profile, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 25,
+        "unit": "%",
+        "source": "Higher GP promote for value-add risk/reward, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 7.5,
+        "unit": "%",
+        "source": "Charlotte Class B office exit cap rate, higher risk premium, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period, Fallon standard"
+      }
+    },
+    "office_class_c": {
+      "_description": "Class C office — pre-1990s vintage, commodity space, conversion candidate",
+      "rent_psf_annual_nnn": {
+        "value": 22,
+        "unit": "$/sf/year NNN",
+        "source": "Charlotte Class C office rent, older buildings, suburban or tertiary locations, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 72,
+        "unit": "%",
+        "source": "Charlotte Class C office high vacancy, structural obsolescence, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 36,
+        "unit": "months",
+        "source": "Charlotte Class C office extended lease-up, limited tenant demand, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 12,
+        "unit": "months",
+        "source": "Charlotte Class C office aggressive concessions required, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 40,
+        "unit": "$/sf",
+        "source": "Charlotte Class C office TI allowance, cost-conscious tenants, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 7,
+        "unit": "%",
+        "source": "Higher commission to incentivize Class C leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 200,
+        "unit": "$/sf",
+        "source": "Charlotte Class C office basic renovation cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 20,
+        "unit": "%",
+        "source": "Minimal soft costs for basic renovation, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher contingency for older building unknowns, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 48,
+        "unit": "months",
+        "source": "12-month renovation + 36-month lease-up, Charlotte Class C office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 50,
+        "unit": "%",
+        "source": "Class C office LTC very conservative, limited lender appetite, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 9.0,
+        "unit": "%",
+        "source": "SOFR + 450-500bps spread for Class C office, higher risk, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 48,
+        "unit": "months",
+        "source": "Extended loan term for Class C repositioning, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 85,
+        "unit": "%",
+        "source": "Higher GP equity for value-add/opportunistic deals, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher preferred return for opportunistic risk, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 30,
+        "unit": "%",
+        "source": "Higher GP promote for opportunistic risk/reward, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 9.0,
+        "unit": "%",
+        "source": "Charlotte Class C office exit cap rate, significant risk premium, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 3.0,
+        "unit": "%",
+        "source": "Higher disposition costs for challenging asset class, Q4 2025"
+      },
+      "exit_year": {
+        "value": 7,
+        "unit": "years",
+        "source": "Longer hold for Class C repositioning or conversion, Q4 2025"
+      }
+    },
+    "office": {
+      "_note": "Legacy alias — defaults to Class A assumptions for backward compatibility",
+      "rent_psf_annual_nnn": {
+        "value": 45,
+        "unit": "$/sf/year NNN",
+        "source": "Charlotte Class A office asking rent, Uptown/South End, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Charlotte Class A office occupancy, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 20,
+        "unit": "months",
+        "source": "Charlotte Class A office lease-up timeline, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 8,
+        "unit": "months",
+        "source": "Charlotte Class A office concession package, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 75,
+        "unit": "$/sf",
+        "source": "Charlotte Class A office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 5,
+        "unit": "%",
+        "source": "Standard office leasing commission, Charlotte market, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 380,
+        "unit": "$/sf",
+        "source": "Charlotte Class A office construction cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 25,
+        "unit": "%",
+        "source": "Office soft costs higher than multifamily due to design complexity, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 8,
+        "unit": "%",
+        "source": "Standard contingency for office construction, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 38,
+        "unit": "months",
+        "source": "18-month construction + 20-month lease-up, Charlotte office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 55,
+        "unit": "%",
+        "source": "Office LTC conservative due to market uncertainty, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.25,
+        "unit": "%",
+        "source": "SOFR + 350-400bps spread for office construction, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "3.5-year construction loan term for office, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 9,
+        "unit": "%",
+        "source": "LP preferred return slightly higher for office risk, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 20,
+        "unit": "%",
+        "source": "GP promote above preferred return, Fallon standard, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 6.0,
+        "unit": "%",
+        "source": "Charlotte Class A office exit cap rate, Q4 2025"
       },
       "exit_sale_cost_pct": {
         "value": 2.5,
@@ -212,9 +522,9 @@
   },
   "nashville": {
     "_meta": {
-      "last_updated": "2025-12-01",
+      "last_updated": "2025-02-24",
       "data_quality": "estimated",
-      "update_notes": "Based on public CBRE, JLL, and Marcus & Millichap Q3-Q4 2025 reports. Replace with broker confirmation."
+      "update_notes": "Based on CBRE, JLL, Marcus & Millichap, Walker & Dunlop Q4 2025 reports. Office segmented by Class A/B/C."
     },
     "multifamily": {
       "rent_psf_monthly": {
@@ -318,29 +628,30 @@
         "source": "Typical merchant developer hold period, Fallon standard"
       }
     },
-    "office": {
+    "office_class_a": {
+      "_description": "Trophy/Class A office — new construction, premium finishes, Downtown/Gulch locations",
       "rent_psf_annual_nnn": {
-        "value": 35,
+        "value": 48,
         "unit": "$/sf/year NNN",
-        "source": "Nashville Class A office asking rent, downtown/Gulch, Q4 2025"
+        "source": "Nashville Class A trophy office rent, Downtown/Gulch new construction, Q4 2025"
       },
       "stabilized_occupancy_pct": {
-        "value": 89,
+        "value": 88,
         "unit": "%",
-        "source": "Nashville office market occupancy, Q4 2025"
+        "source": "Nashville Class A office occupancy, strong corporate demand, Q4 2025"
       },
       "lease_up_months": {
         "value": 22,
         "unit": "months",
-        "source": "Nashville office lease-up timeline for new construction, Q4 2025"
+        "source": "Nashville Class A office lease-up timeline, Q4 2025"
       },
       "free_rent_months": {
-        "value": 5,
+        "value": 6,
         "unit": "months",
         "source": "Nashville Class A office concession package, Q4 2025"
       },
       "ti_allowance_psf": {
-        "value": 60,
+        "value": 70,
         "unit": "$/sf",
         "source": "Nashville Class A office TI allowance, Q4 2025"
       },
@@ -350,7 +661,316 @@
         "source": "Standard office leasing commission, Nashville market, Q4 2025"
       },
       "hard_cost_psf": {
-        "value": 340,
+        "value": 365,
+        "unit": "$/sf",
+        "source": "Nashville Class A office construction cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 24,
+        "unit": "%",
+        "source": "Office soft costs, Nashville market, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 8,
+        "unit": "%",
+        "source": "Standard contingency for office construction, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 40,
+        "unit": "months",
+        "source": "18-month construction + 22-month lease-up, Nashville Class A office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 55,
+        "unit": "%",
+        "source": "Class A office LTC conservative, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.25,
+        "unit": "%",
+        "source": "SOFR + 350-400bps spread for Class A office construction, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "Construction loan term, Nashville Class A office, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 9,
+        "unit": "%",
+        "source": "LP preferred return for office development, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 20,
+        "unit": "%",
+        "source": "GP promote above preferred return, Fallon standard, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 6.0,
+        "unit": "%",
+        "source": "Nashville Class A office exit cap rate, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period, Fallon standard"
+      }
+    },
+    "office_class_b": {
+      "_description": "Class B office — 1990s-2010s vintage, good locations, needs renovation",
+      "rent_psf_annual_nnn": {
+        "value": 30,
+        "unit": "$/sf/year NNN",
+        "source": "Nashville Class B office rent, older vintage buildings, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 80,
+        "unit": "%",
+        "source": "Nashville Class B office occupancy, elevated vacancy, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 30,
+        "unit": "months",
+        "source": "Nashville Class B office longer lease-up, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 10,
+        "unit": "months",
+        "source": "Nashville Class B office higher concessions, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 50,
+        "unit": "$/sf",
+        "source": "Nashville Class B office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 6,
+        "unit": "%",
+        "source": "Higher commission for Class B leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 260,
+        "unit": "$/sf",
+        "source": "Nashville Class B office renovation cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 22,
+        "unit": "%",
+        "source": "Lower soft costs for renovation, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher contingency for renovation unknowns, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "12-month renovation + 30-month lease-up, Nashville Class B office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 55,
+        "unit": "%",
+        "source": "Class B office LTC conservative, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.5,
+        "unit": "%",
+        "source": "SOFR + 400-450bps spread for Class B office, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "Construction loan term for Class B repositioning, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher preferred return for Class B risk, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 25,
+        "unit": "%",
+        "source": "Higher GP promote for value-add, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 7.25,
+        "unit": "%",
+        "source": "Nashville Class B office exit cap rate, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period, Fallon standard"
+      }
+    },
+    "office_class_c": {
+      "_description": "Class C office — pre-1990s vintage, commodity space, conversion candidate",
+      "rent_psf_annual_nnn": {
+        "value": 20,
+        "unit": "$/sf/year NNN",
+        "source": "Nashville Class C office rent, older buildings, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 70,
+        "unit": "%",
+        "source": "Nashville Class C office high vacancy, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 36,
+        "unit": "months",
+        "source": "Nashville Class C office extended lease-up, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 12,
+        "unit": "months",
+        "source": "Nashville Class C office aggressive concessions, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 35,
+        "unit": "$/sf",
+        "source": "Nashville Class C office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 7,
+        "unit": "%",
+        "source": "Higher commission for Class C leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 185,
+        "unit": "$/sf",
+        "source": "Nashville Class C office basic renovation cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 20,
+        "unit": "%",
+        "source": "Minimal soft costs for basic renovation, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher contingency for older building unknowns, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 48,
+        "unit": "months",
+        "source": "12-month renovation + 36-month lease-up, Nashville Class C office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 50,
+        "unit": "%",
+        "source": "Class C office LTC very conservative, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 9.0,
+        "unit": "%",
+        "source": "SOFR + 450-500bps spread for Class C office, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 48,
+        "unit": "months",
+        "source": "Extended loan term for Class C repositioning, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 85,
+        "unit": "%",
+        "source": "Higher GP equity for opportunistic deals, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher preferred return for opportunistic risk, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 30,
+        "unit": "%",
+        "source": "Higher GP promote for opportunistic risk/reward, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 8.75,
+        "unit": "%",
+        "source": "Nashville Class C office exit cap rate, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 3.0,
+        "unit": "%",
+        "source": "Higher disposition costs for challenging asset class, Q4 2025"
+      },
+      "exit_year": {
+        "value": 7,
+        "unit": "years",
+        "source": "Longer hold for Class C repositioning, Q4 2025"
+      }
+    },
+    "office": {
+      "_note": "Legacy alias — defaults to Class A assumptions for backward compatibility",
+      "rent_psf_annual_nnn": {
+        "value": 48,
+        "unit": "$/sf/year NNN",
+        "source": "Nashville Class A office asking rent, downtown/Gulch, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 88,
+        "unit": "%",
+        "source": "Nashville Class A office occupancy, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 22,
+        "unit": "months",
+        "source": "Nashville Class A office lease-up timeline, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 6,
+        "unit": "months",
+        "source": "Nashville Class A office concession package, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 70,
+        "unit": "$/sf",
+        "source": "Nashville Class A office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 5,
+        "unit": "%",
+        "source": "Standard office leasing commission, Nashville market, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 365,
         "unit": "$/sf",
         "source": "Nashville Class A office construction cost, Q4 2025"
       },
@@ -375,19 +995,19 @@
         "source": "18-month construction + 22-month lease-up, Nashville office, Q4 2025"
       },
       "construction_loan_ltc_pct": {
-        "value": 60,
+        "value": 55,
         "unit": "%",
-        "source": "Office LTC slightly lower than multifamily, Q4 2025"
+        "source": "Office LTC conservative, Q4 2025"
       },
       "construction_loan_rate_pct": {
-        "value": 8.0,
+        "value": 8.25,
         "unit": "%",
-        "source": "SOFR + 300-350bps spread for office construction, Q4 2025"
+        "source": "SOFR + 350-400bps spread for office construction, Q4 2025"
       },
       "construction_loan_term_months": {
-        "value": 40,
+        "value": 42,
         "unit": "months",
-        "source": "Construction loan term matching carry period, Nashville office, Q4 2025"
+        "source": "Construction loan term, Nashville office, Q4 2025"
       },
       "equity_split_lp_pct": {
         "value": 90,
@@ -405,7 +1025,7 @@
         "source": "GP promote above preferred return, Fallon standard, Q4 2025"
       },
       "exit_cap_rate_pct": {
-        "value": 6.25,
+        "value": 6.0,
         "unit": "%",
         "source": "Nashville Class A office exit cap rate, Q4 2025"
       },
@@ -422,19 +1042,19 @@
     },
     "hotel": {
       "adr": {
-        "value": 195,
+        "value": 175,
         "unit": "$/night",
-        "source": "Nashville hotel ADR, upscale select-service, Q4 2025"
+        "source": "Nashville hotel ADR, upscale select-service, Q4 2025 — supply pressure"
       },
       "stabilized_occupancy_pct": {
-        "value": 72,
+        "value": 65,
         "unit": "%",
-        "source": "Nashville hotel stabilized occupancy, Q4 2025"
+        "source": "Nashville hotel stabilized occupancy, oversupply environment, Q4 2025"
       },
       "revpar": {
-        "value": 140,
+        "value": 114,
         "unit": "$/available room/night",
-        "source": "Nashville hotel RevPAR ($195 ADR × 72% occ), Q4 2025"
+        "source": "Nashville hotel RevPAR ($175 ADR × 65% occ), Q4 2025"
       },
       "total_keys": {
         "value": 200,
@@ -477,14 +1097,14 @@
         "source": "24-month construction + 12-month ramp-up, Nashville hotel, Q4 2025"
       },
       "construction_loan_ltc_pct": {
-        "value": 55,
+        "value": 50,
         "unit": "%",
-        "source": "Hotel LTC lower due to higher perceived risk, Q4 2025"
+        "source": "Hotel LTC very conservative due to oversupply, Q4 2025"
       },
       "construction_loan_rate_pct": {
-        "value": 8.25,
+        "value": 8.5,
         "unit": "%",
-        "source": "SOFR + 325-375bps spread for hotel construction, Q4 2025"
+        "source": "SOFR + 400-450bps spread for hotel construction, higher risk, Q4 2025"
       },
       "construction_loan_term_months": {
         "value": 36,
@@ -507,9 +1127,9 @@
         "source": "GP promote above preferred return, higher for hotel complexity, Q4 2025"
       },
       "exit_cap_rate_pct": {
-        "value": 7.0,
+        "value": 7.5,
         "unit": "%",
-        "source": "Nashville select-service hotel exit cap rate, Q4 2025"
+        "source": "Nashville select-service hotel exit cap rate, oversupply premium, Q4 2025"
       },
       "exit_sale_cost_pct": {
         "value": 2.5,
@@ -525,9 +1145,9 @@
   },
   "boston": {
     "_meta": {
-      "last_updated": "2025-12-01",
+      "last_updated": "2025-02-24",
       "data_quality": "estimated",
-      "update_notes": "Based on public Marcus & Millichap, CBRE, and JLL Q3-Q4 2025 Boston reports. Replace with broker confirmation."
+      "update_notes": "Based on Marcus & Millichap, CBRE, JLL, Cushman & Wakefield Q4 2025 Boston reports. Office segmented by Class A/B/C."
     },
     "multifamily": {
       "rent_psf_monthly": {
@@ -561,12 +1181,12 @@
         "source": "Parking (premium in Boston), storage, amenity fees, Q4 2025"
       },
       "hard_cost_psf": {
-        "value": 375,
+        "value": 400,
         "unit": "$/sf",
         "source": "Boston multifamily construction cost, union labor market, Q4 2025"
       },
       "soft_cost_pct_of_hard": {
-        "value": 28,
+        "value": 30,
         "unit": "%",
         "source": "Boston soft costs higher due to permitting complexity and union requirements, Q4 2025"
       },
@@ -631,11 +1251,12 @@
         "source": "Typical merchant developer hold period, Fallon standard"
       }
     },
-    "office": {
+    "office_class_a": {
+      "_description": "Trophy/Class A office — new construction, premium finishes, Seaport/Financial District",
       "rent_psf_annual_nnn": {
-        "value": 65,
+        "value": 78,
         "unit": "$/sf/year NNN",
-        "source": "Boston Seaport Class A office asking rent, Q4 2025 — premium submarket"
+        "source": "Boston Seaport Class A trophy office asking rent, Q4 2025"
       },
       "stabilized_occupancy_pct": {
         "value": 90,
@@ -645,15 +1266,15 @@
       "lease_up_months": {
         "value": 20,
         "unit": "months",
-        "source": "Boston office lease-up, strong demand in Seaport for quality product, Q4 2025"
+        "source": "Boston Class A office lease-up, strong demand for quality, Q4 2025"
       },
       "free_rent_months": {
-        "value": 8,
+        "value": 10,
         "unit": "months",
-        "source": "Boston Class A office concession package, Q4 2025"
+        "source": "Boston Class A office concession package, competitive market, Q4 2025"
       },
       "ti_allowance_psf": {
-        "value": 85,
+        "value": 100,
         "unit": "$/sf",
         "source": "Boston Seaport Class A office TI allowance, Q4 2025"
       },
@@ -663,14 +1284,323 @@
         "source": "Standard office leasing commission, Boston market, Q4 2025"
       },
       "hard_cost_psf": {
-        "value": 450,
+        "value": 550,
+        "unit": "$/sf",
+        "source": "Boston Class A office construction cost, union labor, premium finishes, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 32,
+        "unit": "%",
+        "source": "Boston office soft costs — permitting, union, design complexity, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher contingency for Boston office market risk, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 38,
+        "unit": "months",
+        "source": "18-month construction + 20-month lease-up, Boston Class A office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 50,
+        "unit": "%",
+        "source": "Boston Class A office LTC very conservative due to high costs, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.0,
+        "unit": "%",
+        "source": "SOFR + 325-375bps spread for Boston office construction, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "Construction loan term, Boston Class A office, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 9,
+        "unit": "%",
+        "source": "LP preferred return for office development, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 20,
+        "unit": "%",
+        "source": "GP promote above preferred return, Fallon standard, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 5.75,
+        "unit": "%",
+        "source": "Boston Class A office exit cap rate, Seaport submarket, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period, Fallon standard"
+      }
+    },
+    "office_class_b": {
+      "_description": "Class B office — 1990s-2010s vintage, Financial District/Back Bay, needs renovation",
+      "rent_psf_annual_nnn": {
+        "value": 55,
+        "unit": "$/sf/year NNN",
+        "source": "Boston Class B office rent, Financial District older vintage, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 78,
+        "unit": "%",
+        "source": "Boston Class B office occupancy, elevated vacancy from flight to quality, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 30,
+        "unit": "months",
+        "source": "Boston Class B office longer lease-up, competitive market, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 14,
+        "unit": "months",
+        "source": "Boston Class B office higher concessions to compete, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 70,
+        "unit": "$/sf",
+        "source": "Boston Class B office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 6,
+        "unit": "%",
+        "source": "Higher commission to incentivize Class B leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 350,
+        "unit": "$/sf",
+        "source": "Boston Class B office renovation cost, union labor, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 28,
+        "unit": "%",
+        "source": "Boston renovation soft costs, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher contingency for renovation unknowns in older buildings, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "12-month renovation + 30-month lease-up, Boston Class B office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 50,
+        "unit": "%",
+        "source": "Class B office LTC conservative in Boston, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.75,
+        "unit": "%",
+        "source": "SOFR + 425-475bps spread for Class B office repositioning, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "Construction loan term for Class B repositioning, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher preferred return for Class B risk profile, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 25,
+        "unit": "%",
+        "source": "Higher GP promote for value-add risk/reward, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 7.5,
+        "unit": "%",
+        "source": "Boston Class B office exit cap rate, higher risk premium, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period, Fallon standard"
+      }
+    },
+    "office_class_c": {
+      "_description": "Class C office — pre-1990s vintage, commodity space, conversion candidate for residential",
+      "rent_psf_annual_nnn": {
+        "value": 38,
+        "unit": "$/sf/year NNN",
+        "source": "Boston Class C office rent, older buildings, tertiary locations, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 65,
+        "unit": "%",
+        "source": "Boston Class C office very high vacancy, structural obsolescence, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "Boston Class C office extended lease-up, conversion often better option, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 18,
+        "unit": "months",
+        "source": "Boston Class C office aggressive concessions required, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 50,
+        "unit": "$/sf",
+        "source": "Boston Class C office TI allowance, cost-conscious tenants, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 7,
+        "unit": "%",
+        "source": "Higher commission to incentivize Class C leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 275,
+        "unit": "$/sf",
+        "source": "Boston Class C office basic renovation cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 25,
+        "unit": "%",
+        "source": "Lower soft costs for basic renovation, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 15,
+        "unit": "%",
+        "source": "Higher contingency for older building unknowns, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 54,
+        "unit": "months",
+        "source": "12-month renovation + 42-month lease-up, Boston Class C office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 45,
+        "unit": "%",
+        "source": "Class C office LTC very conservative, limited lender appetite, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 9.5,
+        "unit": "%",
+        "source": "SOFR + 500-550bps spread for Class C office, highest risk, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 54,
+        "unit": "months",
+        "source": "Extended loan term for Class C repositioning, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 85,
+        "unit": "%",
+        "source": "Higher GP equity for opportunistic deals, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher preferred return for opportunistic risk, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 30,
+        "unit": "%",
+        "source": "Higher GP promote for opportunistic risk/reward, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 9.5,
+        "unit": "%",
+        "source": "Boston Class C office exit cap rate, significant risk premium, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 3.0,
+        "unit": "%",
+        "source": "Higher disposition costs for challenging asset class, Q4 2025"
+      },
+      "exit_year": {
+        "value": 7,
+        "unit": "years",
+        "source": "Longer hold for Class C repositioning or conversion, Q4 2025"
+      }
+    },
+    "office": {
+      "_note": "Legacy alias — defaults to Class A assumptions for backward compatibility",
+      "rent_psf_annual_nnn": {
+        "value": 78,
+        "unit": "$/sf/year NNN",
+        "source": "Boston Seaport Class A office asking rent, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Boston Class A office occupancy, Seaport submarket, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 20,
+        "unit": "months",
+        "source": "Boston Class A office lease-up, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 10,
+        "unit": "months",
+        "source": "Boston Class A office concession package, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 100,
+        "unit": "$/sf",
+        "source": "Boston Seaport Class A office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 5,
+        "unit": "%",
+        "source": "Standard office leasing commission, Boston market, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 550,
         "unit": "$/sf",
         "source": "Boston Class A office construction cost, union labor, Q4 2025"
       },
       "soft_cost_pct_of_hard": {
-        "value": 30,
+        "value": 32,
         "unit": "%",
-        "source": "Boston office soft costs — permitting, union, design complexity, Q4 2025"
+        "source": "Boston office soft costs, Q4 2025"
       },
       "developer_fee_pct_of_total_cost": {
         "value": 4,
@@ -688,17 +1618,17 @@
         "source": "18-month construction + 20-month lease-up, Boston office, Q4 2025"
       },
       "construction_loan_ltc_pct": {
-        "value": 55,
+        "value": 50,
         "unit": "%",
         "source": "Boston office LTC conservative due to high costs, Q4 2025"
       },
       "construction_loan_rate_pct": {
-        "value": 7.75,
+        "value": 8.0,
         "unit": "%",
-        "source": "SOFR + 275-325bps spread for Boston office construction, Q4 2025"
+        "source": "SOFR + 325-375bps spread for Boston office construction, Q4 2025"
       },
       "construction_loan_term_months": {
-        "value": 40,
+        "value": 42,
         "unit": "months",
         "source": "Construction loan term, Boston office, Q4 2025"
       },
@@ -736,9 +1666,9 @@
   },
   "national_average": {
     "_meta": {
-      "last_updated": "2025-12-01",
+      "last_updated": "2025-02-24",
       "data_quality": "estimated",
-      "update_notes": "National averages from CBRE, JLL, and Marcus & Millichap 2025 reports. Fallback only — always prefer market-specific data."
+      "update_notes": "National averages from CBRE, JLL, Marcus & Millichap 2025 reports. Fallback only. Office segmented by Class A/B/C."
     },
     "multifamily": {
       "rent_psf_monthly": {
@@ -842,29 +1772,30 @@
         "source": "Typical merchant developer hold period"
       }
     },
-    "office": {
+    "office_class_a": {
+      "_description": "Trophy/Class A office — national average for new construction",
       "rent_psf_annual_nnn": {
-        "value": 38,
+        "value": 48,
         "unit": "$/sf/year NNN",
         "source": "National average Class A office asking rent, Q4 2025"
       },
       "stabilized_occupancy_pct": {
         "value": 87,
         "unit": "%",
-        "source": "National average office occupancy, Q4 2025"
+        "source": "National average Class A office occupancy, Q4 2025"
       },
       "lease_up_months": {
         "value": 24,
         "unit": "months",
-        "source": "National average office lease-up period, Q4 2025"
+        "source": "National average Class A office lease-up period, Q4 2025"
       },
       "free_rent_months": {
-        "value": 6,
+        "value": 8,
         "unit": "months",
-        "source": "National average office free rent concession, Q4 2025"
+        "source": "National average Class A office free rent concession, Q4 2025"
       },
       "ti_allowance_psf": {
-        "value": 65,
+        "value": 75,
         "unit": "$/sf",
         "source": "National average Class A office TI allowance, Q4 2025"
       },
@@ -874,7 +1805,7 @@
         "source": "National average office leasing commission, Q4 2025"
       },
       "hard_cost_psf": {
-        "value": 375,
+        "value": 400,
         "unit": "$/sf",
         "source": "National average Class A office construction cost, Q4 2025"
       },
@@ -899,12 +1830,321 @@
         "source": "National average carry period for office, Q4 2025"
       },
       "construction_loan_ltc_pct": {
-        "value": 60,
+        "value": 55,
+        "unit": "%",
+        "source": "National average Class A office construction LTC, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.25,
+        "unit": "%",
+        "source": "National average Class A office construction loan rate, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "National average office construction loan term, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, industry standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 9,
+        "unit": "%",
+        "source": "Industry standard LP preferred return for office, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 20,
+        "unit": "%",
+        "source": "Industry standard GP promote, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 6.25,
+        "unit": "%",
+        "source": "National average Class A office exit cap rate, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Industry standard disposition costs, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period"
+      }
+    },
+    "office_class_b": {
+      "_description": "Class B office — national average for renovation/repositioning",
+      "rent_psf_annual_nnn": {
+        "value": 32,
+        "unit": "$/sf/year NNN",
+        "source": "National average Class B office asking rent, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 80,
+        "unit": "%",
+        "source": "National average Class B office occupancy, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 30,
+        "unit": "months",
+        "source": "National average Class B office lease-up period, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 10,
+        "unit": "months",
+        "source": "National average Class B office free rent concession, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 55,
+        "unit": "$/sf",
+        "source": "National average Class B office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 6,
+        "unit": "%",
+        "source": "Higher commission for Class B leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 275,
+        "unit": "$/sf",
+        "source": "National average Class B office renovation cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 22,
+        "unit": "%",
+        "source": "National average Class B renovation soft cost, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Industry standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher contingency for renovation, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "National average Class B carry period, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 55,
+        "unit": "%",
+        "source": "National average Class B office construction LTC, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.5,
+        "unit": "%",
+        "source": "National average Class B office construction loan rate, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "National average Class B construction loan term, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, industry standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher preferred return for Class B risk, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 25,
+        "unit": "%",
+        "source": "Higher GP promote for value-add, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 7.5,
+        "unit": "%",
+        "source": "National average Class B office exit cap rate, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Industry standard disposition costs, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period"
+      }
+    },
+    "office_class_c": {
+      "_description": "Class C office — national average for commodity/conversion candidates",
+      "rent_psf_annual_nnn": {
+        "value": 22,
+        "unit": "$/sf/year NNN",
+        "source": "National average Class C office asking rent, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 70,
+        "unit": "%",
+        "source": "National average Class C office occupancy, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 36,
+        "unit": "months",
+        "source": "National average Class C office lease-up period, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 12,
+        "unit": "months",
+        "source": "National average Class C office free rent concession, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 40,
+        "unit": "$/sf",
+        "source": "National average Class C office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 7,
+        "unit": "%",
+        "source": "Higher commission for Class C leasing, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 200,
+        "unit": "$/sf",
+        "source": "National average Class C office renovation cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 20,
+        "unit": "%",
+        "source": "Lower soft cost for basic renovation, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Industry standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher contingency for older building unknowns, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 48,
+        "unit": "months",
+        "source": "National average Class C carry period, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 50,
+        "unit": "%",
+        "source": "National average Class C office construction LTC, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 9.0,
+        "unit": "%",
+        "source": "National average Class C office construction loan rate, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 48,
+        "unit": "months",
+        "source": "National average Class C construction loan term, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 85,
+        "unit": "%",
+        "source": "Higher GP equity for opportunistic deals, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 12,
+        "unit": "%",
+        "source": "Higher preferred return for opportunistic risk, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 30,
+        "unit": "%",
+        "source": "Higher GP promote for opportunistic risk/reward, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 9.0,
+        "unit": "%",
+        "source": "National average Class C office exit cap rate, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 3.0,
+        "unit": "%",
+        "source": "Higher disposition costs for challenging asset class, Q4 2025"
+      },
+      "exit_year": {
+        "value": 7,
+        "unit": "years",
+        "source": "Longer hold for Class C repositioning"
+      }
+    },
+    "office": {
+      "_note": "Legacy alias — defaults to Class A assumptions for backward compatibility",
+      "rent_psf_annual_nnn": {
+        "value": 48,
+        "unit": "$/sf/year NNN",
+        "source": "National average Class A office asking rent, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 87,
+        "unit": "%",
+        "source": "National average office occupancy, Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 24,
+        "unit": "months",
+        "source": "National average office lease-up period, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 8,
+        "unit": "months",
+        "source": "National average office free rent concession, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 75,
+        "unit": "$/sf",
+        "source": "National average Class A office TI allowance, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 5,
+        "unit": "%",
+        "source": "National average office leasing commission, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 400,
+        "unit": "$/sf",
+        "source": "National average Class A office construction cost, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 26,
+        "unit": "%",
+        "source": "National average office soft cost percentage, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Industry standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 8,
+        "unit": "%",
+        "source": "National average office construction contingency, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "National average carry period for office, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 55,
         "unit": "%",
         "source": "National average office construction LTC, Q4 2025"
       },
       "construction_loan_rate_pct": {
-        "value": 8.0,
+        "value": 8.25,
         "unit": "%",
         "source": "National average office construction loan rate, Q4 2025"
       },

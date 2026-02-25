@@ -23,6 +23,7 @@ _MARKET_DEFAULTS_PATH = os.path.join(_BASE_DIR, "data", "market_defaults", "mark
 CONTRACTS_COLLECTION = "fallon_contracts"
 DEAL_DATA_COLLECTION = "fallon_deal_data"
 MARKET_DEFAULTS_COLLECTION = "fallon_market_defaults"
+MARKET_RESEARCH_COLLECTION = "fallon_market_research"
 
 # ── Client & embedding function ────────────────────────────────────────────────
 # Persistent client: data survives between app restarts
@@ -180,16 +181,17 @@ def query_collection(
 
 def get_collection_counts() -> dict:
     """
-    Return document counts for all three collections.
+    Return document counts for all collections.
     Used by the Streamlit sidebar to show how many documents are indexed.
 
     Returns:
-        {"fallon_contracts": int, "fallon_deal_data": int, "fallon_market_defaults": int}
+        {"fallon_contracts": int, "fallon_deal_data": int, "fallon_market_defaults": int, "fallon_market_research": int}
     """
     return {
         CONTRACTS_COLLECTION: _get_count(CONTRACTS_COLLECTION),
         DEAL_DATA_COLLECTION: _get_count(DEAL_DATA_COLLECTION),
         MARKET_DEFAULTS_COLLECTION: _get_count(MARKET_DEFAULTS_COLLECTION),
+        MARKET_RESEARCH_COLLECTION: _get_count(MARKET_RESEARCH_COLLECTION),
     }
 
 

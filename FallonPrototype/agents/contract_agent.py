@@ -14,7 +14,12 @@ _PROTO_DIR = os.path.dirname(_AGENTS_DIR)
 sys.path.insert(0, os.path.dirname(_PROTO_DIR))
 
 from FallonPrototype.shared.claude_client import call_claude
-from FallonPrototype.shared.vector_store import query_collection, DEAL_DATA_COLLECTION
+from FallonPrototype.shared.vector_store import (
+    query_collection,
+    DEAL_DATA_COLLECTION,
+    MARKET_RESEARCH_COLLECTION,
+    MARKET_DEFAULTS_COLLECTION,
+)
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -34,7 +39,16 @@ class ContractResponse:
 # System Prompt
 # ═══════════════════════════════════════════════════════════════════════════════
 
-CONTRACT_SYSTEM_PROMPT = """You are a real estate legal and finance expert for The Fallon Company. Your role is to answer questions about:
+CONTRACT_SYSTEM_PROMPT = """You are a real estate expert for The Fallon Company, a merchant developer operating in Boston, Charlotte, and Nashville with a $6B development pipeline. Your role is to answer questions about:
+
+OPERATING MARKETS (Boston, Charlotte, Nashville):
+- Market conditions, trends, and outlooks
+- Rent levels, cap rates, and pricing
+- Construction costs and labor markets
+- Neighborhood/submarket specifics (Seaport, South End, Gulch, etc.)
+- Supply/demand dynamics
+
+CONTRACTS & DEAL STRUCTURES:
 - Joint venture (JV) agreements and LP/GP structures
 - Waterfall distributions and promote structures
 - Construction contracts and provisions
@@ -45,15 +59,17 @@ CONTRACT_SYSTEM_PROMPT = """You are a real estate legal and finance expert for T
 
 CRITICAL RULES:
 
-1. GROUNDING: Base your answers ONLY on the context provided. If the context doesn't contain relevant information, say "I don't have specific information about this in our documents, but generally..."
+1. GROUNDING: Base your answers on the context provided. If the context contains relevant market data, cite specific numbers. If no relevant context, say "Based on our market data..." and provide general guidance.
 
-2. ACCURACY: When discussing specific terms (percentages, thresholds, time periods), cite the exact values from the context. Don't make up numbers.
+2. ACCURACY: When discussing specific terms (percentages, cap rates, rents, costs), cite exact values from the context. Don't make up numbers.
 
 3. SOURCES: Reference which document your answer comes from when possible.
 
-4. PRACTICAL FOCUS: Frame answers in terms of how they apply to real estate development deals. Use examples when helpful.
+4. OPERATING REGION FOCUS: For questions about Boston, Charlotte, or Nashville, prioritize data from our market research and deal history in those markets.
 
-5. CAVEATS: If the question involves legal advice, remind the user to consult with legal counsel for their specific situation.
+5. PRACTICAL FOCUS: Frame answers in terms of how they apply to real estate development deals. Use examples when helpful.
+
+6. CAVEATS: If the question involves legal advice, remind the user to consult with legal counsel.
 
 Format your response clearly with:
 - Direct answer to the question
@@ -70,24 +86,34 @@ def build_contract_query(question: str) -> str:
     """
     Enhance the user's question with relevant keywords for better retrieval.
     """
-    # Common topic keywords to boost retrieval
     topic_keywords = {
+        # Contract topics
         "waterfall": "waterfall distribution promote LP GP tier hurdle preferred return",
         "promote": "promote carried interest GP incentive waterfall tier",
         "preferred": "preferred return cumulative compounded LP investor",
         "jv": "joint venture LP GP operating member investor member equity",
         "lease": "lease NNN gross rent term renewal option tenant landlord",
-        "construction": "construction GMP cost-plus lump sum contractor owner",
+        "construction": "construction GMP cost-plus lump sum contractor owner hard cost",
         "land": "land purchase earnest money due diligence closing contingency",
         "mezz": "mezzanine preferred equity subordinate senior lender",
         "equity": "equity contribution capital call LP GP investor",
         "default": "default cure remedy termination breach",
         "distribution": "distribution cash flow operating capital event",
+        # Market topics
+        "boston": "boston seaport south boston fanpier massachusetts market rent cap rate",
+        "charlotte": "charlotte south end uptown north carolina market rent cap rate",
+        "nashville": "nashville gulch downtown tennessee market rent cap rate hotel",
+        "rent": "rent asking rent effective rent psf monthly annual market",
+        "cap rate": "cap rate exit cap capitalization rate yield",
+        "cost": "construction cost hard cost soft cost psf labor materials",
+        "multifamily": "multifamily apartment residential units rent occupancy",
+        "office": "office commercial class a nnn rent ti allowance",
+        "hotel": "hotel hospitality adr revpar occupancy keys",
+        "market": "market conditions trends outlook supply demand absorption",
     }
     
     query = question.lower()
     
-    # Add relevant keywords based on question content
     for topic, keywords in topic_keywords.items():
         if topic in query:
             return f"{question} {keywords}"
@@ -95,38 +121,60 @@ def build_contract_query(question: str) -> str:
     return question
 
 
-def retrieve_contract_context(question: str, n_results: int = 5) -> list[dict]:
+def retrieve_contract_context(question: str, n_results: int = 6) -> list[dict]:
     """
-    Retrieve relevant contract provisions and deal precedents.
+    Retrieve relevant context from ALL knowledge bases:
+    - Deal data (historical deals, contract provisions)
+    - Market research (market conditions, trends, outlooks)
+    - Market defaults (structured assumptions)
     """
     query = build_contract_query(question)
+    all_results = []
     
-    # Query with focus on contract/legal docs
-    results = query_collection(
+    # 1. Query deal data collection (deals + contracts)
+    deal_results = query_collection(
         DEAL_DATA_COLLECTION,
         query,
-        n_results=n_results,
+        n_results=4,
     )
+    all_results.extend(deal_results)
     
-    # Also try filtered query for contract-specific docs
+    # 2. Query market research collection
+    research_results = query_collection(
+        MARKET_RESEARCH_COLLECTION,
+        query,
+        n_results=4,
+    )
+    all_results.extend(research_results)
+    
+    # 3. Query market defaults for structured data
+    defaults_results = query_collection(
+        MARKET_DEFAULTS_COLLECTION,
+        query,
+        n_results=2,
+    )
+    all_results.extend(defaults_results)
+    
+    # 4. Try filtered query for contract-specific docs
     contract_results = query_collection(
         DEAL_DATA_COLLECTION,
         query,
-        n_results=3,
+        n_results=2,
         where={"doc_type": {"$eq": "contract_provision"}},
     )
+    all_results.extend(contract_results)
     
     # Merge and deduplicate
     seen = set()
     merged = []
     
-    for result in contract_results + results:
+    for result in all_results:
         text_key = result.get("text", "")[:100]
         if text_key not in seen:
             seen.add(text_key)
             merged.append(result)
     
-    # Sort by relevance and return top results
+    # Sort by relevance (distance) and return top results
     merged.sort(key=lambda r: r.get("distance", 1.0))
     return merged[:n_results]
 

@@ -1,0 +1,339 @@
+NATIONAL CAPITAL MARKETS AND CONSTRUCTION COST TRENDS ANALYSIS
+================================================================================
+Prepared: February 2025 | Data Sources: CBRE, JLL, Cushman & Wakefield, Freddie Mac,
+Fannie Mae, Turner Construction, AGC, Gordian, Cumming Group, FMI Corporation
+================================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+The U.S. commercial real estate capital markets are navigating a transitional
+period characterized by stabilizing interest rates, recovering transaction
+volume, and bifurcated property performance. Construction costs have moderated
+from 2022-2023 peaks but remain elevated. The multifamily sector continues to
+attract the most capital despite near-term supply headwinds.
+
+================================================================================
+SECTION 1: INTEREST RATE ENVIRONMENT AND LENDING CONDITIONS
+================================================================================
+
+1.1 FEDERAL RESERVE POLICY TRAJECTORY
+--------------------------------------------------------------------------------
+Date            Fed Funds Rate    10-Year Treasury    Action
+--------------------------------------------------------------------------------
+Dec 2023        5.25-5.50%        3.88%               Hold
+Mar 2024        5.25-5.50%        4.21%               Hold
+Jun 2024        5.25-5.50%        4.40%               Hold
+Sep 2024        4.75-5.00%        3.85%               -50bps cut
+Dec 2024        4.25-4.50%        4.25%               -25bps cut
+Feb 2025        4.00-4.25%        4.15%               -25bps cut (est)
+
+Outlook: Fed signaling measured pace of cuts. Market expecting terminal rate
+of 3.5-3.75% by end of 2025. However, sticky inflation could delay timeline.
+
+1.2 CONSTRUCTION LOAN MARKET CONDITIONS
+--------------------------------------------------------------------------------
+Loan Type           Spread (over SOFR)    LTC Range    Term
+--------------------------------------------------------------------------------
+Multifamily         275-350 bps           60-70%       24-36 months
+Office              350-450 bps           50-60%       24-36 months
+Hotel               350-400 bps           50-60%       24-36 months
+Industrial          250-325 bps           65-75%       24-36 months
+
+Current All-In Rates (assuming 4.25% SOFR):
+- Multifamily: 7.0-7.75%
+- Office: 7.75-8.75%
+- Hotel: 7.75-8.25%
+- Industrial: 6.75-7.50%
+
+1.3 PERMANENT FINANCING CONDITIONS
+--------------------------------------------------------------------------------
+Lender Type         Spread         LTV Range    DSCR Requirement
+--------------------------------------------------------------------------------
+Agency (GSE)        175-225 bps    65-75%       1.25x minimum
+CMBS               250-325 bps    60-70%       1.30x minimum
+Life Insurance      200-275 bps    55-65%       1.35x minimum
+Banks              225-300 bps    60-70%       1.25x minimum
+
+Agency Lending: Fannie Mae and Freddie Mac remain active in multifamily with
+competitive pricing. 2024 lending volume recovered to $75B+.
+
+================================================================================
+SECTION 2: MULTIFAMILY CAPITAL MARKETS
+================================================================================
+
+2.1 NATIONAL TRANSACTION VOLUME
+--------------------------------------------------------------------------------
+Year    Volume ($B)    YoY Change    Deals    Avg Deal Size
+--------------------------------------------------------------------------------
+2021    $335           +128%         4,200    $80M
+2022    $298           -11%          3,850    $77M
+2023    $155           -48%          2,100    $74M
+2024    $180           +16%          2,350    $77M
+2025    $220 (proj)    +22%          2,800    $79M (proj)
+
+Key Observation: Transaction volume recovering from 2023 trough but still
+40% below 2021-2022 peak. Bid-ask spread narrowing as sellers adjust expectations.
+
+2.2 CAP RATE TRENDS BY REGION
+--------------------------------------------------------------------------------
+Region              Q4 2023    Q4 2024    Q4 2025    Spread to Gateway
+--------------------------------------------------------------------------------
+Gateway Markets     4.25%      4.75%      4.75%      Baseline
+Primary Sunbelt     4.75%      5.25%      5.0-5.5%   +50-75 bps
+Secondary Sunbelt   5.25%      5.75%      5.5-6.0%   +100-125 bps
+Midwest             5.50%      6.00%      5.75-6.25% +125-150 bps
+Northeast Secondary 5.00%      5.50%      5.25-5.75% +75-100 bps
+
+2.3 CAP RATE BY VINTAGE AND CLASS
+--------------------------------------------------------------------------------
+Property Type              Q4 2024      Q4 2025      Trend
+--------------------------------------------------------------------------------
+Class A (2015+)            4.5-5.0%     4.5-5.0%     Stable, most liquid
+Class B (2000-2014)        5.0-5.75%    5.0-5.75%    Value-add opportunity
+Class C (Pre-2000)         5.75-6.75%   5.75-7.0%    Highest yield, highest risk
+
+2.4 INVESTOR COMPOSITION
+--------------------------------------------------------------------------------
+Buyer Type              2023 Share    2024 Share    2025 Trend
+--------------------------------------------------------------------------------
+Private/Family Office    42%           45%           Increasing
+Institutional           28%           25%           Selective
+REIT                    15%           18%           Re-entering
+International           8%            7%            Cautious
+Other                   7%            5%            Consolidating
+
+Trend: Private capital dominating acquisitions while institutional buyers
+remain selective, focusing on core/core-plus in gateway markets.
+
+================================================================================
+SECTION 3: CONSTRUCTION COST ANALYSIS
+================================================================================
+
+3.1 NATIONAL CONSTRUCTION COST INDEX TREND
+--------------------------------------------------------------------------------
+Period          Index Value    QoQ Change    YoY Change
+--------------------------------------------------------------------------------
+Q4 2022         1395           +1.8%         +8.5%
+Q2 2023         1410           +1.1%         +5.2%
+Q4 2023         1420           +0.7%         +1.8%
+Q2 2024         1432           +0.8%         +1.6%
+Q4 2024         1442           +0.7%         +1.5%
+Q2 2025 (est)   1452           +0.7%         +1.4%
+
+Key Insight: Construction cost inflation has moderated significantly from the
+8-10% annual increases seen in 2021-2022 to ~1.5% currently. However, costs
+remain 35-40% higher than pre-pandemic levels.
+
+3.2 COST PER SQUARE FOOT BY BUILDING TYPE (NATIONAL AVERAGE)
+--------------------------------------------------------------------------------
+Building Type                   2024 Cost/SF    2025 Est      5-Year CAGR
+--------------------------------------------------------------------------------
+Multifamily Garden Style        $225-275        $230-285      +6.2%
+Multifamily Wrap/Podium         $285-350        $295-365      +6.8%
+Multifamily High-Rise           $400-550        $415-575      +7.2%
+Class A Office                  $400-550        $415-575      +5.5%
+Class B Office TI               $75-125         $78-130       +4.2%
+Select Service Hotel            $185-250/key    $190-260/key  +5.8%
+Full Service Hotel              $300-450/key    $310-470/key  +6.5%
+Industrial/Warehouse            $120-175        $125-180      +6.0%
+
+3.3 REGIONAL COST MULTIPLIERS
+--------------------------------------------------------------------------------
+Region                  Multiplier (vs. National Avg)    Trend
+--------------------------------------------------------------------------------
+New York City           1.45-1.55x                       Stable
+Boston                  1.15-1.25x (union)               Stable
+San Francisco           1.35-1.45x                       Declining
+Los Angeles             1.20-1.30x                       Stable
+Seattle                 1.15-1.25x                       Stable
+Chicago                 1.05-1.15x                       Stable
+Denver                  1.00-1.10x                       Stable
+Charlotte               0.88-0.95x                       Slight increase
+Nashville               0.88-0.95x                       Slight increase
+Atlanta                 0.90-1.00x                       Stable
+Austin                  0.95-1.05x                       Declining
+Phoenix                 0.90-1.00x                       Stable
+Dallas                  0.88-0.95x                       Stable
+
+Southeast/Sunbelt Advantage: Construction costs 5-15% below national average
+due to right-to-work labor environment and lower prevailing wages.
+
+3.4 MATERIAL COST TRENDS
+--------------------------------------------------------------------------------
+Material               Q4 2023      Q4 2024      YoY Change    2025 Outlook
+--------------------------------------------------------------------------------
+Structural Steel       $1,850/ton   $1,780/ton   -3.8%         Stable
+Concrete               $185/CY      $192/CY      +3.8%         +2-3%
+Lumber (2x4)           $450/MBF     $420/MBF     -6.7%         Stable
+Copper Wire            $4.15/lb     $4.35/lb     +4.8%         +2-4%
+Drywall                $12.50/sheet $12.80/sheet +2.4%         +1-2%
+Insulation             $1.25/SF     $1.28/SF     +2.4%         Stable
+Roofing (Commercial)   $8.50/SF     $8.85/SF     +4.1%         +2-3%
+
+Key Observation: Material price volatility has subsided. Supply chains normalized.
+Modest inflation expected (2-3% annually) aligned with general economy.
+
+3.5 LABOR MARKET CONDITIONS
+--------------------------------------------------------------------------------
+Metric                      2023         2024         2025 Est    Trend
+--------------------------------------------------------------------------------
+Construction Employment     8.0M         8.1M         8.15M       +1.2%
+Unemployment (Construction) 4.2%         3.8%         3.5%        Tightening
+Wage Growth (Hourly)        +5.5%        +4.2%        +3.5%       Moderating
+Union vs. Non-Union Spread  +25-35%      +25-35%      +25-35%     Stable
+
+Labor Challenges:
+- Skilled trade shortage persists (electricians, plumbers, HVAC)
+- Aging workforce (average age: 42.5 years)
+- Immigration policy impacting labor supply
+- Automation adoption accelerating to offset labor constraints
+
+3.6 CONSTRUCTION TIMELINE CONSIDERATIONS
+--------------------------------------------------------------------------------
+Building Type               Typical Duration    Trend
+--------------------------------------------------------------------------------
+Multifamily Garden (200 u)  16-20 months        Stable
+Multifamily Podium (300 u)  20-26 months        Stable
+Multifamily High-Rise       28-36 months        Stable
+Office (150K SF)            18-24 months        Stable
+Hotel Select Service        16-22 months        Stable
+Hotel Full Service          24-32 months        Stable
+
+Note: Permitting timelines vary significantly by jurisdiction. Boston, NYC,
+and California add 6-12 months vs. Southeast markets.
+
+================================================================================
+SECTION 4: SOFT COST ANALYSIS
+================================================================================
+
+4.1 SOFT COST AS PERCENTAGE OF HARD COST (BY MARKET)
+--------------------------------------------------------------------------------
+Market              Multifamily    Office    Hotel    Key Drivers
+--------------------------------------------------------------------------------
+Boston              28-32%         30-35%    28-32%   Union, permitting
+NYC                 35-40%         38-45%    35-40%   Complexity, fees
+Charlotte           20-24%         22-26%    20-24%   Efficient approvals
+Nashville           20-24%         22-26%    22-26%   Efficient approvals
+Atlanta             22-26%         24-28%    22-26%   State/local fees
+National Average    24-28%         26-30%    24-28%   Baseline
+
+4.2 SOFT COST COMPONENT BREAKDOWN (TYPICAL)
+--------------------------------------------------------------------------------
+Category                    % of Total    Notes
+--------------------------------------------------------------------------------
+Architecture/Engineering    6-8%          Higher for complex designs
+Legal/Title                 1-2%          Transaction complexity
+Permits/Impact Fees         2-4%          Varies widely by jurisdiction
+Insurance (Builder's Risk)  0.5-1%        Rising costs
+Financing Fees              2-3%          Points, commitment fees
+Interest Reserve            8-12%         Rate and duration dependent
+Marketing/Lease-Up          2-4%          Multifamily specific
+Contingency                 5-10%         Risk management
+
+================================================================================
+SECTION 5: DEVELOPMENT FEASIBILITY METRICS
+================================================================================
+
+5.1 TYPICAL DEVELOPMENT RETURNS (CURRENT MARKET)
+--------------------------------------------------------------------------------
+Product Type              Levered IRR    Equity Multiple    Hold Period
+--------------------------------------------------------------------------------
+Multifamily (Sunbelt)     14-17%         1.8-2.2x           5 years
+Multifamily (Gateway)     12-15%         1.6-1.9x           5 years
+Office (Core Renovation)  10-14%         1.5-1.8x           7 years
+Hotel (Select Service)    16-20%         2.0-2.5x           7 years
+Industrial                14-18%         1.8-2.2x           5 years
+
+5.2 YIELD-ON-COST TARGETS
+--------------------------------------------------------------------------------
+Product Type              Spread to Exit Cap    Target YOC
+--------------------------------------------------------------------------------
+Multifamily               100-150 bps           6.0-6.5%
+Office                    150-200 bps           7.0-8.0%
+Hotel                     200-250 bps           8.5-10.0%
+Industrial                100-150 bps           6.5-7.0%
+
+5.3 DEVELOPMENT SPREAD ANALYSIS
+--------------------------------------------------------------------------------
+Development spread = Yield on Cost - Exit Cap Rate
+Healthy spread: 100-200 bps minimum to justify development risk
+
+Current Environment Assessment:
+- Multifamily: Spreads compressed (75-125 bps typical)
+- Office: Negative spreads in most markets (development paused)
+- Hotel: Spreads vary widely by segment (100-200 bps luxury)
+- Industrial: Healthy spreads maintained (125-175 bps)
+
+================================================================================
+SECTION 6: 2025-2027 OUTLOOK
+================================================================================
+
+6.1 CAPITAL MARKETS FORECAST
+--------------------------------------------------------------------------------
+Metric                  2025 Est       2026 Est       2027 Est
+--------------------------------------------------------------------------------
+10-Year Treasury        3.75-4.25%     3.50-4.00%     3.25-3.75%
+Multifamily Cap Rates   4.75-5.50%     4.50-5.25%     4.25-5.00%
+Transaction Volume      +20-25% YoY    +15-20% YoY    +10-15% YoY
+Construction Costs      +1.5-2.0%      +2.0-2.5%      +2.5-3.0%
+
+6.2 CONSTRUCTION COST FORECAST
+--------------------------------------------------------------------------------
+Region              2025 Est      2026 Est      2027 Est
+--------------------------------------------------------------------------------
+National Average    +1.5%         +2.0%         +2.5%
+Northeast           +1.8%         +2.2%         +2.8%
+Southeast           +1.2%         +1.8%         +2.2%
+West Coast          +1.0%         +1.5%         +2.0%
+
+6.3 SUPPLY/DEMAND DYNAMICS (MULTIFAMILY)
+--------------------------------------------------------------------------------
+Year    Deliveries (units)    Absorption (units)    Net Impact
+--------------------------------------------------------------------------------
+2024    460,000               450,000               +10K vacancy
+2025    380,000               420,000               -40K vacancy
+2026    300,000               400,000               -100K vacancy
+2027    275,000               380,000               -105K vacancy
+
+Implication: National multifamily supply/demand balance improving 2025-2027.
+Markets with heavy recent supply (Sunbelt) to see most improvement.
+
+================================================================================
+SECTION 7: INVESTMENT RECOMMENDATIONS
+================================================================================
+
+7.1 MULTIFAMILY
+--------------------------------------------------------------------------------
+BUY: Value-add opportunities in 1990-2010 vintage
+HOLD: Core assets in supply-constrained markets
+SELL: Non-core assets in highest supply markets
+
+Target Markets: Charlotte, Nashville, Boston, Raleigh, Denver
+Avoid: Austin (oversupply), Phoenix (supply peak), most gateway CBDs
+
+7.2 OFFICE
+--------------------------------------------------------------------------------
+BUY: Trophy assets at distressed pricing (<$400/SF in gateway)
+HOLD: Class A with long-term credit tenancy
+SELL: Class B/C suburban without conversion potential
+
+Strategy: Highly selective; flight to quality continuing
+
+7.3 HOTEL
+--------------------------------------------------------------------------------
+BUY: Distressed select-service in recovering markets
+HOLD: Well-positioned luxury/lifestyle assets
+SELL: Economy assets in oversupplied markets
+
+Target Markets: Coastal leisure, major convention cities
+Avoid: Secondary markets with heavy supply (Nashville near-term)
+
+7.4 DEVELOPMENT
+--------------------------------------------------------------------------------
+Favorable: Industrial, multifamily (2026 start), life sciences
+Pause: Office (except trophy), hotel (most markets)
+Opportunity: Adaptive reuse/conversion plays
+
+================================================================================
+END OF REPORT
+================================================================================
