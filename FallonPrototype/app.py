@@ -1,7 +1,8 @@
 """
 Fallon Financial Model — Streamlit UI (Phase 6)
 
-A clean single-page interface for generating development pro formas.
+A clean single-page interface for generating development pro formas
+and answering contract/deal structure questions.
 """
 
 import streamlit as st
@@ -29,6 +30,7 @@ from FallonPrototype.agents.financial_agent import (
     generate_pro_forma,
     validate_pro_forma,
 )
+from FallonPrototype.agents.contract_agent import answer_contract_question
 from FallonPrototype.shared.vector_store import get_collection_counts
 from FallonPrototype.shared.return_calculator import (
     compute_returns,
@@ -98,6 +100,10 @@ if "needs_clarification" not in st.session_state:
     st.session_state.needs_clarification = False
 if "adjusted_pro_forma" not in st.session_state:
     st.session_state.adjusted_pro_forma = None
+if "contract_response" not in st.session_state:
+    st.session_state.contract_response = None
+if "active_tab" not in st.session_state:
+    st.session_state.active_tab = "Pro Forma Generator"
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -150,23 +156,30 @@ with st.sidebar:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Main Area — Input
+# Main Area — Mode Selection
 # ═══════════════════════════════════════════════════════════════════════════════
 
-st.header("Development Pro Forma Generator")
+main_tab1, main_tab2 = st.tabs(["Pro Forma Generator", "Contract Q&A"])
 
-# Query input
-query = st.text_area(
-    "Describe your project:",
-    placeholder="""Examples:
-• "200-unit multifamily in Charlotte, targeting 15% IRR"
-• "Mixed-use hotel and apartments in Nashville, 300 keys and 180 units"
-• "80,000sf Class A office in Boston Seaport"
-• "150 condos in Charlotte with $12M land cost"
-""",
-    height=120,
-    key="query_input",
-)
+# ═══════════════════════════════════════════════════════════════════════════════
+# TAB 1: Pro Forma Generator
+# ═══════════════════════════════════════════════════════════════════════════════
+
+with main_tab1:
+    st.header("Development Pro Forma Generator")
+    
+    # Query input
+    query = st.text_area(
+        "Describe your project:",
+        placeholder="""Examples:
+    * "200-unit multifamily in Charlotte, targeting 15% IRR"
+    * "Mixed-use hotel and apartments in Nashville, 300 keys and 180 units"
+    * "80,000sf Class A office in Boston Seaport"
+    * "150 condos in Charlotte with $12M land cost"
+    """,
+        height=120,
+        key="query_input",
+    )
 
 # Generate button
 col1, col2, col3 = st.columns([2, 1, 2])
@@ -603,6 +616,75 @@ if st.session_state.response and not st.session_state.needs_clarification:
     else:
         # No pro forma in response — show the answer text
         st.info(response.answer)
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# TAB 2: Contract Q&A
+# ═══════════════════════════════════════════════════════════════════════════════
+
+with main_tab2:
+    st.header("Contract & Deal Structure Q&A")
+    st.caption("Ask questions about JV agreements, waterfall structures, lease terms, and more.")
+    
+    # Sample questions
+    with st.expander("Example Questions"):
+        st.markdown("""
+        - How does a typical waterfall distribution work?
+        - What is a standard LP preferred return?
+        - Explain the GP catch-up provision
+        - What are typical promote structures for development deals?
+        - What's the difference between cumulative and non-cumulative preferred returns?
+        - How do tiered promotes work in institutional JVs?
+        - What are standard construction contract provisions?
+        - Explain NNN vs gross lease structures
+        """)
+    
+    # Question input
+    contract_question = st.text_area(
+        "Your question:",
+        placeholder="e.g., How does a 90/10 JV waterfall with 8% preferred return work?",
+        height=100,
+        key="contract_question",
+    )
+    
+    col1, col2, col3 = st.columns([2, 1, 2])
+    with col2:
+        ask_clicked = st.button("Ask Question", type="primary", use_container_width=True, key="ask_contract")
+    
+    if ask_clicked and contract_question.strip():
+        with st.spinner("Searching documents and generating answer..."):
+            try:
+                contract_response = answer_contract_question(contract_question)
+                st.session_state.contract_response = contract_response
+            except Exception as e:
+                st.error(f"Error: {e}")
+    
+    # Display contract response
+    if st.session_state.contract_response:
+        resp = st.session_state.contract_response
+        
+        # Confidence indicator
+        confidence_colors = {"high": "green", "medium": "orange", "low": "red"}
+        st.markdown(f"**Confidence:** :{confidence_colors.get(resp.confidence, 'gray')}[{resp.confidence.upper()}]")
+        
+        # Sources
+        if resp.sources:
+            st.caption(f"Sources: {', '.join(resp.sources)}")
+        
+        st.markdown("---")
+        
+        # Answer
+        st.markdown(resp.answer)
+        
+        # Show retrieved chunks
+        with st.expander("View Source Documents"):
+            for i, chunk in enumerate(resp.chunks_used, 1):
+                source = chunk.get("metadata", {}).get("source", "Unknown")
+                relevance = chunk.get("relevance", "unknown")
+                text = chunk.get("text", "")[:500]
+                
+                st.markdown(f"**Document {i}: {source}** (Relevance: {relevance})")
+                st.text(text + "..." if len(chunk.get("text", "")) > 500 else text)
+                st.markdown("---")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
