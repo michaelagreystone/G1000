@@ -1,0 +1,138 @@
+LIMITED LIABILITY COMPANY OPERATING AGREEMENT
+OF
+FALLON-INSTITUTIONAL PARTNER JV, LLC
+
+This Limited Liability Company Operating Agreement ("Agreement") is entered into as of March 1, 2024, by and between:
+
+MANAGING MEMBER: Fallon Seaport Development LLC, a Delaware limited liability company ("Fallon" or "Managing Member"), with offices at 1 Seaport Lane, Suite 500, Boston, MA 02210
+
+INVESTOR MEMBER: Metropolitan Real Estate Partners Fund VII, LP, a Delaware limited partnership ("Investor" or "Limited Partner"), with offices at 1345 Avenue of the Americas, New York, NY 10105
+
+The Company formed hereby is FALLON-INSTITUTIONAL PARTNER JV, LLC (the "Company").
+
+RECITALS
+
+WHEREAS, the Members desire to form a Delaware limited liability company for the purpose of acquiring, developing, and operating a mixed-use development project consisting of 450 residential units and 25,000 square feet of retail space located at 500 Seaport Boulevard, Boston, Massachusetts (the "Project"); and
+
+WHEREAS, the Members desire to set forth their rights and obligations with respect to the Company and the Project;
+
+NOW, THEREFORE, the Members agree as follows:
+
+ARTICLE 1 - FORMATION AND PURPOSE
+
+1.1 Formation. The Company was formed as a Delaware limited liability company on February 15, 2024.
+
+1.2 Purpose. The purpose of the Company is to acquire, develop, own, operate, and ultimately sell or refinance the Project.
+
+ARTICLE 2 - CAPITAL CONTRIBUTIONS
+
+2.1 Total Project Capitalization. The total equity capitalization for the Project shall be One Hundred Twenty Million Dollars ($120,000,000.00).
+
+2.2 Member Contributions.
+    (a) Investor shall contribute ninety percent (90%) of all required Capital Contributions.
+    (b) Managing Member shall contribute ten percent (10%) of all required Capital Contributions.
+
+2.3 Initial Capital Contributions.
+    (a) Investor: $108,000,000.00
+    (b) Managing Member: $12,000,000.00
+
+ARTICLE 3 - ALLOCATION OF PROFITS AND LOSSES
+
+3.1 Allocation of Profits. Profits shall be allocated as follows:
+    (a) First, to Members in proportion to their respective Capital Account deficits, if any
+    (b) Second, to Members in accordance with the distribution waterfall set forth in Article 4
+
+ARTICLE 4 - DISTRIBUTIONS AND WATERFALL
+
+4.1 Distribution Waterfall. Available Cash Flow shall be distributed as follows:
+
+    TIER 1 - Return of Capital:
+    First, to Investor until Investor has received distributions equal to its Capital Contributions.
+
+    TIER 2 - Preferred Return:
+    Second, to Investor until Investor has received a cumulative, non-compounded preferred return of nine percent (9%) per annum on its unreturned Capital Contributions.
+
+    TIER 3 - Catch-Up:
+    Third, one hundred percent (100%) to Managing Member until Managing Member has received twenty percent (20%) of the amounts distributed under Tiers 2 and 3.
+
+    TIER 4 - Residual Split:
+    Thereafter, eighty percent (80%) to Investor and twenty percent (20%) to Managing Member.
+
+4.2 Promote IRR Hurdles. Notwithstanding Section 4.1, the distribution percentages in Tier 4 shall be adjusted as follows:
+
+    (a) If Investor achieves a fifteen percent (15%) IRR:
+        Seventy percent (70%) to Investor, thirty percent (30%) to Managing Member
+
+    (b) If Investor achieves a twenty percent (20%) IRR:
+        Sixty-five percent (65%) to Investor, thirty-five percent (35%) to Managing Member
+
+ARTICLE 5 - MANAGEMENT
+
+5.1 Managing Member Authority. Managing Member shall have exclusive authority to manage the day-to-day operations of the Company and the Project, including:
+    (a) Construction management
+    (b) Property management
+    (c) Leasing
+    (d) Operating budgets under $500,000
+
+5.2 Major Decisions. The following require unanimous Member approval:
+    (a) Sale or refinancing of the Project
+    (b) Capital calls exceeding the approved budget
+    (c) Modifications to Project plans materially affecting scope or cost
+    (d) Execution of construction contracts exceeding $5,000,000
+    (e) Admission of additional Members
+    (f) Bankruptcy filings
+    (g) Related party transactions
+
+ARTICLE 6 - FEES
+
+6.1 Development Fee. Managing Member shall receive a development fee equal to four percent (4%) of total hard and soft costs, payable pro rata with construction draws.
+
+6.2 Asset Management Fee. Managing Member shall receive an annual asset management fee equal to one-half percent (0.5%) of total Project cost, payable monthly.
+
+6.3 Property Management Fee. Managing Member or its affiliate shall receive a property management fee equal to three percent (3%) of gross revenues.
+
+6.4 Disposition Fee. Managing Member shall receive a disposition fee equal to one percent (1%) of gross sales price upon sale of the Project.
+
+ARTICLE 7 - REMOVAL OF MANAGING MEMBER
+
+7.1 Cause Events. Managing Member may be removed for Cause upon:
+    (a) Fraud, willful misconduct, or gross negligence
+    (b) Material breach of this Agreement not cured within 30 days
+    (c) Bankruptcy or insolvency of Managing Member
+    (d) Indictment of Managing Member principals for felony offenses
+
+7.2 Effect of Removal. Upon removal for Cause:
+    (a) Managing Member's promote shall be reduced to zero
+    (b) Managing Member's Capital Account shall be redeemed at 50% of fair market value
+
+ARTICLE 8 - TRANSFER RESTRICTIONS
+
+8.1 Prohibited Transfers. No Member may transfer its Interest without the prior written consent of the other Members.
+
+8.2 Right of First Offer. Any Member desiring to sell must first offer its Interest to the other Members at fair market value.
+
+8.3 Tag-Along Rights. If Managing Member receives a bona fide offer for its Interest, Investor may elect to include a pro rata portion of its Interest in such sale on the same terms.
+
+8.4 Drag-Along Rights. If Investor desires to sell its Interest after Year 5, Investor may require Managing Member to sell its Interest on the same terms.
+
+ARTICLE 9 - GOVERNING LAW
+
+9.1 This Agreement shall be governed by the laws of the State of Delaware.
+
+IN WITNESS WHEREOF, the Members have executed this Agreement.
+
+MANAGING MEMBER:
+Fallon Seaport Development LLC
+
+By: _______________________
+Name: Joseph F. Fallon
+Title: Managing Member
+
+INVESTOR MEMBER:
+Metropolitan Real Estate Partners Fund VII, LP
+
+By: Metropolitan Real Estate Advisors LLC, its General Partner
+
+By: _______________________
+Name: Michael R. Sterling
+Title: Managing Director

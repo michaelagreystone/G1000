@@ -19,6 +19,7 @@ from FallonPrototype.shared.vector_store import (
     DEAL_DATA_COLLECTION,
     MARKET_RESEARCH_COLLECTION,
     MARKET_DEFAULTS_COLLECTION,
+    CONTRACTS_COLLECTION,
 )
 
 
@@ -121,9 +122,10 @@ def build_contract_query(question: str) -> str:
     return question
 
 
-def retrieve_contract_context(question: str, n_results: int = 6) -> list[dict]:
+def retrieve_contract_context(question: str, n_results: int = 8) -> list[dict]:
     """
     Retrieve relevant context from ALL knowledge bases:
+    - Contracts (full contract documents with structured extraction)
     - Deal data (historical deals, contract provisions)
     - Market research (market conditions, trends, outlooks)
     - Market defaults (structured assumptions)
@@ -131,7 +133,15 @@ def retrieve_contract_context(question: str, n_results: int = 6) -> list[dict]:
     query = build_contract_query(question)
     all_results = []
     
-    # 1. Query deal data collection (deals + contracts)
+    # 1. Query contracts collection (full contract documents)
+    contracts_results = query_collection(
+        CONTRACTS_COLLECTION,
+        query,
+        n_results=4,
+    )
+    all_results.extend(contracts_results)
+    
+    # 2. Query deal data collection (deals + contract provisions)
     deal_results = query_collection(
         DEAL_DATA_COLLECTION,
         query,
@@ -139,15 +149,15 @@ def retrieve_contract_context(question: str, n_results: int = 6) -> list[dict]:
     )
     all_results.extend(deal_results)
     
-    # 2. Query market research collection
+    # 3. Query market research collection
     research_results = query_collection(
         MARKET_RESEARCH_COLLECTION,
         query,
-        n_results=4,
+        n_results=3,
     )
     all_results.extend(research_results)
     
-    # 3. Query market defaults for structured data
+    # 4. Query market defaults for structured data
     defaults_results = query_collection(
         MARKET_DEFAULTS_COLLECTION,
         query,
@@ -155,14 +165,14 @@ def retrieve_contract_context(question: str, n_results: int = 6) -> list[dict]:
     )
     all_results.extend(defaults_results)
     
-    # 4. Try filtered query for contract-specific docs
-    contract_results = query_collection(
+    # 5. Try filtered query for contract-specific docs in deal data
+    contract_provision_results = query_collection(
         DEAL_DATA_COLLECTION,
         query,
         n_results=2,
         where={"doc_type": {"$eq": "contract_provision"}},
     )
-    all_results.extend(contract_results)
+    all_results.extend(contract_provision_results)
     
     # Merge and deduplicate
     seen = set()

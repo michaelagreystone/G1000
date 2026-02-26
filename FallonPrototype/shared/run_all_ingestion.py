@@ -16,8 +16,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from FallonPrototype.shared.ingest_deal_data import ingest_deal_data
 from FallonPrototype.shared.ingest_market_defaults import ingest_market_defaults
 from FallonPrototype.shared.ingest_market_research import ingest_market_research as ingest_market_research_dedicated
+from FallonPrototype.shared.ingest_contracts import ingest_contracts
 from FallonPrototype.shared.vector_store import (
-    add_documents, get_collection_counts, DEAL_DATA_COLLECTION, MARKET_RESEARCH_COLLECTION
+    add_documents, get_collection_counts, DEAL_DATA_COLLECTION, MARKET_RESEARCH_COLLECTION, CONTRACTS_COLLECTION
 )
 
 
@@ -94,8 +95,11 @@ def main():
     print("\n--- Phase 3: Market Research ---")
     research_result = ingest_market_research_dedicated()
 
-    print("\n--- Phase 4: Contract Provisions ---")
+    print("\n--- Phase 4: Contract Provisions (Legacy) ---")
     contract_result = ingest_contract_provisions()
+
+    print("\n--- Phase 5: Contracts with Structured Extraction ---")
+    contracts_result = ingest_contracts(extract_metadata=True)
 
     print("\n" + "=" * 60)
     print("INGESTION COMPLETE")
@@ -105,6 +109,7 @@ def main():
     print(f"  fallon_deal_data:        {counts.get('fallon_deal_data', 0)} chunks")
     print(f"  fallon_market_defaults:  {counts.get('fallon_market_defaults', 0)} records")
     print(f"  fallon_market_research:  {counts.get('fallon_market_research', 0)} chunks")
+    print(f"  fallon_contracts:        {counts.get('fallon_contracts', 0)} chunks")
     print("=" * 60)
 
 

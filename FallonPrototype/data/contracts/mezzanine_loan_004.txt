@@ -1,0 +1,164 @@
+MEZZANINE LOAN AGREEMENT
+
+This Mezzanine Loan Agreement ("Agreement") is made as of February 15, 2024, by and between:
+
+LENDER: Blackstone Real Estate Debt Strategies LP, a Delaware limited partnership ("Mezzanine Lender" or "Lender")
+
+BORROWER: Fallon Charlotte Holdings LLC, a Delaware limited liability company ("Mezzanine Borrower" or "Borrower")
+
+RECITALS
+
+WHEREAS, Borrower is the sole member of Fallon Charlotte Development LLC ("Property Owner"), which owns a 280-unit multifamily development project located at 1200 South Tryon Street, Charlotte, North Carolina 28203 (the "Property");
+
+WHEREAS, Property Owner has obtained a senior mortgage loan from Wells Fargo Bank, N.A. in the amount of Forty-Five Million Dollars ($45,000,000.00) (the "Senior Loan");
+
+WHEREAS, Borrower desires to obtain mezzanine financing to be secured by a pledge of Borrower's membership interest in Property Owner;
+
+NOW, THEREFORE, the parties agree as follows:
+
+ARTICLE 1 - LOAN AMOUNT AND TERMS
+
+1.1 Principal Amount. Lender agrees to lend to Borrower the principal sum of Fifteen Million Dollars ($15,000,000.00) (the "Mezzanine Loan").
+
+1.2 Interest Rate. The Mezzanine Loan shall bear interest at a fixed rate of eleven percent (11%) per annum.
+
+1.3 Payment Terms. Interest only payments shall be due monthly during the term. Principal shall be due at maturity.
+
+1.4 Loan Term. The initial term shall be three (3) years from the date hereof, coterminous with the Senior Loan.
+
+1.5 Extension Options. Two (2) one-year extension options, subject to:
+    (a) No Event of Default
+    (b) Minimum DSCR of 1.20x
+    (c) Payment of 0.25% extension fee
+
+ARTICLE 2 - TOTAL CAPITALIZATION
+
+2.1 Capital Stack.
+    Senior Loan:      $45,000,000   (60% LTC)
+    Mezzanine Loan:   $15,000,000   (20% LTC)
+    Equity:           $15,000,000   (20% LTC)
+    ─────────────────────────────────
+    Total:            $75,000,000   (100%)
+
+2.2 Combined LTV. The combined loan-to-value of the Senior Loan and Mezzanine Loan shall not exceed eighty percent (80%).
+
+ARTICLE 3 - SECURITY
+
+3.1 Pledge of Membership Interests. The Mezzanine Loan shall be secured by a first priority pledge of 100% of Borrower's membership interest in Property Owner.
+
+3.2 Assignment of Distributions. Borrower assigns all distributions from Property Owner to Lender as additional collateral.
+
+3.3 UCC Filing. Lender shall file UCC-1 financing statements to perfect its security interest.
+
+ARTICLE 4 - SUBORDINATION AND INTERCREDITOR
+
+4.1 Subordination. The Mezzanine Loan is subordinate to the Senior Loan in right of payment and security.
+
+4.2 Intercreditor Agreement. Lender and Senior Lender have entered into an Intercreditor Agreement governing:
+    (a) Notice requirements
+    (b) Cure rights
+    (c) Standstill periods
+    (d) UCC foreclosure procedures
+
+4.3 Cure Rights. Lender shall have the right (but not obligation) to cure any default under the Senior Loan.
+
+4.4 Standstill. Upon Senior Lender default notice, Lender shall have a sixty (60) day standstill period before exercising remedies.
+
+ARTICLE 5 - COVENANTS
+
+5.1 DSCR Covenant. Borrower shall maintain a minimum Debt Service Coverage Ratio of 1.15x, tested quarterly on a trailing twelve-month basis.
+
+5.2 Occupancy Covenant. The Property shall maintain minimum physical occupancy of 90%.
+
+5.3 Distributions. Prior to Mezzanine Loan repayment:
+    (a) Distributions for Senior Loan debt service are permitted
+    (b) Distributions for approved operating expenses are permitted
+    (c) All other distributions require Lender consent
+
+5.4 Change of Control. No change in the direct or indirect ownership of Borrower or Property Owner without Lender consent.
+
+5.5 Additional Debt. No additional debt at the Borrower or Property Owner level without Lender consent.
+
+ARTICLE 6 - PREPAYMENT
+
+6.1 Lockout Period. The Mezzanine Loan may not be prepaid during the first twelve (12) months.
+
+6.2 Prepayment Premium. Thereafter, prepayment is permitted subject to the following premiums:
+    Months 13-24: 2.0% of outstanding principal
+    Months 25-36: 1.0% of outstanding principal
+    Thereafter: No premium
+
+6.3 Open Period. The final three (3) months of the term shall be open for prepayment without premium.
+
+ARTICLE 7 - DEFAULT AND REMEDIES
+
+7.1 Events of Default.
+    (a) Failure to pay principal or interest when due
+    (b) Breach of any covenant not cured within applicable grace period
+    (c) Default under the Senior Loan not cured by Lender
+    (d) Bankruptcy or insolvency of Borrower, Property Owner, or Guarantor
+    (e) Material adverse change in the Property or Borrower's financial condition
+
+7.2 Remedies. Upon Event of Default, Lender may:
+    (a) Accelerate all amounts due
+    (b) Exercise UCC remedies, including foreclosure on the pledged membership interests
+    (c) Take control of Property Owner
+    (d) Pursue the Guaranty
+    (e) Exercise all other available legal remedies
+
+7.3 UCC Foreclosure. Lender may conduct a public or private sale of the membership interests in accordance with UCC Article 9.
+
+ARTICLE 8 - GUARANTY
+
+8.1 Recourse Carve-Out Guaranty. The Fallon Company, LLC, shall provide a recourse guaranty covering:
+    (a) Fraud, willful misconduct, or material misrepresentation
+    (b) Misapplication of insurance proceeds or condemnation awards
+    (c) Waste
+    (d) Environmental liabilities
+    (e) Voluntary bankruptcy filing
+
+8.2 Completion/Carry Guaranty. Guarantor guarantees completion of any remaining construction and payment of debt service shortfalls during lease-up.
+
+ARTICLE 9 - REPORTING
+
+9.1 Quarterly Reports. Within thirty (30) days of each quarter end:
+    (a) Property operating statements
+    (b) Rent roll
+    (c) DSCR calculations
+    (d) Occupancy reports
+
+9.2 Annual Reports.
+    (a) Audited financial statements of Borrower and Guarantor
+    (b) Annual budget for following year
+    (c) Updated appraisal (if requested)
+
+ARTICLE 10 - GOVERNING LAW
+
+10.1 This Agreement shall be governed by the laws of the State of New York.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement.
+
+LENDER:
+Blackstone Real Estate Debt Strategies LP
+
+By: BREDS GP LLC, its General Partner
+
+By: _______________________
+Name: Jonathan D. Gray
+Title: Senior Managing Director
+
+BORROWER:
+Fallon Charlotte Holdings LLC
+
+By: _______________________
+Name: Joseph F. Fallon
+Title: Authorized Signatory
+
+ACKNOWLEDGED AND AGREED FOR PURPOSES OF GUARANTY:
+
+GUARANTOR:
+The Fallon Company, LLC
+
+By: _______________________
+Name: Joseph F. Fallon
+Title: CEO

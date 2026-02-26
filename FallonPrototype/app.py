@@ -1,8 +1,7 @@
 """
-Fallon Financial Model — Streamlit UI (Phase 6)
+Fallon — Development Intelligence
 
-A clean single-page interface for generating development pro formas
-and answering contract/deal structure questions.
+A minimal, Apple-inspired interface for real estate development analysis.
 """
 
 import streamlit as st
@@ -10,8 +9,9 @@ import pandas as pd
 import subprocess
 import sys
 import os
+import copy
+from datetime import datetime
 
-# Add project to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from FallonPrototype.agents.financial_agent import (
@@ -39,660 +39,955 @@ from FallonPrototype.shared.return_calculator import (
     _val,
 )
 from FallonPrototype.shared.excel_export import export_pro_forma, get_suggested_filename
+from FallonPrototype.shared.claude_client import call_claude
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Page Config
+# Page Config & Apple-Inspired Styling
 # ═══════════════════════════════════════════════════════════════════════════════
 
 st.set_page_config(
-    page_title="Fallon Financial Model",
-    page_icon="🏗️",
+    page_title="Fallon",
+    page_icon="◼",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
-# Custom CSS for styling
 st.markdown("""
 <style>
-    .metric-card {
-        background-color: #f0f2f6;
-        padding: 1rem;
-        border-radius: 0.5rem;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+    
+    /* Global Reset */
+    * {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    }
+    
+    /* Hide Streamlit Branding */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    
+    /* Main Container */
+    .main .block-container {
+        max-width: 900px;
+        padding: 2rem 1rem 6rem 1rem;
+        margin: 0 auto;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 500 !important;
+        letter-spacing: -0.02em !important;
+        color: #1d1d1f !important;
+    }
+    
+    p, span, div {
+        color: #1d1d1f;
+        line-height: 1.5;
+    }
+    
+    /* Hero Title */
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        color: #1d1d1f;
         text-align: center;
+        margin: 3rem 0 0.5rem 0;
+        line-height: 1.1;
     }
-    .warning-banner {
-        background-color: #fff3cd;
-        border: 1px solid #ffc107;
-        padding: 0.75rem;
-        border-radius: 0.25rem;
-        margin-bottom: 1rem;
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #86868b;
+        text-align: center;
+        margin-bottom: 3rem;
     }
-    .error-banner {
-        background-color: #f8d7da;
-        border: 1px solid #dc3545;
-        padding: 0.75rem;
-        border-radius: 0.25rem;
-        margin-bottom: 1rem;
+    
+    /* Chat Messages */
+    .stChatMessage {
+        background: transparent !important;
+        border: none !important;
+        padding: 1.5rem 0 !important;
     }
-    .success-banner {
-        background-color: #d4edda;
-        border: 1px solid #28a745;
-        padding: 0.75rem;
-        border-radius: 0.25rem;
+    
+    [data-testid="stChatMessageContent"] {
+        background: transparent !important;
+        padding: 0 !important;
+    }
+    
+    /* User Message Bubble */
+    [data-testid="stChatMessageContent"] p {
+        font-size: 1.0625rem;
+        line-height: 1.6;
+    }
+    
+    /* Chat Input */
+    .stChatInput {
+        border: none !important;
+    }
+    
+    .stChatInput > div {
+        background: #f5f5f7 !important;
+        border: 1px solid #d2d2d7 !important;
+        border-radius: 24px !important;
+        padding: 0.25rem 0.5rem !important;
+        transition: all 0.2s ease !important;
+    }
+    
+    .stChatInput > div:focus-within {
+        border-color: #0071e3 !important;
+        box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1) !important;
+    }
+    
+    .stChatInput textarea {
+        font-size: 1rem !important;
+        color: #1d1d1f !important;
+    }
+    
+    .stChatInput textarea::placeholder {
+        color: #86868b !important;
+    }
+    
+    /* Metric Cards */
+    .metric-card {
+        background: #ffffff;
+        border: 1px solid #e8e8ed;
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    
+    .metric-card:hover {
+        border-color: #d2d2d7;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    
+    .metric-value {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #1d1d1f;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.25rem;
+    }
+    
+    .metric-label {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: #86868b;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+    
+    /* Pro Forma Card */
+    .proforma-container {
+        background: #fbfbfd;
+        border: 1px solid #e8e8ed;
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 1.5rem 0;
+    }
+    
+    .proforma-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1d1d1f;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+    }
+    
+    /* Data Tables */
+    .stDataFrame {
+        border: none !important;
+    }
+    
+    .stDataFrame > div {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    [data-testid="stDataFrame"] table {
+        font-size: 0.875rem !important;
+    }
+    
+    [data-testid="stDataFrame"] th {
+        background: #f5f5f7 !important;
+        font-weight: 500 !important;
+        color: #1d1d1f !important;
+        border: none !important;
+        padding: 0.75rem 1rem !important;
+    }
+    
+    [data-testid="stDataFrame"] td {
+        border: none !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        padding: 0.75rem 1rem !important;
+        color: #1d1d1f !important;
+    }
+    
+    /* Buttons */
+    .stButton > button {
+        background: #0071e3 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 980px !important;
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9375rem !important;
+        font-weight: 500 !important;
+        transition: all 0.2s ease !important;
+        letter-spacing: 0 !important;
+    }
+    
+    .stButton > button:hover {
+        background: #0077ed !important;
+        transform: scale(1.02);
+    }
+    
+    .stButton > button:active {
+        transform: scale(0.98);
+    }
+    
+    /* Secondary Button */
+    .secondary-btn > button {
+        background: transparent !important;
+        color: #0071e3 !important;
+        border: 1px solid #0071e3 !important;
+    }
+    
+    .secondary-btn > button:hover {
+        background: rgba(0, 113, 227, 0.04) !important;
+    }
+    
+    /* Download Button */
+    .stDownloadButton > button {
+        background: #1d1d1f !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 980px !important;
+        padding: 0.875rem 1.75rem !important;
+        font-size: 0.9375rem !important;
+        font-weight: 500 !important;
+    }
+    
+    .stDownloadButton > button:hover {
+        background: #333336 !important;
+    }
+    
+    /* Expanders */
+    .streamlit-expanderHeader {
+        font-size: 0.9375rem !important;
+        font-weight: 500 !important;
+        color: #1d1d1f !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 1rem 0 !important;
+    }
+    
+    .streamlit-expanderContent {
+        border: none !important;
+        padding: 0 !important;
+    }
+    
+    /* Tabs */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 0 !important;
+        background: #f5f5f7;
+        border-radius: 10px;
+        padding: 4px;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background: transparent !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.875rem !important;
+        font-weight: 500 !important;
+        color: #86868b !important;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background: white !important;
+        color: #1d1d1f !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    }
+    
+    /* Spinner */
+    .stSpinner > div {
+        border-color: #0071e3 transparent transparent transparent !important;
+    }
+    
+    /* Info/Warning Boxes */
+    .stAlert {
+        background: #f5f5f7 !important;
+        border: none !important;
+        border-radius: 12px !important;
+        padding: 1rem 1.25rem !important;
+    }
+    
+    .stAlert > div {
+        color: #1d1d1f !important;
+    }
+    
+    /* Sidebar */
+    [data-testid="stSidebar"] {
+        background: #fbfbfd !important;
+        border-right: 1px solid #e8e8ed !important;
+    }
+    
+    [data-testid="stSidebar"] .block-container {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    /* Sidebar Title */
+    [data-testid="stSidebar"] h1 {
+        font-size: 1.125rem !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Metrics in Sidebar */
+    [data-testid="stMetricValue"] {
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+        color: #1d1d1f !important;
+    }
+    
+    [data-testid="stMetricLabel"] {
+        font-size: 0.75rem !important;
+        color: #86868b !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.02em !important;
+    }
+    
+    /* Caption */
+    .caption-text {
+        font-size: 0.8125rem;
+        color: #86868b;
+        margin-top: 0.5rem;
+    }
+    
+    /* Source Pills */
+    .source-pill {
+        display: inline-block;
+        background: #f5f5f7;
+        color: #86868b;
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 0.25rem 0.75rem;
+        border-radius: 100px;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    /* Confidence Indicator */
+    .confidence-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+    }
+    
+    .confidence-high { background: #34c759; }
+    .confidence-medium { background: #ff9f0a; }
+    .confidence-low { background: #ff3b30; }
+    
+    /* Empty State */
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+    
+    .empty-state-icon {
+        font-size: 3rem;
         margin-bottom: 1rem;
+        opacity: 0.3;
+    }
+    
+    .empty-state-text {
+        color: #86868b;
+        font-size: 1.0625rem;
+    }
+    
+    /* Divider */
+    hr {
+        border: none;
+        border-top: 1px solid #e8e8ed;
+        margin: 2rem 0;
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #d2d2d7;
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #86868b;
     }
 </style>
 """, unsafe_allow_html=True)
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Session State Initialization
+# Session State
 # ═══════════════════════════════════════════════════════════════════════════════
 
-if "response" not in st.session_state:
-    st.session_state.response = None
-if "params" not in st.session_state:
-    st.session_state.params = None
-if "original_query" not in st.session_state:
-    st.session_state.original_query = ""
-if "needs_clarification" not in st.session_state:
-    st.session_state.needs_clarification = False
-if "adjusted_pro_forma" not in st.session_state:
-    st.session_state.adjusted_pro_forma = None
-if "contract_response" not in st.session_state:
-    st.session_state.contract_response = None
-if "active_tab" not in st.session_state:
-    st.session_state.active_tab = "Pro Forma Generator"
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+if "pending_clarification" not in st.session_state:
+    st.session_state.pending_clarification = None
+if "current_pro_forma" not in st.session_state:
+    st.session_state.current_pro_forma = None
+if "current_params" not in st.session_state:
+    st.session_state.current_params = None
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Sidebar — Status Panel
+# Intent Classification
 # ═══════════════════════════════════════════════════════════════════════════════
 
-with st.sidebar:
-    st.title("Fallon Financial Model")
-    st.markdown("---")
+INTENT_PROMPT = """You are a real estate assistant. Classify the user's intent.
+
+Return ONLY one word:
+- PRO_FORMA: Generate financial model, pro forma, underwriting, development analysis
+- QUESTION: Question about markets, contracts, deals, terms, or information
+- ADJUSTMENT: Modify existing pro forma (change cap rate, rent, costs)
+- CLARIFICATION: Providing additional information for a pending request
+
+User message: {message}
+
+Intent:"""
+
+
+def classify_intent(message: str, has_pending: bool = False) -> str:
+    if has_pending:
+        return "CLARIFICATION"
     
-    # Collection status
-    st.subheader("Data Status")
-    try:
-        counts = get_collection_counts()
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric("Deal Memos", counts.get("fallon_deal_data", 0))
-            st.metric("Market Research", counts.get("fallon_market_research", 0))
-        with col2:
-            st.metric("Market Defaults", counts.get("fallon_market_defaults", 0))
-    except Exception:
-        st.warning("Could not load data counts")
-    
-    st.markdown("---")
-    
-    # Re-index button
-    if st.button("Re-index Data", use_container_width=True):
-        with st.spinner("Running ingestion pipeline..."):
-            try:
-                result = subprocess.run(
-                    [sys.executable, "-m", "FallonPrototype.Financial Model.shared.run_all_ingestion"],
-                    capture_output=True,
-                    text=True,
-                    cwd=os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                )
-                if result.returncode == 0:
-                    st.success("Data re-indexed successfully!")
-                else:
-                    st.error(f"Ingestion failed: {result.stderr[:200]}")
-            except Exception as e:
-                st.error(f"Error: {e}")
-    
-    # Clear session button
-    if st.button("Clear Session", use_container_width=True):
-        for key in list(st.session_state.keys()):
-            del st.session_state[key]
-        st.rerun()
-    
-    st.markdown("---")
-    st.caption("Built for The Fallon Company")
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# Main Area — Mode Selection
-# ═══════════════════════════════════════════════════════════════════════════════
-
-main_tab1, main_tab2 = st.tabs(["Pro Forma Generator", "Market & Deal Q&A"])
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# TAB 1: Pro Forma Generator
-# ═══════════════════════════════════════════════════════════════════════════════
-
-with main_tab1:
-    st.header("Development Pro Forma Generator")
-    
-    # Query input
-    query = st.text_area(
-        "Describe your project:",
-        placeholder="""Examples:
-    * "200-unit multifamily in Charlotte, targeting 15% IRR"
-    * "Mixed-use hotel and apartments in Nashville, 300 keys and 180 units"
-    * "80,000sf Class A office in Boston Seaport"
-    * "150 condos in Charlotte with $12M land cost"
-    """,
-        height=120,
-        key="query_input",
+    response = call_claude(
+        "Return only: PRO_FORMA, QUESTION, ADJUSTMENT, or CLARIFICATION",
+        INTENT_PROMPT.format(message=message),
+        max_tokens=20,
     )
-
-# Generate button
-col1, col2, col3 = st.columns([2, 1, 2])
-with col2:
-    generate_clicked = st.button("Generate Model", type="primary", use_container_width=True)
-
-# Handle generation
-if generate_clicked and query.strip():
-    st.session_state.original_query = query
     
-    with st.spinner("Building your pro forma..."):
-        try:
-            response = run(query)
-            st.session_state.response = response
-            st.session_state.needs_clarification = response.needs_clarification
+    intent = response.strip().upper()
+    if intent in ["PRO_FORMA", "QUESTION", "ADJUSTMENT", "CLARIFICATION"]:
+        return intent
+    
+    msg_lower = message.lower()
+    pro_forma_keywords = ["generate", "model", "pro forma", "underwrite", "build", "unit", "keys", "sf "]
+    if any(kw in msg_lower for kw in pro_forma_keywords):
+        return "PRO_FORMA"
+    
+    return "QUESTION"
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Response Handlers
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def handle_pro_forma_request(user_message: str) -> dict:
+    response = run(user_message)
+    
+    if response.needs_clarification:
+        params = normalize_parameters(extract_parameters(user_message))
+        st.session_state.pending_clarification = {
+            "type": "pro_forma",
+            "params": params,
+            "original_query": user_message,
+        }
+        return {
+            "type": "clarification",
+            "text": response.answer,
+            "confidence": response.confidence,
+        }
+    
+    if response.export_data and "pro_forma" in response.export_data:
+        st.session_state.current_pro_forma = response.export_data
+        st.session_state.pending_clarification = None
+        return {
+            "type": "pro_forma",
+            "data": response.export_data,
+            "sources": response.sources,
+            "confidence": response.confidence,
+            "warnings": response.warnings,
+        }
+    
+    return {
+        "type": "text",
+        "text": response.answer,
+        "confidence": response.confidence,
+    }
+
+
+def handle_clarification(user_message: str) -> dict:
+    pending = st.session_state.pending_clarification
+    
+    if pending["type"] == "pro_forma":
+        merged_params = merge_clarification(pending["params"], user_message)
+        missing = check_missing_parameters(merged_params)
+        
+        if missing:
+            st.session_state.pending_clarification["params"] = merged_params
+            return {
+                "type": "clarification",
+                "text": format_clarification_message(missing),
+            }
+        
+        deal_comps = retrieve_deal_comps(merged_params)
+        defaults_dict = get_defaults_for_params(merged_params)
+        defaults_chunks = retrieve_defaults_context(merged_params)
+        context = format_financial_context(deal_comps, defaults_dict, defaults_chunks, merged_params)
+        
+        pro_forma = generate_pro_forma(merged_params, context)
+        
+        if pro_forma:
+            calc_results = compute_returns(pro_forma)
+            warnings = check_return_discrepancy(pro_forma, calc_results)
             
-            if response.needs_clarification:
-                # Extract params for later merge
-                params = normalize_parameters(extract_parameters(query))
-                st.session_state.params = params
-        except Exception as e:
-            st.error(f"Something went wrong generating your model. Please try rephrasing your request or check that all data has been indexed.")
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# Clarification Flow
-# ═══════════════════════════════════════════════════════════════════════════════
-
-if st.session_state.needs_clarification and st.session_state.response:
-    st.warning(st.session_state.response.answer)
+            export_data = {
+                "pro_forma": pro_forma,
+                "calc_results": calc_results,
+                "warnings": warnings,
+            }
+            
+            st.session_state.current_pro_forma = export_data
+            st.session_state.pending_clarification = None
+            
+            return {
+                "type": "pro_forma",
+                "data": export_data,
+                "sources": [c["metadata"]["source"] for c in deal_comps],
+                "confidence": "medium",
+                "warnings": warnings,
+            }
+        
+        return {"type": "text", "text": "Unable to generate the model. Please try again."}
     
-    clarification = st.text_input("Your answer:", key="clarification_input")
+    return {"type": "text", "text": "Could you clarify what you need?"}
+
+
+def handle_question(user_message: str) -> dict:
+    response = answer_contract_question(user_message)
     
-    if st.button("Submit Clarification"):
-        if clarification.strip():
-            with st.spinner("Updating model with your details..."):
-                try:
-                    # Merge clarification with original params
-                    merged_params = merge_clarification(
-                        st.session_state.params,
-                        clarification
-                    )
-                    
-                    # Check if we have enough now
-                    missing = check_missing_parameters(merged_params)
-                    
-                    if missing:
-                        st.warning(format_clarification_message(missing))
-                    else:
-                        # Generate with merged params
-                        deal_comps = retrieve_deal_comps(merged_params)
-                        defaults_dict = get_defaults_for_params(merged_params)
-                        defaults_chunks = retrieve_defaults_context(merged_params)
-                        context = format_financial_context(
-                            deal_comps, defaults_dict, defaults_chunks, merged_params
-                        )
-                        
-                        pro_forma = generate_pro_forma(merged_params, context)
-                        
-                        if pro_forma:
-                            calc_results = compute_returns(pro_forma)
-                            warnings = check_return_discrepancy(pro_forma, calc_results)
-                            
-                            # Build response
-                            response = AgentResponse(
-                                intent="FINANCIAL_MODEL",
-                                answer="Pro forma generated successfully.",
-                                sources=[c["metadata"]["source"] for c in deal_comps],
-                                raw_chunks=deal_comps,
-                                confidence="medium",
-                                export_data={
-                                    "pro_forma": pro_forma,
-                                    "calc_results": calc_results,
-                                    "warnings": warnings,
-                                },
-                                warnings=warnings,
-                            )
-                            
-                            st.session_state.response = response
-                            st.session_state.needs_clarification = False
-                            st.rerun()
-                        else:
-                            st.error("Could not generate pro forma. Please try again.")
-                except Exception as e:
-                    st.error(f"Error: {e}")
+    return {
+        "type": "answer",
+        "text": response.answer,
+        "sources": response.sources,
+        "confidence": response.confidence,
+        "chunks": response.chunks_used,
+    }
+
+
+def handle_adjustment(user_message: str) -> dict:
+    if not st.session_state.current_pro_forma:
+        return {
+            "type": "text",
+            "text": "No active model to adjust. Generate one first.",
+        }
+    
+    adjustments = parse_adjustment_request(user_message)
+    
+    if not adjustments:
+        return {
+            "type": "text",
+            "text": "Try: \"change cap rate to 5.5%\" or \"set rent to $2.50/sf\"",
+        }
+    
+    adjusted = copy.deepcopy(st.session_state.current_pro_forma["pro_forma"])
+    changes_made = []
+    
+    for field, value in adjustments.items():
+        if apply_adjustment(adjusted, field, value):
+            changes_made.append(f"{field.replace('_', ' ')}: {value}")
+    
+    new_calc = compute_returns(adjusted)
+    warnings = check_return_discrepancy(adjusted, new_calc)
+    
+    st.session_state.current_pro_forma = {
+        "pro_forma": adjusted,
+        "calc_results": new_calc,
+        "warnings": warnings,
+    }
+    
+    return {
+        "type": "pro_forma",
+        "data": st.session_state.current_pro_forma,
+        "text": f"Updated {', '.join(changes_made)}",
+        "confidence": "high",
+        "warnings": warnings,
+    }
+
+
+def parse_adjustment_request(message: str) -> dict:
+    import re
+    adjustments = {}
+    msg_lower = message.lower()
+    
+    cap_match = re.search(r'cap\s*rate.*?(\d+\.?\d*)\s*%?', msg_lower)
+    if cap_match:
+        adjustments["exit_cap_rate"] = float(cap_match.group(1))
+    
+    rent_match = re.search(r'rent.*?\$?(\d+\.?\d*)', msg_lower)
+    if rent_match:
+        adjustments["rent_psf"] = float(rent_match.group(1))
+    
+    cost_match = re.search(r'(?:construction|hard)\s*cost.*?\$?(\d+)', msg_lower)
+    if cost_match:
+        adjustments["hard_cost_psf"] = float(cost_match.group(1))
+    
+    loan_match = re.search(r'(?:loan|interest)\s*rate.*?(\d+\.?\d*)\s*%?', msg_lower)
+    if loan_match:
+        adjustments["loan_rate"] = float(loan_match.group(1))
+    
+    return adjustments
+
+
+def apply_adjustment(pro_forma: dict, field: str, value: float) -> bool:
+    mapping = {
+        "exit_cap_rate": ("return_metrics", "exit_cap_rate_pct"),
+        "rent_psf": ("revenue_assumptions", "rent_psf_monthly"),
+        "hard_cost_psf": ("cost_assumptions", "hard_cost_psf"),
+        "loan_rate": ("financing_assumptions", "construction_loan_rate_pct"),
+    }
+    
+    if field not in mapping:
+        return False
+    
+    section, key = mapping[field]
+    if section in pro_forma and key in pro_forma[section]:
+        if isinstance(pro_forma[section][key], dict):
+            pro_forma[section][key]["value"] = value
+        else:
+            pro_forma[section][key] = value
+        return True
+    return False
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# Results Display
+# Display Components
 # ═══════════════════════════════════════════════════════════════════════════════
 
-if st.session_state.response and not st.session_state.needs_clarification:
-    response = st.session_state.response
-    export_data = response.export_data
+def display_pro_forma_card(data: dict):
+    """Display a minimal pro forma card."""
+    pro_forma = data.get("pro_forma", {})
+    calc_results = data.get("calc_results", {})
+    warnings = data.get("warnings", [])
     
-    if export_data and "pro_forma" in export_data:
-        pro_forma = st.session_state.adjusted_pro_forma or export_data["pro_forma"]
-        calc_results = export_data.get("calc_results", {})
-        warnings = export_data.get("warnings", [])
-        
-        st.markdown("---")
-        
-        # ═══════════════════════════════════════════════════════════════════════
-        # Headline Metrics
-        # ═══════════════════════════════════════════════════════════════════════
-        
-        returns = pro_forma.get("return_metrics", {})
-        costs = pro_forma.get("cost_assumptions", {})
-        summary = pro_forma.get("project_summary", {})
-        
-        deal_name = summary.get("deal_name", "Development Pro Forma")
-        st.subheader(deal_name)
-        
-        # Four metric cards
-        col1, col2, col3, col4 = st.columns(4)
-        
-        irr = _val(returns, "project_irr_levered_pct")
-        calc_irr = calc_results.get("calc_irr_approx_pct")
-        irr_delta = f"{calc_irr - irr:+.1f}%" if (irr and calc_irr) else None
-        
-        multiple = _val(returns, "equity_multiple_lp")
-        calc_mult = calc_results.get("calc_equity_multiple_approx")
-        mult_delta = f"{calc_mult - multiple:+.2f}x" if (multiple and calc_mult) else None
-        
-        poc = _val(returns, "profit_on_cost_pct")
-        calc_poc = calc_results.get("calc_profit_on_cost_pct")
-        poc_delta = f"{calc_poc - poc:+.1f}%" if (poc and calc_poc) else None
-        
-        total_cost = _val(costs, "total_project_cost")
-        
-        with col1:
-            st.metric(
-                "LP IRR",
-                f"{irr:.1f}%" if irr else "—",
-                delta=irr_delta,
-                delta_color="normal" if irr_delta else "off",
-            )
-        
-        with col2:
-            st.metric(
-                "Equity Multiple",
-                f"{multiple:.2f}x" if multiple else "—",
-                delta=mult_delta,
-                delta_color="normal" if mult_delta else "off",
-            )
-        
-        with col3:
-            st.metric(
-                "Profit on Cost",
-                f"{poc:.1f}%" if poc else "—",
-                delta=poc_delta,
-                delta_color="normal" if poc_delta else "off",
-            )
-        
-        with col4:
-            st.metric(
-                "Total Project Cost",
-                f"${total_cost/1_000_000:.1f}M" if total_cost else "—",
-            )
-        
-        # ═══════════════════════════════════════════════════════════════════════
-        # Confidence & Warning Banners
-        # ═══════════════════════════════════════════════════════════════════════
-        
-        if response.confidence == "low":
-            st.error("**Low confidence:** No market-specific data found. All assumptions are national averages. Verify before use.")
-        elif response.confidence == "medium":
-            st.warning("**Medium confidence:** Market defaults used. Confirm rent and cost assumptions with local broker.")
-        
-        for warning in warnings:
-            st.warning(warning)
-        
-        # ═══════════════════════════════════════════════════════════════════════
-        # Pro Forma Tabs
-        # ═══════════════════════════════════════════════════════════════════════
-        
-        st.markdown("---")
-        
-        tab1, tab2, tab3, tab4, tab5 = st.tabs([
-            "Summary", "Revenue", "Costs", "Financing", "Returns"
-        ])
+    summary = pro_forma.get("project_summary", {})
+    returns = pro_forma.get("return_metrics", {})
+    costs = pro_forma.get("cost_assumptions", {})
+    
+    deal_name = _val(summary, "deal_name", "Development Model")
+    
+    # Container
+    st.markdown(f'<div class="proforma-container">', unsafe_allow_html=True)
+    st.markdown(f'<div class="proforma-title">{deal_name}</div>', unsafe_allow_html=True)
+    
+    # Metrics
+    irr = _val(returns, "project_irr_levered_pct")
+    multiple = _val(returns, "equity_multiple_lp")
+    poc = _val(returns, "profit_on_cost_pct")
+    total_cost = _val(costs, "total_project_cost")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.markdown(f'''
+        <div class="metric-card">
+            <div class="metric-value">{f"{irr:.1f}%" if irr else "—"}</div>
+            <div class="metric-label">LP IRR</div>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f'''
+        <div class="metric-card">
+            <div class="metric-value">{f"{multiple:.2f}x" if multiple else "—"}</div>
+            <div class="metric-label">Multiple</div>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown(f'''
+        <div class="metric-card">
+            <div class="metric-value">{f"{poc:.1f}%" if poc else "—"}</div>
+            <div class="metric-label">Profit on Cost</div>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    with col4:
+        st.markdown(f'''
+        <div class="metric-card">
+            <div class="metric-value">{f"${total_cost/1_000_000:.0f}M" if total_cost else "—"}</div>
+            <div class="metric-label">Total Cost</div>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Warnings
+    for warning in warnings:
+        st.warning(warning)
+    
+    # Details
+    with st.expander("View Details"):
+        tab1, tab2, tab3, tab4, tab5 = st.tabs(["Summary", "Revenue", "Costs", "Financing", "Returns"])
         
         def section_to_df(section: dict) -> pd.DataFrame:
-            """Convert a pro forma section to a styled DataFrame."""
             rows = []
             for key, field in section.items():
                 if isinstance(field, dict) and "value" in field:
+                    val = field.get("value")
+                    if isinstance(val, float):
+                        val = f"{val:,.2f}" if val < 100 else f"{val:,.0f}"
                     rows.append({
-                        "Variable": key.replace("_", " ").title(),
-                        "Value": field.get("value"),
+                        "Item": key.replace("_", " ").title(),
+                        "Value": val,
                         "Unit": field.get("unit", ""),
-                        "Status": field.get("label", ""),
                     })
                 elif field is not None and not isinstance(field, dict):
+                    val = field
+                    if isinstance(val, float):
+                        val = f"{val:,.2f}" if val < 100 else f"{val:,.0f}"
                     rows.append({
-                        "Variable": key.replace("_", " ").title(),
-                        "Value": field,
+                        "Item": key.replace("_", " ").title(),
+                        "Value": val,
                         "Unit": "",
-                        "Status": "confirmed",
                     })
-            return pd.DataFrame(rows)
-        
-        def style_by_label(row):
-            """Apply background color based on label."""
-            label = row.get("Status", "")
-            colors = {
-                "confirmed": "background-color: #FFFF99",
-                "estimated": "background-color: #CCE5FF",
-                "calculated": "background-color: #FFFFFF",
-                "missing": "background-color: #FFCCCC",
-            }
-            color = colors.get(label, "")
-            return [color] * len(row)
+            return pd.DataFrame(rows) if rows else pd.DataFrame({"Item": [], "Value": [], "Unit": []})
         
         with tab1:
-            df = section_to_df(pro_forma.get("project_summary", {}))
-            st.dataframe(df.style.apply(style_by_label, axis=1), use_container_width=True, hide_index=True)
-        
+            st.dataframe(section_to_df(pro_forma.get("project_summary", {})), use_container_width=True, hide_index=True)
         with tab2:
-            df = section_to_df(pro_forma.get("revenue_assumptions", {}))
-            st.dataframe(df.style.apply(style_by_label, axis=1), use_container_width=True, hide_index=True)
-        
+            st.dataframe(section_to_df(pro_forma.get("revenue_assumptions", {})), use_container_width=True, hide_index=True)
         with tab3:
-            df = section_to_df(pro_forma.get("cost_assumptions", {}))
-            st.dataframe(df.style.apply(style_by_label, axis=1), use_container_width=True, hide_index=True)
-        
+            st.dataframe(section_to_df(pro_forma.get("cost_assumptions", {})), use_container_width=True, hide_index=True)
         with tab4:
-            df = section_to_df(pro_forma.get("financing_assumptions", {}))
-            st.dataframe(df.style.apply(style_by_label, axis=1), use_container_width=True, hide_index=True)
-        
+            st.dataframe(section_to_df(pro_forma.get("financing_assumptions", {})), use_container_width=True, hide_index=True)
         with tab5:
-            df = section_to_df(pro_forma.get("return_metrics", {}))
-            st.dataframe(df.style.apply(style_by_label, axis=1), use_container_width=True, hide_index=True)
-        
-        # ═══════════════════════════════════════════════════════════════════════
-        # Sensitivity Table
-        # ═══════════════════════════════════════════════════════════════════════
-        
-        st.markdown("---")
-        st.subheader("Sensitivity Analysis: Levered IRR (%)")
-        st.caption("Exit Cap Rate vs Construction Cost")
-        
+            st.dataframe(section_to_df(pro_forma.get("return_metrics", {})), use_container_width=True, hide_index=True)
+    
+    # Sensitivity
+    with st.expander("Sensitivity"):
         target_irr = _val(returns, "lp_irr_pct", 14.0)
         sensitivity = compute_sensitivity_table(pro_forma, target_irr=target_irr)
         
-        # Build sensitivity DataFrame
-        sens_data = {}
-        sens_data["Cap Rate"] = sensitivity["rows"]
+        sens_data = {"Exit Cap": sensitivity["rows"]}
         for i, col_label in enumerate(sensitivity["cols"]):
             sens_data[col_label] = [
                 f"{sensitivity['values'][j][i]:.1f}%" if sensitivity['values'][j][i] else "—"
                 for j in range(3)
             ]
-        
-        sens_df = pd.DataFrame(sens_data)
-        
-        def style_sensitivity(val):
-            """Apply green/yellow/red styling to sensitivity cells."""
-            if val == "—" or "%" not in str(val):
-                return ""
-            try:
-                irr_val = float(val.replace("%", ""))
-                if irr_val >= target_irr:
-                    return "background-color: #C6EFCE"  # Green
-                elif irr_val >= target_irr - 2:
-                    return "background-color: #FFEB9C"  # Yellow
-                else:
-                    return "background-color: #FFC7CE"  # Red
-            except:
-                return ""
-        
-        styled_sens = sens_df.style.applymap(
-            style_sensitivity,
-            subset=["-10%", "Base", "+10%"]
-        )
-        
-        st.dataframe(styled_sens, use_container_width=True, hide_index=True)
-        
-        # Legend
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.markdown("🟢 Meets target IRR")
-        with col2:
-            st.markdown("🟡 Within 200bps of target")
-        with col3:
-            st.markdown("🔴 Below target")
-        
-        # ═══════════════════════════════════════════════════════════════════════
-        # Source Expander
-        # ═══════════════════════════════════════════════════════════════════════
-        
-        with st.expander("View Assumption Sources & Comparable Deals"):
-            st.subheader("Estimated Assumptions")
-            
-            # Collect estimated assumptions
-            estimated = []
-            for section_name in ["revenue_assumptions", "cost_assumptions", 
-                                "financing_assumptions", "return_metrics"]:
-                section = pro_forma.get(section_name, {})
-                for key, field in section.items():
-                    if isinstance(field, dict) and field.get("label") == "estimated":
-                        estimated.append({
-                            "Variable": key.replace("_", " ").title(),
-                            "Value": field.get("value"),
-                            "Source": field.get("source", ""),
-                        })
-            
-            if estimated:
-                st.dataframe(pd.DataFrame(estimated), use_container_width=True, hide_index=True)
-            else:
-                st.info("No estimated assumptions found.")
-            
-            st.subheader("Comparable Deals Retrieved")
-            
-            if response.raw_chunks:
-                for i, chunk in enumerate(response.raw_chunks, 1):
-                    st.markdown(f"**{i}. {chunk['metadata'].get('source', 'Unknown')}** — Relevance: {chunk.get('relevance', 'N/A')}")
-                    st.caption(chunk.get("text", "")[:200] + "...")
-            else:
-                st.info("No comparable deals retrieved.")
-        
-        # ═══════════════════════════════════════════════════════════════════════
-        # Adjust Assumptions Panel
-        # ═══════════════════════════════════════════════════════════════════════
-        
-        with st.expander("Adjust Key Assumptions"):
-            st.caption("Modify values below and click 'Update Returns' to recalculate without a new API call.")
-            
-            col1, col2 = st.columns(2)
-            
-            with col1:
-                adj_cap_rate = st.number_input(
-                    "Exit Cap Rate (%)",
-                    value=_val(returns, "exit_cap_rate_pct", 5.25),
-                    min_value=3.0,
-                    max_value=12.0,
-                    step=0.25,
-                    key="adj_cap_rate",
-                )
-                
-                adj_hard_cost = st.number_input(
-                    "Construction Cost ($/sf)",
-                    value=_val(pro_forma.get("cost_assumptions", {}), "hard_cost_psf", 300),
-                    min_value=100,
-                    max_value=600,
-                    step=10,
-                    key="adj_hard_cost",
-                )
-                
-                adj_rent = st.number_input(
-                    "Monthly Rent ($/sf)",
-                    value=_val(pro_forma.get("revenue_assumptions", {}), "rent_psf_monthly", 1.85),
-                    min_value=0.5,
-                    max_value=5.0,
-                    step=0.05,
-                    key="adj_rent",
-                )
-            
-            with col2:
-                adj_loan_rate = st.number_input(
-                    "Construction Loan Rate (%)",
-                    value=_val(pro_forma.get("financing_assumptions", {}), "construction_loan_rate_pct", 7.5),
-                    min_value=4.0,
-                    max_value=12.0,
-                    step=0.25,
-                    key="adj_loan_rate",
-                )
-                
-                adj_lease_up = st.number_input(
-                    "Lease-Up Months",
-                    value=int(_val(pro_forma.get("revenue_assumptions", {}), "lease_up_months", 18)),
-                    min_value=6,
-                    max_value=36,
-                    step=1,
-                    key="adj_lease_up",
-                )
-            
-            if st.button("Update Returns", type="secondary"):
-                # Create adjusted pro forma
-                import copy
-                adjusted = copy.deepcopy(pro_forma)
-                
-                # Update values
-                if "return_metrics" in adjusted and "exit_cap_rate_pct" in adjusted["return_metrics"]:
-                    adjusted["return_metrics"]["exit_cap_rate_pct"]["value"] = adj_cap_rate
-                
-                if "cost_assumptions" in adjusted and "hard_cost_psf" in adjusted["cost_assumptions"]:
-                    adjusted["cost_assumptions"]["hard_cost_psf"]["value"] = adj_hard_cost
-                
-                if "revenue_assumptions" in adjusted and "rent_psf_monthly" in adjusted["revenue_assumptions"]:
-                    adjusted["revenue_assumptions"]["rent_psf_monthly"]["value"] = adj_rent
-                
-                if "financing_assumptions" in adjusted and "construction_loan_rate_pct" in adjusted["financing_assumptions"]:
-                    adjusted["financing_assumptions"]["construction_loan_rate_pct"]["value"] = adj_loan_rate
-                
-                if "revenue_assumptions" in adjusted and "lease_up_months" in adjusted["revenue_assumptions"]:
-                    adjusted["revenue_assumptions"]["lease_up_months"]["value"] = adj_lease_up
-                
-                # Recalculate returns
-                new_calc = compute_returns(adjusted)
-                
-                # Update session state
-                st.session_state.adjusted_pro_forma = adjusted
-                response.export_data["calc_results"] = new_calc
-                
-                st.success("Returns updated! Scroll up to see new metrics.")
-                st.rerun()
-        
-        # ═══════════════════════════════════════════════════════════════════════
-        # Download Button
-        # ═══════════════════════════════════════════════════════════════════════
-        
-        st.markdown("---")
-        
-        # Prepare export data with sensitivity
-        export_data_with_sens = export_data.copy()
-        export_data_with_sens["sensitivity"] = sensitivity
-        if st.session_state.adjusted_pro_forma:
-            export_data_with_sens["pro_forma"] = st.session_state.adjusted_pro_forma
-        
-        excel_bytes = export_pro_forma(export_data_with_sens, deal_name)
-        filename = get_suggested_filename(export_data_with_sens)
-        
-        st.download_button(
-            label="Download Model (.xlsx)",
-            data=excel_bytes,
-            file_name=filename,
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            use_container_width=True,
-        )
+        st.dataframe(pd.DataFrame(sens_data), use_container_width=True, hide_index=True)
     
-    else:
-        # No pro forma in response — show the answer text
-        st.info(response.answer)
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# TAB 2: Market & Deal Q&A
-# ═══════════════════════════════════════════════════════════════════════════════
-
-with main_tab2:
-    st.header("Market & Deal Q&A")
-    st.caption("Ask about Boston, Charlotte, Nashville markets, JV structures, contracts, and deal terms.")
+    st.markdown("<br>", unsafe_allow_html=True)
     
-    # Sample questions
-    with st.expander("Example Questions"):
-        st.markdown("""
-        **Market Questions:**
-        - What are current cap rates in Charlotte for multifamily?
-        - What's the rent outlook for Boston Seaport?
-        - How are construction costs trending in Nashville?
-        - What's the supply/demand situation in Charlotte multifamily?
-        
-        **Contract Questions:**
-        - How does a typical waterfall distribution work?
-        - What is a standard LP preferred return?
-        - Explain the GP catch-up provision
-        - What are typical promote structures for development deals?
-        - Explain NNN vs gross lease structures
-        """)
+    # Download
+    sensitivity = compute_sensitivity_table(pro_forma, target_irr=_val(returns, "lp_irr_pct", 14.0))
+    export_data = {**data, "sensitivity": sensitivity}
+    excel_bytes = export_pro_forma(export_data, deal_name)
+    filename = get_suggested_filename(export_data)
     
-    # Question input
-    contract_question = st.text_area(
-        "Your question:",
-        placeholder="e.g., What are cap rates in Charlotte? or How does a 90/10 JV waterfall work?",
-        height=100,
-        key="contract_question",
+    st.download_button(
+        label="Download Model",
+        data=excel_bytes,
+        file_name=filename,
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        use_container_width=True,
     )
     
-    col1, col2, col3 = st.columns([2, 1, 2])
-    with col2:
-        ask_clicked = st.button("Ask Question", type="primary", use_container_width=True, key="ask_contract")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+def display_answer(text: str, sources: list, confidence: str):
+    """Display a Q&A answer with minimal styling."""
+    conf_class = f"confidence-{confidence}"
     
-    if ask_clicked and contract_question.strip():
-        with st.spinner("Searching documents and generating answer..."):
+    st.markdown(text)
+    
+    if sources:
+        st.markdown(f'''
+        <div style="margin-top: 1rem;">
+            <span class="confidence-dot {conf_class}"></span>
+            <span style="font-size: 0.8125rem; color: #86868b;">{confidence.title()} confidence</span>
+        </div>
+        ''', unsafe_allow_html=True)
+        
+        pills_html = "".join(f'<span class="source-pill">{s}</span>' for s in sources[:3])
+        st.markdown(f'<div>{pills_html}</div>', unsafe_allow_html=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Sidebar
+# ═══════════════════════════════════════════════════════════════════════════════
+
+with st.sidebar:
+    st.markdown("### Settings")
+    st.markdown("---")
+    
+    try:
+        counts = get_collection_counts()
+        st.caption("KNOWLEDGE BASE")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("Contracts", counts.get("fallon_contracts", 0))
+            st.metric("Research", counts.get("fallon_market_research", 0))
+        with col2:
+            st.metric("Deals", counts.get("fallon_deal_data", 0))
+            st.metric("Defaults", counts.get("fallon_market_defaults", 0))
+    except Exception:
+        pass
+    
+    st.markdown("---")
+    
+    if st.button("Reindex Data", use_container_width=True):
+        with st.spinner(""):
             try:
-                contract_response = answer_contract_question(contract_question)
-                st.session_state.contract_response = contract_response
+                result = subprocess.run(
+                    [sys.executable, "-m", "FallonPrototype.shared.run_all_ingestion"],
+                    capture_output=True,
+                    text=True,
+                    cwd=os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                )
+                st.success("Done" if result.returncode == 0 else "Failed")
             except Exception:
-                st.error("Something went wrong. Please try rephrasing your question.")
+                st.error("Error")
     
-    # Display contract response
-    if st.session_state.contract_response:
-        resp = st.session_state.contract_response
-        
-        # Confidence indicator
-        confidence_colors = {"high": "green", "medium": "orange", "low": "red"}
-        st.markdown(f"**Confidence:** :{confidence_colors.get(resp.confidence, 'gray')}[{resp.confidence.upper()}]")
-        
-        # Sources
-        if resp.sources:
-            st.caption(f"Sources: {', '.join(resp.sources)}")
-        
-        st.markdown("---")
-        
-        # Answer
-        st.markdown(resp.answer)
-        
-        # Show retrieved chunks
-        with st.expander("View Source Documents"):
-            for i, chunk in enumerate(resp.chunks_used, 1):
-                source = chunk.get("metadata", {}).get("source", "Unknown")
-                relevance = chunk.get("relevance", "unknown")
-                text = chunk.get("text", "")[:500]
+    st.markdown('<div class="secondary-btn">', unsafe_allow_html=True)
+    if st.button("Clear Conversation", use_container_width=True):
+        st.session_state.messages = []
+        st.session_state.pending_clarification = None
+        st.session_state.current_pro_forma = None
+        st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+    
+    st.markdown("---")
+    st.caption("EXAMPLES")
+    st.markdown("""
+    <div style="font-size: 0.8125rem; color: #86868b; line-height: 1.8;">
+    200 unit multifamily in Charlotte<br>
+    What are Boston cap rates?<br>
+    How does a waterfall work?<br>
+    Change cap rate to 5.5%
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Main Interface
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# Hero (only show if no messages)
+if not st.session_state.messages:
+    st.markdown('''
+    <div class="hero-title">Fallon</div>
+    <div class="hero-subtitle">Development intelligence for real estate</div>
+    ''', unsafe_allow_html=True)
+    
+    # Suggestion chips
+    col1, col2, col3 = st.columns(3)
+    
+    suggestions = [
+        "200 unit multifamily in Charlotte",
+        "What are cap rates in Boston?",
+        "How does a JV waterfall work?",
+    ]
+    
+    for i, (col, suggestion) in enumerate(zip([col1, col2, col3], suggestions)):
+        with col:
+            if st.button(suggestion, key=f"suggestion_{i}", use_container_width=True):
+                st.session_state.messages.append({"role": "user", "content": suggestion})
+                st.rerun()
+
+# Chat history
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"], avatar="◼" if msg["role"] == "assistant" else None):
+        if msg["role"] == "user":
+            st.markdown(msg["content"])
+        else:
+            response = msg.get("response", {})
+            
+            if response.get("type") == "pro_forma":
+                if response.get("text"):
+                    st.markdown(response["text"])
+                display_pro_forma_card(response["data"])
+            
+            elif response.get("type") == "answer":
+                display_answer(
+                    response["text"],
+                    response.get("sources", []),
+                    response.get("confidence", "medium"),
+                )
+            
+            elif response.get("type") == "clarification":
+                st.markdown(response["text"])
+            
+            else:
+                st.markdown(msg.get("content", response.get("text", "")))
+
+# Chat input
+if prompt := st.chat_input("Ask anything about real estate development..."):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    
+    with st.chat_message("assistant", avatar="◼"):
+        with st.spinner(""):
+            try:
+                has_pending = st.session_state.pending_clarification is not None
+                intent = classify_intent(prompt, has_pending)
                 
-                st.markdown(f"**Document {i}: {source}** (Relevance: {relevance})")
-                st.text(text + "..." if len(chunk.get("text", "")) > 500 else text)
-                st.markdown("---")
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# Footer
-# ═══════════════════════════════════════════════════════════════════════════════
-
-st.markdown("---")
-st.caption("Fallon Financial Model Generator | All assumptions require broker verification before use.")
+                if intent == "CLARIFICATION" and has_pending:
+                    response = handle_clarification(prompt)
+                elif intent == "PRO_FORMA":
+                    response = handle_pro_forma_request(prompt)
+                elif intent == "ADJUSTMENT":
+                    response = handle_adjustment(prompt)
+                else:
+                    response = handle_question(prompt)
+                
+                if response["type"] == "pro_forma":
+                    if response.get("text"):
+                        st.markdown(response["text"])
+                    display_pro_forma_card(response["data"])
+                
+                elif response["type"] == "answer":
+                    display_answer(
+                        response["text"],
+                        response.get("sources", []),
+                        response.get("confidence", "medium"),
+                    )
+                
+                elif response["type"] == "clarification":
+                    st.markdown(response["text"])
+                
+                else:
+                    st.markdown(response.get("text", ""))
+                
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "response": response,
+                    "content": response.get("text", ""),
+                })
+                
+            except Exception:
+                error_msg = "Something went wrong. Please try again."
+                st.markdown(error_msg)
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": error_msg,
+                    "response": {"type": "text", "text": error_msg},
+                })

@@ -1,0 +1,103 @@
+CONSTRUCTION LOAN AGREEMENT
+
+This Construction Loan Agreement ("Agreement") is entered into as of January 15, 2024, by and between:
+
+LENDER: First National Bank of Massachusetts, a Massachusetts banking corporation, with principal offices at 100 Federal Street, Boston, MA 02110 ("Lender")
+
+BORROWER: Fallon Development LLC, a Delaware limited liability company, with principal offices at 1 Seaport Lane, Suite 500, Boston, MA 02210 ("Borrower")
+
+GUARANTOR: The Fallon Company, LLC, a Delaware limited liability company ("Guarantor")
+
+RECITALS
+
+WHEREAS, Borrower desires to construct a 350-unit multifamily residential development with ground-floor retail space located at 450 Northern Avenue, Boston, Massachusetts 02210 (the "Project"); and
+
+WHEREAS, Lender is willing to make a construction loan to Borrower upon the terms and conditions set forth herein;
+
+NOW, THEREFORE, in consideration of the mutual covenants herein, the parties agree as follows:
+
+ARTICLE 1 - LOAN AMOUNT AND TERMS
+
+1.1 Principal Amount. Lender agrees to lend to Borrower the principal sum of Seventy-Five Million Dollars ($75,000,000.00) (the "Loan").
+
+1.2 Interest Rate. The Loan shall bear interest at a rate equal to the Secured Overnight Financing Rate (SOFR) plus two hundred seventy-five (275) basis points per annum, adjusted monthly.
+
+1.3 Loan Term. The initial term of the Loan shall be thirty-six (36) months from the date of this Agreement, with two (2) six-month extension options subject to satisfaction of extension conditions.
+
+1.4 Loan-to-Cost Ratio. The Loan shall not exceed sixty-five percent (65%) of the total Project costs as approved by Lender.
+
+ARTICLE 2 - DISBURSEMENTS
+
+2.1 Draw Requests. Borrower may submit monthly draw requests for construction costs incurred, accompanied by:
+    (a) AIA Form G702/G703 certified by the general contractor
+    (b) Lien waivers from all contractors and subcontractors
+    (c) Inspection report from Lender's construction consultant
+    (d) Updated title insurance endorsement
+
+2.2 Retainage. Lender shall retain ten percent (10%) of each disbursement until the Project achieves Substantial Completion.
+
+ARTICLE 3 - INTEREST RESERVE
+
+3.1 Interest Reserve Account. An interest reserve in the amount of Five Million Dollars ($5,000,000.00) shall be established at closing and funded from Loan proceeds.
+
+ARTICLE 4 - EQUITY REQUIREMENTS
+
+4.1 Minimum Equity. Borrower shall contribute a minimum of Thirty-Five Million Dollars ($35,000,000.00) in equity prior to Lender's first disbursement.
+
+4.2 Equity First. Borrower's equity shall be contributed first, before any Loan disbursements.
+
+ARTICLE 5 - COMPLETION GUARANTY
+
+5.1 Guarantor's Obligations. Guarantor unconditionally guarantees completion of the Project in accordance with the approved plans and specifications, free of liens, within the construction budget.
+
+5.2 Cost Overrun Guaranty. Guarantor guarantees payment of all Project costs in excess of the Loan amount and approved budget.
+
+ARTICLE 6 - DEFAULT AND REMEDIES
+
+6.1 Events of Default. The following shall constitute Events of Default:
+    (a) Failure to make any payment when due
+    (b) Material breach of any representation, warranty, or covenant
+    (c) Bankruptcy or insolvency of Borrower or Guarantor
+    (d) Abandonment of construction
+    (e) Failure to achieve Substantial Completion within the Loan term
+
+6.2 Remedies. Upon an Event of Default, Lender may:
+    (a) Accelerate all amounts due
+    (b) Take possession of the Project and complete construction
+    (c) Exercise all remedies under the Mortgage and other Loan documents
+    (d) Pursue Guarantor under the Completion Guaranty
+
+ARTICLE 7 - INSURANCE REQUIREMENTS
+
+7.1 Required Coverage. Borrower shall maintain:
+    (a) Builder's risk insurance in the full replacement cost of improvements
+    (b) Commercial general liability of not less than $5,000,000 per occurrence
+    (c) Workers' compensation as required by law
+    (d) Umbrella liability of not less than $25,000,000
+
+ARTICLE 8 - GOVERNING LAW
+
+8.1 This Agreement shall be governed by and construed in accordance with the laws of the Commonwealth of Massachusetts.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+LENDER:
+First National Bank of Massachusetts
+
+By: _______________________
+Name: Robert J. Thompson
+Title: Senior Vice President, Commercial Real Estate
+
+BORROWER:
+Fallon Development LLC
+
+By: _______________________
+Name: Joseph F. Fallon
+Title: Managing Member
+
+GUARANTOR:
+The Fallon Company, LLC
+
+By: _______________________
+Name: Joseph F. Fallon
+Title: CEO
