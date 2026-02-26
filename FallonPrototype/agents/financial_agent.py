@@ -232,6 +232,10 @@ def check_missing_parameters(params: ProjectParameters) -> list[str]:
     if not params.program_type:
         missing.append("program type (multifamily, office, hotel, condo, or mixed-use)")
     
+    # CRITICAL: Parcel size is required for accurate forecasting
+    if not params.acreage and not params.land_cost:
+        missing.append("parcel size in acres (required for accurate cost and density calculations)")
+    
     # Soft required — at least one dimensional input needed
     has_dimension = (
         params.unit_count is not None or
@@ -1142,7 +1146,7 @@ def _build_answer_summary(pro_forma: dict, calc_results: dict, warnings: list[st
     return answer
 
 
-def run(query: str) -> AgentResponse:
+def run(query: str, user_context: dict = None) -> AgentResponse:
     """
     Main entry point for the financial agent.
     
@@ -1150,6 +1154,7 @@ def run(query: str) -> AgentResponse:
     
     Args:
         query: User's natural language project description.
+        user_context: Learned user preferences from memory system (optional).
     
     Returns:
         AgentResponse with the pro forma and summary.
@@ -1159,6 +1164,18 @@ def run(query: str) -> AgentResponse:
     
     # 1. Extract and normalize parameters
     params = normalize_parameters(extract_parameters(query))
+    
+    # 1b. Apply learned preferences if user context available
+    if user_context:
+        # If no market specified but user has preferences, suggest their most common
+        if not params.market and user_context.get("preferred_markets"):
+            top_market = user_context["preferred_markets"][0][0]
+            params.notes += f" [User frequently analyzes {top_market} deals]"
+        
+        # Apply learned IRR targets
+        if not params.target_lp_irr_pct and user_context.get("target_irr_range"):
+            low, high = user_context["target_irr_range"]
+            params.target_lp_irr_pct = (low + high) / 2
     
     # 2. Check for missing required params
     missing = check_missing_parameters(params)
