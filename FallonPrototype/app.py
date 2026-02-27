@@ -9,6 +9,7 @@ import sys
 import os
 import copy
 import re
+import io
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -28,9 +29,14 @@ from FallonPrototype.shared.memory import (
     format_context_for_prompt
 )
 
+if "sidebar_visible" not in st.session_state:
+    st.session_state.sidebar_visible = True
+
 st.set_page_config(page_title="FAiLLON", page_icon="◼", layout="wide", initial_sidebar_state="expanded")
 
-# Dark theme CSS
+import streamlit.components.v1 as components
+
+# Dark theme CSS - clean professional look
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -42,39 +48,6 @@ h1, h2, h3 { color: #ffffff !important; font-weight: 600 !important; }
 p, span, li, label { color: #d1d5db; }
 [data-testid="stSidebar"] { background: #171717 !important; border-right: 1px solid #2a2a2a !important; }
 [data-testid="stSidebar"] * { color: #d1d5db !important; }
-/* Sidebar expand button - WHITE and VISIBLE */
-[data-testid="collapsedControl"],
-[data-testid="stSidebarCollapsedControl"],
-button[kind="header"],
-[data-testid="baseButton-header"] {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: fixed !important;
-    left: 5px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    background: #1a1a1a !important;
-    border: 2px solid #ffffff !important;
-    border-radius: 0 12px 12px 0 !important;
-    border-left: none !important;
-    padding: 20px 10px !important;
-    z-index: 999999 !important;
-    cursor: pointer !important;
-}
-[data-testid="collapsedControl"] svg,
-[data-testid="stSidebarCollapsedControl"] svg,
-button[kind="header"] svg {
-    width: 20px !important;
-    height: 20px !important;
-    fill: #ffffff !important;
-    stroke: #ffffff !important;
-    color: #ffffff !important;
-}
-[data-testid="collapsedControl"]:hover,
-[data-testid="stSidebarCollapsedControl"]:hover {
-    background: #2a2a2a !important;
-}
 [data-testid="stMetricValue"] { color: #ffffff !important; font-size: 1.1rem !important; }
 [data-testid="stMetricLabel"] { color: #6b7280 !important; font-size: 0.65rem !important; text-transform: uppercase !important; }
 .stButton > button { background: #2f2f2f !important; color: #d1d5db !important; border: 1px solid #404040 !important; border-radius: 24px !important; padding: 0.6rem 1rem !important; font-size: 0.875rem !important; }
@@ -83,18 +56,13 @@ button[kind="header"] svg {
 [data-testid="stChatMessage"] { background: transparent !important; padding: 1rem 0 !important; }
 [data-testid="stChatMessageContent"] { background: transparent !important; padding: 0.5rem 0 !important; border: none !important; }
 [data-testid="stChatMessageContent"] p { color: #ececec !important; font-size: 0.9375rem !important; line-height: 1.6 !important; }
-/* Remove ALL backgrounds from bottom chat area - AGGRESSIVE */
 .stBottom, [data-testid="stBottom"], [data-testid="stBottomBlockContainer"],
-.stChatFloatingInputContainer, [data-testid="stChatFloatingInputContainer"],
-[class*="stBottom"], [class*="ChatInput"], [class*="FloatingInput"],
-[class*="emotion-cache"], section[data-testid="stBottom"] > div,
-.block-container + div, iframe + div {
+.stChatFloatingInputContainer, [data-testid="stChatFloatingInputContainer"] {
     background: #000000 !important;
     background-color: #000000 !important;
     border: none !important;
     box-shadow: none !important;
 }
-/* The actual input container - just the rounded input field */
 [data-testid="stChatInput"], .stChatInput { 
     background: transparent !important; 
     background-color: transparent !important;
@@ -111,19 +79,13 @@ button[kind="header"] svg {
     color: #ffffff !important; 
     -webkit-text-fill-color: #ffffff !important; 
     background: transparent !important; 
-    background-color: transparent !important;
 }
-[data-testid="stChatInput"] textarea::placeholder, .stChatInput textarea::placeholder { 
+[data-testid="stChatInput"] textarea::placeholder { 
     color: #6b7280 !important; 
     -webkit-text-fill-color: #6b7280 !important; 
 }
-/* Kill any remaining backgrounds */
-div[data-testid="stBottom"] * {
-    background-color: transparent !important;
-}
-div[data-testid="stBottom"] > div:first-child {
-    background: #000000 !important;
-}
+div[data-testid="stBottom"] * { background-color: transparent !important; }
+div[data-testid="stBottom"] > div:first-child { background: #000000 !important; }
 .metric-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1rem; text-align: center; }
 .metric-value { font-size: 1.5rem; font-weight: 600; color: #ffffff; }
 .metric-label { font-size: 0.6875rem; color: #6b7280; text-transform: uppercase; margin-top: 0.25rem; }
@@ -140,107 +102,72 @@ div[data-testid="stBottom"] > div:first-child {
 .hero h1 { font-size: 2.5rem; color: #ffffff; margin-bottom: 0.5rem; }
 .hero p { color: #6b7280; font-size: 1rem; }
 .src-tag { display: inline-block; background: #2a2a2a; color: #9ca3af; font-size: 0.6875rem; padding: 0.2rem 0.5rem; border-radius: 4px; margin-right: 0.4rem; }
+.upload-msg { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 0.5rem 0.75rem; display: inline-block; color: #9ca3af; font-size: 0.8125rem; }
+[data-testid="stFileUploader"] { background: transparent !important; }
+[data-testid="stFileUploader"] label { display: none !important; }
+[data-testid="stFileUploader"] section { background: #1a1a1a !important; border: 1px dashed #404040 !important; border-radius: 12px !important; padding: 0.5rem !important; }
+[data-testid="stFileUploader"] section > div { color: #6b7280 !important; }
+[data-testid="stFileUploader"] button { background: #2f2f2f !important; color: #d1d5db !important; border: 1px solid #404040 !important; }
 </style>
 """, unsafe_allow_html=True)
 
-# Sidebar expand button using components.html for JavaScript execution
-import streamlit.components.v1 as components
-
-components.html("""
-<style>
-    #expand-btn {
-        position: fixed;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #000000;
-        border: 2px solid #ffffff;
-        border-left: none;
-        border-radius: 0 12px 12px 0;
-        color: #ffffff;
-        padding: 25px 12px;
-        cursor: pointer;
-        z-index: 999999;
-        font-size: 18px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        letter-spacing: -3px;
-    }
-    #expand-btn:hover {
-        background: #1a1a1a;
-        padding-left: 20px;
-    }
-</style>
-<div id="expand-btn">▶▶</div>
-<script>
-    const btn = document.getElementById('expand-btn');
-    const parent = window.parent.document;
+# Hide sidebar when collapsed
+if not st.session_state.sidebar_visible:
+    st.markdown("""
+    <style>
+    [data-testid="stSidebar"] { display: none !important; }
+    </style>
+    """, unsafe_allow_html=True)
     
-    // Function to check if sidebar is collapsed
-    function isSidebarCollapsed() {
-        const sidebar = parent.querySelector('[data-testid="stSidebar"]');
-        if (!sidebar) return false;
-        const style = window.parent.getComputedStyle(sidebar);
-        return sidebar.getAttribute('aria-expanded') === 'false' || 
-               parseInt(style.width) < 50 ||
-               style.transform.includes('translateX');
-    }
-    
-    // Function to expand sidebar
-    function expandSidebar() {
-        // Try multiple selectors for the expand button
-        const selectors = [
-            '[data-testid="collapsedControl"]',
-            '[data-testid="stSidebarCollapsedControl"]', 
-            'button[kind="header"]',
-            '[data-testid="stSidebar"] button',
-            'button[aria-label="Expand sidebar"]'
-        ];
-        
-        for (const selector of selectors) {
-            const expandBtn = parent.querySelector(selector);
-            if (expandBtn) {
-                expandBtn.click();
-                return true;
+    # Show expand button on left edge using components.html for JavaScript click handling
+    components.html("""
+    <style>
+        #expand-sidebar-btn {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #171717;
+            border: 2px solid #404040;
+            border-left: none;
+            border-radius: 0 12px 12px 0;
+            color: #ffffff;
+            padding: 35px 14px;
+            cursor: pointer;
+            z-index: 999999;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        #expand-sidebar-btn:hover {
+            background: #2a2a2a;
+            border-color: #ffffff;
+            padding-right: 20px;
+        }
+    </style>
+    <div id="expand-sidebar-btn" onclick="expandSidebar()">▶</div>
+    <script>
+        function expandSidebar() {
+            // Find and click a Streamlit button to trigger rerun
+            const btns = window.parent.document.querySelectorAll('button');
+            for (let btn of btns) {
+                if (btn.getAttribute('data-testid') === 'expand_sidebar' || 
+                    btn.innerText.includes('Expand') ||
+                    btn.title === 'Expand sidebar') {
+                    btn.click();
+                    return;
+                }
             }
+            // Fallback - reload with query param
+            window.parent.location.reload();
         }
-        
-        // Fallback: directly manipulate sidebar
-        const sidebar = parent.querySelector('[data-testid="stSidebar"]');
-        if (sidebar) {
-            sidebar.style.transition = 'all 0.3s ease';
-            sidebar.style.transform = 'translateX(0)';
-            sidebar.style.width = '260px';
-            sidebar.setAttribute('aria-expanded', 'true');
-        }
-        return false;
-    }
+    </script>
+    """, height=0)
     
-    // Click handler
-    btn.addEventListener('click', function() {
-        expandSidebar();
-        btn.style.opacity = '0';
-        setTimeout(() => { btn.style.display = 'none'; }, 300);
-    });
-    
-    // Watch for sidebar state changes
-    function updateVisibility() {
-        if (isSidebarCollapsed()) {
-            btn.style.display = 'block';
-            btn.style.opacity = '1';
-        } else {
-            btn.style.opacity = '0';
-            setTimeout(() => { 
-                if (!isSidebarCollapsed()) btn.style.display = 'none'; 
-            }, 300);
-        }
-    }
-    
-    // Initial check and observer
-    updateVisibility();
-    setInterval(updateVisibility, 500);
-</script>
-""", height=0)
+    # Hidden button for Streamlit to handle
+    if st.button("▶ Expand", key="expand_sidebar", help="Expand sidebar"):
+        st.session_state.sidebar_visible = True
+        st.rerun()
 
 # Session state
 if "messages" not in st.session_state:
@@ -253,6 +180,10 @@ if "conversation_mode" not in st.session_state:
     st.session_state.conversation_mode = "chat"  # chat, gathering, refining
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
+if "uploaded_documents" not in st.session_state:
+    st.session_state.uploaded_documents = []  # list of {"name": str, "content": str}
+if "processed_file_keys" not in st.session_state:
+    st.session_state.processed_file_keys = set()  # dedup set of "name_size" keys
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CONVERSATIONAL AI - Natural dialogue with Claude
@@ -283,8 +214,9 @@ RESPOND BASED ON WHAT THE USER NEEDS:
 1. IF CASUAL CHAT or QUESTION: Just have a helpful conversation. Answer questions about real estate, explain concepts, discuss market trends.
 
 2. IF STARTING A NEW PROJECT: Ask follow-up questions to gather key info:
-   - What market/city?
-   - What type of development (multifamily, office, hotel, mixed-use)?
+   - What market/city? (Charlotte, Nashville, Boston)
+   - What submarket/neighborhood? (e.g. Seaport, South End, Kendall Square, NoDa, Uptown, Gulch, SoBro, East Bank)
+   - What type of development? (multifamily, office, hotel, lab/life sciences, mixed-use, condo)
    - What's the parcel size (acres or SF)?
    - How many units/keys/SF are they targeting?
    - Any specific return targets?
@@ -296,10 +228,10 @@ RESPOND BASED ON WHAT THE USER NEEDS:
    - Explain impact of changes
 
 4. IF THEY WANT TO GENERATE: Only generate when you have:
-   - Market
-   - Property type
-   - Parcel size
-   - Unit count or SF
+   - Market (Charlotte, Nashville, Boston)
+   - Property type (multifamily, office, hotel, lab, condo, mixed-use)
+   - Parcel size (acres)
+   - Unit count, SF, or hotel keys
    
 RESPONSE FORMAT:
 Return a JSON object with:
@@ -307,11 +239,42 @@ Return a JSON object with:
   "response": "Your conversational response to the user",
   "intent": "chat" | "gather_info" | "generate_model" | "adjust_model" | "answer_question",
   "extracted_data": {{any new project parameters you learned}},
-  "follow_up_questions": ["list of follow-up questions if gathering info"],
   "ready_to_generate": true/false
 }}
 
+IMPORTANT: Weave any follow-up questions naturally into your "response" text. Do NOT use a separate list of questions — instead, ask them conversationally within your response, as a human advisor would. For example: "That sounds like an interesting opportunity. What submarket are you looking at, and do you have a sense of the unit count you're targeting?"
+
+UPLOADED DOCUMENTS:
+If the user has uploaded documents, their content will appear below under "UPLOADED DOCUMENTS:". Reference this content directly when answering questions. Cite specific numbers, terms, or details from the documents.
+
 Be conversational and helpful. Don't be robotic. Ask good questions to understand what they're really trying to accomplish."""
+
+
+def parse_uploaded_file(uploaded_file) -> str:
+    """Parse an uploaded file and return its text content."""
+    name = uploaded_file.name.lower()
+    try:
+        if name.endswith(".pdf"):
+            from pypdf import PdfReader
+            reader = PdfReader(io.BytesIO(uploaded_file.getvalue()))
+            pages = [page.extract_text() or "" for page in reader.pages]
+            return "\n".join(pages).strip()
+        elif name.endswith((".xlsx", ".xls")):
+            df = pd.read_excel(io.BytesIO(uploaded_file.getvalue()), sheet_name=None)
+            parts = []
+            for sheet_name, sheet_df in df.items():
+                parts.append(f"--- Sheet: {sheet_name} ---")
+                parts.append(sheet_df.to_string(index=False))
+            return "\n".join(parts)
+        elif name.endswith(".csv"):
+            df = pd.read_csv(io.BytesIO(uploaded_file.getvalue()))
+            return df.to_string(index=False)
+        elif name.endswith(".txt"):
+            return uploaded_file.getvalue().decode("utf-8", errors="replace")
+        else:
+            return uploaded_file.getvalue().decode("utf-8", errors="replace")
+    except Exception as e:
+        return f"[Error parsing {uploaded_file.name}: {str(e)[:100]}]"
 
 
 def get_ai_response(user_message: str) -> dict:
@@ -332,15 +295,28 @@ def get_ai_response(user_message: str) -> dict:
     # Format project data
     proj_data = json.dumps(st.session_state.project_data, indent=2) if st.session_state.project_data else "No project data yet"
     
-    prompt = CONVERSATION_PROMPT.format(
+    system_prompt = CONVERSATION_PROMPT.format(
         project_data=proj_data,
         user_context=ctx_str,
         history=history,
         message=user_message
     )
-    
+
+    # Inject uploaded document context
+    if st.session_state.uploaded_documents:
+        doc_context = "\n\nUPLOADED DOCUMENTS:\n"
+        budget = 10000
+        for doc in st.session_state.uploaded_documents:
+            header = f"\n--- {doc['name']} ---\n"
+            content = doc["content"][:budget]
+            doc_context += header + content + "\n"
+            budget -= len(header) + len(content)
+            if budget <= 0:
+                break
+        system_prompt += doc_context
+
     try:
-        response = call_claude(prompt, max_tokens=1500)
+        response = call_claude(system_prompt, user_message, max_tokens=1500)
         
         # Parse JSON response
         try:
@@ -357,16 +333,14 @@ def get_ai_response(user_message: str) -> dict:
             "response": response,
             "intent": "chat",
             "extracted_data": {},
-            "follow_up_questions": [],
             "ready_to_generate": False
         }
-        
+
     except Exception as e:
         return {
             "response": f"I'm having trouble processing that. Could you rephrase? (Error: {str(e)[:50]})",
             "intent": "chat",
             "extracted_data": {},
-            "follow_up_questions": [],
             "ready_to_generate": False
         }
 
@@ -408,15 +382,7 @@ def process_message(user_message: str) -> dict:
     
     # Regular conversational response
     response_text = ai_result.get("response", "I'm not sure how to help with that.")
-    
-    # Add follow-up questions if gathering info
-    if ai_result.get("follow_up_questions"):
-        questions = ai_result["follow_up_questions"]
-        if questions:
-            response_text += "\n\n**A few questions to help me understand better:**"
-            for q in questions[:3]:
-                response_text += f"\n- {q}"
-    
+
     record_interaction(user_message, ai_result.get("intent", "chat"), "text", success=True)
     
     return {"t": "txt", "txt": response_text}
@@ -485,15 +451,21 @@ def generate_model_from_data() -> dict:
     parts = []
     if data.get("market"):
         parts.append(data["market"])
+    if data.get("submarket"):
+        parts.append(data["submarket"])
     if data.get("program_type"):
         parts.append(data["program_type"])
     if data.get("unit_count"):
         parts.append(f"{data['unit_count']} units")
+    if data.get("total_keys"):
+        parts.append(f"{data['total_keys']} keys")
+    if data.get("rentable_sf"):
+        parts.append(f"{data['rentable_sf']} sf")
     if data.get("parcel_acres"):
         parts.append(f"{data['parcel_acres']} acres")
     if data.get("exit_cap"):
         parts.append(f"{data['exit_cap']} cap")
-    
+
     query = " ".join(parts) if parts else "multifamily development"
     
     try:
@@ -592,7 +564,15 @@ def show_answer(txt, src, conf):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 with st.sidebar:
-    st.markdown("### FAiLLON")
+    # Collapse sidebar button at top
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.markdown("### FAiLLON")
+    with col2:
+        if st.button("◀", key="collapse_sidebar", help="Hide sidebar"):
+            st.session_state.sidebar_visible = False
+            st.rerun()
+    
     st.caption("Development Intelligence")
     st.markdown("---")
     
@@ -607,6 +587,8 @@ with st.sidebar:
         st.session_state.messages = []
         st.session_state.project_data = {}
         st.session_state.model = None
+        st.session_state.uploaded_documents = []
+        st.session_state.processed_file_keys = set()
         st.rerun()
     
     st.markdown("---")
@@ -625,7 +607,13 @@ with st.sidebar:
             st.caption(f"{k}: {v}")
     else:
         st.caption("No project started")
-    
+
+    if st.session_state.uploaded_documents:
+        st.markdown("---")
+        st.caption("UPLOADED DOCUMENTS")
+        for doc in st.session_state.uploaded_documents:
+            st.caption(f"📄 {doc['name']}")
+
     st.markdown("---")
     try:
         cnt = get_collection_counts()
@@ -647,17 +635,19 @@ if not st.session_state.messages:
     st.markdown('<div class="hero"><h1>FAiLLON</h1><p>Let\'s talk about your development project</p></div>', unsafe_allow_html=True)
     
     st.markdown("**I can help you with:**")
-    st.markdown("- Underwriting and pro forma analysis")
-    st.markdown("- Market research and cap rate trends")
-    st.markdown("- JV structures and waterfalls")
-    st.markdown("- Contract terms and provisions")
+    st.markdown("- Underwriting and pro forma analysis (multifamily, office, hotel, lab/life sciences)")
+    st.markdown("- Market research by submarket (Seaport, Kendall, South End, NoDa, Gulch, East Bank...)")
+    st.markdown("- Investment thesis, cap rates, and supply/demand dynamics")
+    st.markdown("- JV structures, waterfalls, and contract terms")
     st.markdown("")
     st.markdown("Just tell me about what you're working on, or ask me anything about real estate development.")
 
 # Display chat
 for m in st.session_state.messages:
     with st.chat_message(m["role"]):
-        if m["role"] == "user":
+        if m.get("is_upload"):
+            st.markdown(f'<div class="upload-msg">{m.get("content", "")}</div>', unsafe_allow_html=True)
+        elif m["role"] == "user":
             st.markdown(m.get("content", ""))
         else:
             r = m.get("resp", {})
@@ -667,6 +657,28 @@ for m in st.session_state.messages:
                 show_answer(r["txt"], r.get("src", []), r.get("conf", "medium"))
             else:
                 st.markdown(r.get("txt", m.get("content", "")))
+
+# File uploader
+uploaded_files = st.file_uploader(
+    "Upload documents",
+    type=["pdf", "xlsx", "xls", "csv", "txt"],
+    accept_multiple_files=True,
+    key="file_uploader",
+    label_visibility="collapsed",
+)
+if uploaded_files:
+    for uf in uploaded_files:
+        file_key = f"{uf.name}_{uf.size}"
+        if file_key not in st.session_state.processed_file_keys:
+            st.session_state.processed_file_keys.add(file_key)
+            content = parse_uploaded_file(uf)
+            st.session_state.uploaded_documents.append({"name": uf.name, "content": content})
+            st.session_state.messages.append({
+                "role": "user",
+                "content": f"📄 *Uploaded: {uf.name}*",
+                "is_upload": True,
+            })
+            st.rerun()
 
 # Chat input
 if prompt := st.chat_input("Tell me about your project, or ask me anything..."):

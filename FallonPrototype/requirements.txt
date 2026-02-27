@@ -16,5 +16,8 @@ pandas>=2.0.0
 # Excel Export
 openpyxl>=3.1.0
 
+# PDF Parsing
+pypdf>=4.0.0
+
 # HTTP (for API calls)
 requests>=2.31.0
