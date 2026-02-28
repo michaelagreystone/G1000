@@ -245,7 +245,13 @@ Return a JSON object with:
 IMPORTANT: Weave any follow-up questions naturally into your "response" text. Do NOT use a separate list of questions — instead, ask them conversationally within your response, as a human advisor would. For example: "That sounds like an interesting opportunity. What submarket are you looking at, and do you have a sense of the unit count you're targeting?"
 
 UPLOADED DOCUMENTS:
-If the user has uploaded documents, their content will appear below under "UPLOADED DOCUMENTS:". Reference this content directly when answering questions. Cite specific numbers, terms, or details from the documents.
+You CAN and MUST read uploaded documents. Their full parsed text content appears below under "UPLOADED DOCUMENTS:" in this prompt. You have DIRECT ACCESS to the document content — do NOT tell the user you cannot read their files. Do NOT ask them to summarize or re-explain what is in the document. Instead, reference specific content, numbers, terms, and details from the document text directly. If the document content appears below, you have successfully received it.
+
+DOCUMENT DATA EXTRACTION:
+When uploaded documents contain project parameters (rents, costs, unit counts, SF, cap rates, market, submarket, property type, land cost, acreage, IRR targets, construction costs, timelines, etc.), extract ALL of them into the "extracted_data" field. This data drives pro forma generation. Be aggressive about extracting numbers — if the document has a rent of $2.50/SF, put {{"rent_psf_monthly": 2.50}} in extracted_data. If it names a market, extract it. If it has unit counts, SF, cap rates, or any financial assumptions, extract them all. If the document describes workstreams, deal structures, or opportunity types, extract the key parameters for each.
+
+LIVE MARKET DATA:
+If live web search results appear below under "LIVE MARKET DATA:", use them to provide current, accurate market intelligence. Cite specific data points and note they are from current market sources. Combine web data with uploaded document content for the most comprehensive analysis.
 
 Be conversational and helpful. Don't be robotic. Ask good questions to understand what they're really trying to accomplish."""
 
@@ -253,28 +259,104 @@ Be conversational and helpful. Don't be robotic. Ask good questions to understan
 def parse_uploaded_file(uploaded_file) -> str:
     """Parse an uploaded file and return its text content."""
     name = uploaded_file.name.lower()
-    try:
-        if name.endswith(".pdf"):
+    raw = uploaded_file.getvalue()
+
+    # --- PDF ---
+    if name.endswith(".pdf"):
+        try:
             from pypdf import PdfReader
-            reader = PdfReader(io.BytesIO(uploaded_file.getvalue()))
+            reader = PdfReader(io.BytesIO(raw))
             pages = [page.extract_text() or "" for page in reader.pages]
-            return "\n".join(pages).strip()
-        elif name.endswith((".xlsx", ".xls")):
-            df = pd.read_excel(io.BytesIO(uploaded_file.getvalue()), sheet_name=None)
+            text = "\n".join(pages).strip()
+            if text:
+                return text
+        except Exception as pdf_err:
+            # Log but don't give up — fall through to OCR attempt
+            pass
+
+        # pypdf returned nothing or failed — try OCR on rendered pages
+        try:
+            from PIL import Image
+            import pytesseract
+            # Convert PDF pages to images via pdf2image if available
+            try:
+                from pdf2image import convert_from_bytes
+                images = convert_from_bytes(raw, first_page=1, last_page=5)
+                ocr_parts = [pytesseract.image_to_string(img) for img in images]
+                text = "\n".join(ocr_parts).strip()
+                if text:
+                    return text
+            except ImportError:
+                pass
+        except ImportError:
+            pass
+
+        return "[PDF text extraction returned empty. This may be a scanned document — try exporting pages as images and uploading those.]"
+
+    # --- Images (OCR) ---
+    if name.endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".webp")):
+        try:
+            from PIL import Image
+            import pytesseract
+            img = Image.open(io.BytesIO(raw))
+            text = pytesseract.image_to_string(img)
+            return text.strip() if text.strip() else "[Image uploaded but no text detected by OCR]"
+        except ImportError:
+            return "[Image uploaded but OCR not available — install Tesseract: https://github.com/tesseract-ocr/tesseract]"
+        except Exception as ocr_err:
+            return f"[OCR error: {str(ocr_err)[:150]}. Make sure Tesseract is installed on your system.]"
+
+    # --- Excel ---
+    if name.endswith((".xlsx", ".xls")):
+        try:
+            df = pd.read_excel(io.BytesIO(raw), sheet_name=None)
             parts = []
             for sheet_name, sheet_df in df.items():
                 parts.append(f"--- Sheet: {sheet_name} ---")
                 parts.append(sheet_df.to_string(index=False))
             return "\n".join(parts)
-        elif name.endswith(".csv"):
-            df = pd.read_csv(io.BytesIO(uploaded_file.getvalue()))
+        except Exception as e:
+            return f"[Error parsing Excel {uploaded_file.name}: {str(e)[:150]}]"
+
+    # --- CSV ---
+    if name.endswith(".csv"):
+        try:
+            df = pd.read_csv(io.BytesIO(raw))
             return df.to_string(index=False)
-        elif name.endswith(".txt"):
-            return uploaded_file.getvalue().decode("utf-8", errors="replace")
-        else:
-            return uploaded_file.getvalue().decode("utf-8", errors="replace")
+        except Exception as e:
+            return f"[Error parsing CSV {uploaded_file.name}: {str(e)[:150]}]"
+
+    # --- Text / fallback ---
+    try:
+        return raw.decode("utf-8", errors="replace")
     except Exception as e:
-        return f"[Error parsing {uploaded_file.name}: {str(e)[:100]}]"
+        return f"[Error reading {uploaded_file.name}: {str(e)[:150]}]"
+
+
+_SEARCH_KEYWORDS = re.compile(
+    r'\b(market|cap\s*rate|trend|vacancy|rent\s*growth|supply|demand|'
+    r'current|latest|recent|2025|2026|comparable|comps?|absorption|'
+    r'occupancy|construction\s*pipeline|deliveries|asking\s*rent)\b',
+    re.IGNORECASE,
+)
+
+
+def web_search(query: str, max_results: int = 3) -> str:
+    """Search the web via DuckDuckGo and return formatted results."""
+    try:
+        from duckduckgo_search import DDGS
+        results = DDGS().text(query, max_results=max_results)
+        if not results:
+            return ""
+        parts = []
+        for r in results:
+            parts.append(f"Title: {r.get('title', '')}")
+            parts.append(f"  {r.get('body', '')}")
+            parts.append(f"  URL: {r.get('href', '')}")
+            parts.append("---")
+        return "\n".join(parts)[:3000]
+    except Exception:
+        return ""
 
 
 def get_ai_response(user_message: str) -> dict:
@@ -315,8 +397,16 @@ def get_ai_response(user_message: str) -> dict:
                 break
         system_prompt += doc_context
 
+    # Live web search for market-related queries
+    if _SEARCH_KEYWORDS.search(user_message):
+        market = st.session_state.project_data.get("market", "")
+        search_query = f"{user_message} real estate {market} 2025 2026".strip()
+        search_results = web_search(search_query)
+        if search_results:
+            system_prompt += f"\n\nLIVE MARKET DATA (from web search):\n{search_results}"
+
     try:
-        response = call_claude(system_prompt, user_message, max_tokens=1500)
+        response = call_claude(system_prompt, user_message, max_tokens=2048)
         
         # Parse JSON response
         try:
@@ -661,7 +751,7 @@ for m in st.session_state.messages:
 # File uploader
 uploaded_files = st.file_uploader(
     "Upload documents",
-    type=["pdf", "xlsx", "xls", "csv", "txt"],
+    type=["pdf", "xlsx", "xls", "csv", "txt", "png", "jpg", "jpeg", "tiff", "bmp", "webp"],
     accept_multiple_files=True,
     key="file_uploader",
     label_visibility="collapsed",
@@ -673,9 +763,11 @@ if uploaded_files:
             st.session_state.processed_file_keys.add(file_key)
             content = parse_uploaded_file(uf)
             st.session_state.uploaded_documents.append({"name": uf.name, "content": content})
+            is_image = uf.name.lower().endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".webp"))
+            icon = "📷" if is_image else "📄"
             st.session_state.messages.append({
                 "role": "user",
-                "content": f"📄 *Uploaded: {uf.name}*",
+                "content": f"{icon} *Uploaded: {uf.name}*",
                 "is_upload": True,
             })
             st.rerun()

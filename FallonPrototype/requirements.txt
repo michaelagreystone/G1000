@@ -19,5 +19,12 @@ openpyxl>=3.1.0
 # PDF Parsing
 pypdf>=4.0.0
 
+# Image OCR
+pytesseract>=0.3.10
+Pillow>=10.0.0
+
+# Web Search
+duckduckgo-search>=6.0.0
+
 # HTTP (for API calls)
 requests>=2.31.0
