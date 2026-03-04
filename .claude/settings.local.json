@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"dir /a \"\"C:\\\\Users\\\\mgreystone1\\\\Desktop\\\\RESRV\\\\Cursor Claude\\\\G1000\\\\G1000\\\\granola\\\\inbox\"\"\")",
+      "Bash(python granola/process_inbox.py:*)"
+    ]
+  }
+}

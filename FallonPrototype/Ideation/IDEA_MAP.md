@@ -251,6 +251,7 @@ FallonPrototype/
 │   ├── query.py                   (RAG retrieval + Claude answer)
 │   ├── app.py                     (Streamlit UI)
 │   └── sample_contracts/          (dummy contract PDFs for demo)
+
 ├── 02_financial_model_generator/
 │   ├── README.md
 │   ├── model_generator.py         (prompt → structured pro forma)

@@ -58,6 +58,9 @@ class ProjectParameters:
     # Hotel-specific
     total_keys: Optional[int] = None          # hotel room count
 
+    # Submarket — for targeted comp retrieval and assumption weighting
+    submarket: Optional[str] = None           # e.g. "seaport", "south_end", "kendall_square"
+
     # Any additional context from the query that doesn't fit above
     notes: str = ""
 
@@ -83,12 +86,14 @@ Required fields:
   "construction_duration_months": integer or null,
   "mixed_use_components": array of strings or [],
   "total_keys": integer or null,
+  "submarket": string or null,
   "notes": string (capture any project context not in the above fields)
 }
 
 Normalize these values:
 - market must be one of: "charlotte", "nashville", "boston", "other"
-- program_type must be one of: "multifamily", "office", "hotel", "mixed_use", "condo"
+- program_type must be one of: "multifamily", "office", "hotel", "mixed_use", "condo", "lab"
+- submarket: extract neighborhood/submarket if mentioned (e.g. "seaport", "south_end", "kendall_square", "uptown", "south_end", "noda", "gulch", "sobro", "east_bank", "back_bay", "financial_district")
 - All percentages as floats 0–100 (14% → 14.0, not 0.14)
 - unit_count, rentable_sf, total_gfa_sf, and total_keys as integers, not strings
 - For mixed_use projects, populate mixed_use_components with the component types
@@ -97,6 +102,8 @@ Examples:
 - "200 units in Charlotte" → {"market": "charlotte", "program_type": "multifamily", "unit_count": 200, ...}
 - "80k sf office in Boston" → {"market": "boston", "program_type": "office", "rentable_sf": 80000, ...}
 - "hotel and apartments in Nashville, 300 keys" → {"market": "nashville", "program_type": "mixed_use", "mixed_use_components": ["hotel", "multifamily"], "total_keys": 300, ...}
+- "100k sf lab in Kendall Square" → {"market": "boston", "program_type": "lab", "rentable_sf": 100000, "submarket": "kendall_square", ...}
+- "Boston Seaport multifamily 150 units" → {"market": "boston", "program_type": "multifamily", "unit_count": 150, "submarket": "seaport", ...}
 
 Return ONLY the JSON object."""
 
@@ -151,6 +158,7 @@ def extract_parameters(query: str) -> ProjectParameters:
         construction_duration_months=data.get("construction_duration_months"),
         mixed_use_components=data.get("mixed_use_components") or [],
         total_keys=data.get("total_keys"),
+        submarket=data.get("submarket"),
         notes=data.get("notes") or "",
     )
 
@@ -197,15 +205,84 @@ def normalize_parameters(params: ProjectParameters) -> ProjectParameters:
             "condos": "condo",
             "condominium": "condo",
             "mixed": "mixed_use",
+            "life_sciences": "lab",
+            "life_science": "lab",
+            "laboratory": "lab",
+            "wet_lab": "lab",
+            "biotech": "lab",
         }
         params.program_type = prog_map.get(prog, prog)
-    
+
+    # Normalize submarket
+    if params.submarket:
+        sub = params.submarket.lower().strip().replace("-", "_").replace(" ", "_")
+        submarket_map = {
+            # Boston submarkets
+            "seaport": "seaport",
+            "seaport_district": "seaport",
+            "south_boston_waterfront": "seaport",
+            "back_bay": "back_bay",
+            "backbay": "back_bay",
+            "financial_district": "financial_district",
+            "fidi": "financial_district",
+            "south_end": "south_end",
+            "southend": "south_end",
+            "kendall": "kendall_square",
+            "kendall_square": "kendall_square",
+            "kendall_sq": "kendall_square",
+            "cambridge": "kendall_square",
+            "suffolk_downs": "suffolk_downs",
+            "east_boston": "east_boston",
+            "fenway": "fenway",
+            "longwood": "longwood",
+            # Charlotte submarkets
+            "uptown": "uptown",
+            "downtown_charlotte": "uptown",
+            "south_end_clt": "south_end_clt",
+            "noda": "noda",
+            "north_davidson": "noda",
+            "plaza_midwood": "plaza_midwood",
+            "south_park": "south_park",
+            "ballantyne": "ballantyne",
+            "university_city": "university_city",
+            "weho": "south_end_clt",
+            # Nashville submarkets
+            "gulch": "gulch",
+            "the_gulch": "gulch",
+            "sobro": "sobro",
+            "south_broadway": "sobro",
+            "east_bank": "east_bank",
+            "germantown": "germantown",
+            "wedgewood_houston": "wedgewood_houston",
+            "weho_nash": "wedgewood_houston",
+            "midtown_nash": "midtown_nash",
+            "12_south": "12_south",
+            "twelve_south": "12_south",
+            "music_row": "music_row",
+        }
+        params.submarket = submarket_map.get(sub, sub)
+
+        # Infer market from submarket if market not set
+        if not params.market:
+            boston_subs = {"seaport", "back_bay", "financial_district", "south_end",
+                          "kendall_square", "suffolk_downs", "east_boston", "fenway", "longwood"}
+            charlotte_subs = {"uptown", "south_end_clt", "noda", "plaza_midwood",
+                              "south_park", "ballantyne", "university_city"}
+            nashville_subs = {"gulch", "sobro", "east_bank", "germantown",
+                              "wedgewood_houston", "midtown_nash", "12_south", "music_row"}
+            if params.submarket in boston_subs:
+                params.market = "boston"
+            elif params.submarket in charlotte_subs:
+                params.market = "charlotte"
+            elif params.submarket in nashville_subs:
+                params.market = "nashville"
+
     # Estimate total_gfa_sf from unit_count if not provided (avg 900sf/unit)
     if params.unit_count and not params.total_gfa_sf:
         params.total_gfa_sf = params.unit_count * 900
     
-    # For office, use rentable_sf as total_gfa_sf if not provided
-    if params.rentable_sf and not params.total_gfa_sf and params.program_type == "office":
+    # For office/lab, use rentable_sf as total_gfa_sf if not provided
+    if params.rentable_sf and not params.total_gfa_sf and params.program_type in ("office", "lab"):
         params.total_gfa_sf = int(params.rentable_sf * 1.15)  # ~15% common area factor
     
     return params
@@ -230,7 +307,7 @@ def check_missing_parameters(params: ProjectParameters) -> list[str]:
         missing.append("market (Charlotte, Nashville, Boston, or other)")
     
     if not params.program_type:
-        missing.append("program type (multifamily, office, hotel, condo, or mixed-use)")
+        missing.append("program type (multifamily, office, hotel, lab, condo, or mixed-use)")
     
     # CRITICAL: Parcel size is required for accurate forecasting
     if not params.acreage and not params.land_cost:
@@ -246,7 +323,7 @@ def check_missing_parameters(params: ProjectParameters) -> list[str]:
     if not has_dimension:
         if params.program_type == "multifamily" or params.program_type == "condo":
             missing.append("unit count (number of residential units)")
-        elif params.program_type == "office":
+        elif params.program_type in ("office", "lab"):
             missing.append("rentable square footage")
         elif params.program_type == "hotel":
             missing.append("total keys (number of hotel rooms)")
@@ -319,6 +396,8 @@ def merge_clarification(original_params: ProjectParameters, clarification_text: 
         original_params.mixed_use_components = clarification_params.mixed_use_components
     if clarification_params.total_keys and not original_params.total_keys:
         original_params.total_keys = clarification_params.total_keys
+    if clarification_params.submarket and not original_params.submarket:
+        original_params.submarket = clarification_params.submarket
     if clarification_params.notes and not original_params.notes:
         original_params.notes = clarification_params.notes
     
@@ -361,10 +440,13 @@ def build_deal_query(params: ProjectParameters) -> str:
         Query string biased toward financial content retrieval.
     """
     parts = []
-    
+
     if params.market:
         parts.append(params.market.title())
-    
+
+    if params.submarket:
+        parts.append(params.submarket.replace("_", " ").title())
+
     if params.program_type:
         prog = params.program_type.replace("_", " ")
         if params.program_type == "multifamily":
@@ -377,11 +459,13 @@ def build_deal_query(params: ProjectParameters) -> str:
             parts.append("Class A office")
         elif params.program_type == "hotel":
             parts.append("hotel hospitality")
+        elif params.program_type == "lab":
+            parts.append("life sciences lab biotech")
         else:
             parts.append(prog)
-    
+
     parts.append("development pro forma IRR returns assumptions")
-    
+
     return " ".join(parts)
 
 
@@ -873,6 +957,7 @@ def build_generation_message(params: ProjectParameters, context: str) -> str:
     
     message = f"""PROJECT PARAMETERS:
 Market: {fmt(params.market)}
+Submarket: {fmt(params.submarket)}
 Program type: {fmt(params.program_type)}
 Unit count: {fmt(params.unit_count)}
 Rentable SF: {fmt(params.rentable_sf)}

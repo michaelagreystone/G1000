@@ -204,7 +204,7 @@ model reflects Fallon's actual institutional knowledge.
   the documents the Financial Model sub-agent retrieves when generating
   a new comparable deal.
 
-- [x] **1.2.2 — Define metadata schema for deal data chunks**
+- [ ] **1.2.2 — Define metadata schema for deal data chunks**
   Every chunk ingested from deal data files gets metadata that the retrieval
   system can filter on. Define the required fields:
   ```python
@@ -223,7 +223,7 @@ model reflects Fallon's actual institutional knowledge.
   type when the user specifies one, rather than returning the most semantically
   similar chunk regardless of relevance.
 
-- [x] **1.2.3 — Build `ingest_deal_data.py`**
+- [ ] **1.2.3 — Build `ingest_deal_data.py`**
   Create `FallonPrototype/shared/ingest_deal_data.py`. The ingestion script:
 
   1. Reads every `.txt` file in `data/deal_data/`
@@ -239,7 +239,7 @@ model reflects Fallon's actual institutional knowledge.
 
   Make it runnable standalone: `python -m FallonPrototype.shared.ingest_deal_data`
 
-- [x] **1.2.4 — Validate ingestion with a relevance test**
+- [ ] **1.2.4 — Validate ingestion with a relevance test**
   After running ingestion, open a Python REPL and run:
   ```python
   from FallonPrototype.shared.vector_store import query_collection
@@ -268,7 +268,7 @@ exact market name.
 
 **Tasks:**
 
-- [x] **1.3.1 — Build `ingest_market_defaults.py`**
+- [ ] **1.3.1 — Build `ingest_market_defaults.py`**
   Create `FallonPrototype/shared/ingest_market_defaults.py`. For each
   market/program combination in `market_defaults.json`, convert it into a
   human-readable text block and ingest it into `fallon_market_defaults`.
@@ -293,7 +293,7 @@ exact market name.
   Since there's only one defaults record per market/program, these will always
   be upserted (replaced) when the JSON is updated, keeping the vector store current.
 
-- [x] **1.3.2 — Create a combined ingestion runner**
+- [ ] **1.3.2 — Create a combined ingestion runner**
   Create `FallonPrototype/shared/run_all_ingestion.py` that runs both
   `ingest_deal_data.py` and `ingest_market_defaults.py` in sequence and
   prints a final status summary:
@@ -323,7 +323,7 @@ user provided vs. fields that will be filled with defaults.
 
 **Tasks:**
 
-- [x] **2.1.1 — Build the `ProjectParameters` dataclass**
+- [ ] **2.1.1 — Build the `ProjectParameters` dataclass**
   Create `FallonPrototype/agents/financial_agent.py`. Define:
   ```python
   from dataclasses import dataclass, field
@@ -358,7 +358,7 @@ user provided vs. fields that will be filled with defaults.
       notes: str = ""
   ```
 
-- [x] **2.1.2 — Define required vs. optional fields**
+- [ ] **2.1.2 — Define required vs. optional fields**
   Document clearly which fields are required for generation to proceed and
   which can be defaulted:
 
@@ -386,7 +386,7 @@ Regex won't catch the variation — Claude does.
 
 **Tasks:**
 
-- [x] **2.2.1 — Write the extraction system prompt**
+- [ ] **2.2.1 — Write the extraction system prompt**
   The system prompt must be extremely specific about output format. Claude
   tends to add explanation — the prompt must prevent this:
   ```
@@ -419,7 +419,7 @@ Regex won't catch the variation — Claude does.
   - unit_count and rentable_sf as integers, not strings
   ```
 
-- [x] **2.2.2 — Build `extract_parameters()`**
+- [ ] **2.2.2 — Build `extract_parameters()`**
   In `financial_agent.py`, write:
   ```python
   def extract_parameters(query: str) -> ProjectParameters
@@ -433,7 +433,7 @@ Regex won't catch the variation — Claude does.
      `ProjectParameters` with all fields null. The clarification handler
      in Phase 2.3 will catch this and ask the user to re-state the request.
 
-- [x] **2.2.3 — Add a normalization pass after extraction**
+- [ ] **2.2.3 — Add a normalization pass after extraction**
   Write `normalize_parameters(params: ProjectParameters) -> ProjectParameters`
   that applies light corrections after extraction:
   - Lowercase and strip whitespace from `market` and `program_type`
@@ -445,7 +445,7 @@ Regex won't catch the variation — Claude does.
     (the model will mark it as "missing — user input required")
   Return the normalized params.
 
-- [x] **2.2.4 — Test extraction against 10 varied inputs**
+- [ ] **2.2.4 — Test extraction against 10 varied inputs**
   Create `FallonPrototype/tests/test_extraction.py`. Write 10 test cases
   ranging from minimal to detailed, and assert the correct fields are populated:
   ```python
@@ -477,7 +477,7 @@ their entire query.
 
 **Tasks:**
 
-- [x] **2.3.1 — Build `check_missing_parameters()`**
+- [ ] **2.3.1 — Build `check_missing_parameters()`**
   Write `check_missing_parameters(params: ProjectParameters) -> list[str]`
   that returns a list of human-readable gap descriptions. Example returns:
   - `["market (Charlotte / Nashville / Boston)"]`
@@ -485,7 +485,7 @@ their entire query.
      "unit count or square footage"]`
   - `[]` (empty list = all required fields present, proceed to generation)
 
-- [x] **2.3.2 — Build the clarification message formatter**
+- [ ] **2.3.2 — Build the clarification message formatter**
   Write `format_clarification_message(missing: list[str]) -> str` that
   produces a specific, actionable message. Example:
   ```
@@ -498,7 +498,7 @@ their entire query.
   missing. The user's reply is then merged with the original query and
   re-run through extraction. Never show a generic "invalid input" error.
 
-- [x] **2.3.3 — Build the parameter merge function**
+- [ ] **2.3.3 — Build the parameter merge function**
   Write `merge_clarification(original_params: ProjectParameters,
   clarification_text: str) -> ProjectParameters` that:
   1. Re-runs extraction on the clarification text alone

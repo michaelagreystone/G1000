@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-02-28T15:24:48.165214",
+  "total_interactions": 30,
+  "patterns": {
+    "top_markets": [
+      [
+        "Boston",
+        1
+      ]
+    ],
+    "avg_irr": 16.400000000000002,
+    "avg_exit_cap": 5.25,
+    "avg_deal_size": 71040000.0,
+    "intent_distribution": {
+      "MODEL": 4,
+      "CLARIFY": 5,
+      "chat": 15,
+      "gather_info": 5,
+      "generate_model": 1
+    },
+    "success_rate": 1.0
+  }
+}

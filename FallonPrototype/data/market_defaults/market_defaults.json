@@ -416,6 +416,108 @@
         "source": "Longer hold for Class C repositioning or conversion, Q4 2025"
       }
     },
+    "hotel": {
+      "adr": {
+        "value": 165,
+        "unit": "$/night",
+        "source": "Charlotte hotel ADR, convention/business market, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 67,
+        "unit": "%",
+        "source": "Charlotte hotel stabilized occupancy, stable convention demand, Q4 2025"
+      },
+      "revpar": {
+        "value": 111,
+        "unit": "$/available room/night",
+        "source": "Charlotte hotel RevPAR ($165 ADR × 67% occ), Q4 2025"
+      },
+      "total_keys": {
+        "value": 200,
+        "unit": "keys",
+        "source": "Placeholder — user should provide actual key count"
+      },
+      "management_fee_pct": {
+        "value": 3,
+        "unit": "%",
+        "source": "Hotel management fee as % of gross revenue, Q4 2025"
+      },
+      "ff_and_e_reserve_pct": {
+        "value": 4,
+        "unit": "%",
+        "source": "FF&E reserve as % of gross revenue, industry standard, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 360,
+        "unit": "$/sf",
+        "source": "Charlotte select-service hotel construction cost, regional cost index 0.92x, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 25,
+        "unit": "%",
+        "source": "Hotel soft costs higher due to FF&E and brand requirements, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 8,
+        "unit": "%",
+        "source": "Standard contingency for hotel construction, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 36,
+        "unit": "months",
+        "source": "24-month construction + 12-month ramp-up, Charlotte hotel, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 55,
+        "unit": "%",
+        "source": "Charlotte hotel LTC, moderate convention demand supports, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.5,
+        "unit": "%",
+        "source": "SOFR + 400-450bps spread for hotel construction, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 36,
+        "unit": "months",
+        "source": "Standard construction loan term for hotel, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 10,
+        "unit": "%",
+        "source": "LP preferred return higher for hotel risk profile, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 25,
+        "unit": "%",
+        "source": "GP promote above preferred return, higher for hotel complexity, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 7.25,
+        "unit": "%",
+        "source": "Charlotte select-service hotel exit cap rate, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 7,
+        "unit": "years",
+        "source": "Longer hold for hotel to capture stabilized performance, Fallon standard"
+      }
+    },
     "office": {
       "_note": "Legacy alias — defaults to Class A assumptions for backward compatibility",
       "rent_psf_annual_nnn": {
@@ -1651,6 +1753,211 @@
         "value": 5.75,
         "unit": "%",
         "source": "Boston Class A office exit cap rate, Seaport submarket, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 5,
+        "unit": "years",
+        "source": "Typical merchant developer hold period, Fallon standard"
+      }
+    },
+    "hotel": {
+      "adr": {
+        "value": 225,
+        "unit": "$/night",
+        "source": "Boston hotel ADR, gateway city premium, convention + business + tourism, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 70,
+        "unit": "%",
+        "source": "Boston hotel stabilized occupancy, strong institutional demand, Q4 2025"
+      },
+      "revpar": {
+        "value": 158,
+        "unit": "$/available room/night",
+        "source": "Boston hotel RevPAR ($225 ADR × 70% occ), Q4 2025"
+      },
+      "total_keys": {
+        "value": 200,
+        "unit": "keys",
+        "source": "Placeholder — user should provide actual key count"
+      },
+      "management_fee_pct": {
+        "value": 3,
+        "unit": "%",
+        "source": "Hotel management fee as % of gross revenue, Q4 2025"
+      },
+      "ff_and_e_reserve_pct": {
+        "value": 4,
+        "unit": "%",
+        "source": "FF&E reserve as % of gross revenue, industry standard, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 500,
+        "unit": "$/sf",
+        "source": "Boston hotel construction cost, union labor 1.35x multiplier, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 30,
+        "unit": "%",
+        "source": "Boston hotel soft costs, permitting complexity, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher contingency for Boston hotel market risk, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 36,
+        "unit": "months",
+        "source": "24-month construction + 12-month ramp-up, Boston hotel, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 50,
+        "unit": "%",
+        "source": "Boston hotel LTC conservative for high-cost market, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.25,
+        "unit": "%",
+        "source": "SOFR + 375-425bps spread for Boston hotel construction, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 36,
+        "unit": "months",
+        "source": "Standard construction loan term for hotel, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 10,
+        "unit": "%",
+        "source": "LP preferred return higher for hotel risk profile, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 25,
+        "unit": "%",
+        "source": "GP promote above preferred return, higher for hotel complexity, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 6.75,
+        "unit": "%",
+        "source": "Boston hotel exit cap rate, gateway city compression, Q4 2025"
+      },
+      "exit_sale_cost_pct": {
+        "value": 2.5,
+        "unit": "%",
+        "source": "Broker fees + transfer taxes, industry standard, Q4 2025"
+      },
+      "exit_year": {
+        "value": 7,
+        "unit": "years",
+        "source": "Longer hold for hotel to capture stabilized performance, Fallon standard"
+      }
+    },
+    "lab": {
+      "_description": "Life sciences / lab space — Boston's defining asset class with unique wet lab economics",
+      "rent_psf_annual_nnn": {
+        "value": 95,
+        "unit": "$/sf/year NNN",
+        "source": "Boston Kendall Square Class A lab rent, corrected from $120-140 peak, Q4 2025"
+      },
+      "stabilized_occupancy_pct": {
+        "value": 88,
+        "unit": "%",
+        "source": "Boston urban core lab occupancy (suburban much worse at ~78%), Q4 2025"
+      },
+      "lease_up_months": {
+        "value": 24,
+        "unit": "months",
+        "source": "Boston lab lease-up, specialized tenant base, Q4 2025"
+      },
+      "free_rent_months": {
+        "value": 12,
+        "unit": "months",
+        "source": "Boston lab free rent concession, competitive market, Q4 2025"
+      },
+      "ti_allowance_psf": {
+        "value": 150,
+        "unit": "$/sf",
+        "source": "Boston lab TI allowance, specialized wet lab fit-out, Q4 2025"
+      },
+      "leasing_commission_pct": {
+        "value": 5,
+        "unit": "%",
+        "source": "Standard lab leasing commission, Boston market, Q4 2025"
+      },
+      "hard_cost_psf": {
+        "value": 650,
+        "unit": "$/sf",
+        "source": "Boston wet lab construction cost, specialized MEP and fit-out premium, Q4 2025"
+      },
+      "soft_cost_pct_of_hard": {
+        "value": 35,
+        "unit": "%",
+        "source": "Boston lab soft costs — MEPA review, specialized MEP design, Q4 2025"
+      },
+      "developer_fee_pct_of_total_cost": {
+        "value": 4,
+        "unit": "%",
+        "source": "Fallon standard developer fee, Q4 2025"
+      },
+      "contingency_pct_of_hard": {
+        "value": 10,
+        "unit": "%",
+        "source": "Higher contingency for specialized lab construction, Q4 2025"
+      },
+      "carry_cost_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "18-month construction + 24-month lease-up, Boston lab, Q4 2025"
+      },
+      "construction_loan_ltc_pct": {
+        "value": 50,
+        "unit": "%",
+        "source": "Boston lab LTC conservative for high-cost specialized construction, Q4 2025"
+      },
+      "construction_loan_rate_pct": {
+        "value": 8.0,
+        "unit": "%",
+        "source": "SOFR + 325-375bps spread for Boston lab construction, Q4 2025"
+      },
+      "construction_loan_term_months": {
+        "value": 42,
+        "unit": "months",
+        "source": "Construction loan term for lab development, Q4 2025"
+      },
+      "equity_split_lp_pct": {
+        "value": 90,
+        "unit": "%",
+        "source": "Typical LP/GP split 90/10, Fallon standard, Q4 2025"
+      },
+      "preferred_return_pct": {
+        "value": 9,
+        "unit": "%",
+        "source": "LP preferred return for lab development, Q4 2025"
+      },
+      "promote_pct": {
+        "value": 20,
+        "unit": "%",
+        "source": "GP promote above preferred return, Fallon standard, Q4 2025"
+      },
+      "exit_cap_rate_pct": {
+        "value": 5.5,
+        "unit": "%",
+        "source": "Boston Class A lab exit cap rate, institutional demand, Q4 2025"
       },
       "exit_sale_cost_pct": {
         "value": 2.5,
