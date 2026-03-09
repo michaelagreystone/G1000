@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beehive Pro's - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <div class="admin-header">
+            <div>
+                <h1>Beehive Pro's — Admin Dashboard</h1>
+                <p class="subtitle" style="font-size:11px; color: var(--text-secondary); margin-top:4px;">Ferris Development Group Time Tracking</p>
+            </div>
+            <div class="admin-actions">
+                <button id="refresh-btn" class="btn btn-secondary">Refresh</button>
+                <button id="export-csv" class="btn btn-primary" style="width:auto; padding:8px 16px; font-size:12px;">Export CSV</button>
+                <a href="index.html" class="btn btn-secondary" style="text-decoration:none; text-align:center;">Worker View</a>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">—</div>
+                <div class="stat-label">Total Entries</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-hours">—</div>
+                <div class="stat-label">Total Hours</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-flagged">—</div>
+                <div class="stat-label">Flagged</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-flagged-pct">—</div>
+                <div class="stat-label">Flag Rate</div>
+            </div>
+        </div>
+
+        <!-- Active Shifts -->
+        <h3 class="section-title">Currently Clocked In</h3>
+        <div class="active-shifts-grid" id="active-shifts">
+            <p class="empty-state">Loading...</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="form-group">
+                <label>Job Site</label>
+                <select id="filter-site"><option value="">All Sites</option></select>
+            </div>
+            <div class="form-group">
+                <label>Date From</label>
+                <input type="date" id="filter-date-from">
+            </div>
+            <div class="form-group">
+                <label>Date To</label>
+                <input type="date" id="filter-date-to">
+            </div>
+            <label class="filter-check">
+                <input type="checkbox" id="filter-flagged"> Flagged Only
+            </label>
+            <div class="filter-actions">
+                <button id="apply-filters" class="btn btn-primary">Filter</button>
+                <button id="clear-filters" class="btn btn-secondary">Clear</button>
+            </div>
+        </div>
+
+        <!-- Entries Table -->
+        <h3 class="section-title">Time Entries</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Trade</th>
+                        <th>Site</th>
+                        <th>Date</th>
+                        <th>Clock In</th>
+                        <th>Clock Out</th>
+                        <th>Hours</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="entries-tbody">
+                    <tr><td colspan="8" class="empty-state">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <!-- App Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+/* ==================================================================
+   BEEHIVE PRO'S TIME CARD - Ferris Development Group
+   Minimalistic, mobile-first design for trades workers
+   ================================================================== */
+
+:root {
+    --bg: #0C0C0C;
+    --surface: #161616;
+    --surface-raised: #1E1E1E;
+    --border: #2A2A2A;
+    --text-primary: #E8E8E8;
+    --text-secondary: #888888;
+    --accent: #F5A623;          /* Beehive gold */
+    --accent-dim: #A06E15;
+    --success: #34C759;
+    --error: #FF3B30;
+    --warning: #FFD60A;
+    --flag-bg: #3A1A1A;
+    --flag-border: #FF3B30;
+    --font-body: 'IBM Plex Mono', 'Courier New', monospace;
+    --font-display: 'IBM Plex Sans', -apple-system, sans-serif;
+    --radius: 6px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* -- Layout -- */
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+.admin-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px;
+}
+
+.hidden { display: none !important; }
+
+/* -- Header -- */
+.header {
+    text-align: center;
+    padding: 24px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.header .subtitle {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.live-clock {
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+/* -- Forms / Inputs -- */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 16px;                  /* prevents iOS zoom */
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: #1a1a1a;
+    color: #E8E8E8;
+}
+
+/* -- Buttons -- */
+.btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #000;
+}
+.btn-primary:hover { background: #FFBA42; }
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-clock-in {
+    background: var(--success);
+    color: #000;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 12px;
+}
+.btn-clock-in:hover { background: #3DD968; }
+
+.btn-clock-out {
+    background: var(--error);
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 12px;
+}
+.btn-clock-out:hover { background: #FF5147; }
+
+.btn.disabled,
+.btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    padding: 10px;
+}
+.btn-secondary:hover { color: var(--text-primary); border-color: var(--text-secondary); }
+
+/* -- GPS Status -- */
+.gps-status {
+    text-align: center;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+}
+.gps-status.acquiring { color: var(--accent); background: rgba(245, 166, 35, 0.1); }
+.gps-status.locked { color: var(--success); background: rgba(52, 199, 89, 0.1); }
+.gps-status.error { color: var(--error); background: rgba(255, 59, 48, 0.1); }
+
+/* -- Status Messages -- */
+.status-message {
+    text-align: center;
+    padding: 12px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    margin-bottom: 16px;
+    min-height: 20px;
+}
+.status-message.success { color: var(--success); background: rgba(52, 199, 89, 0.1); }
+.status-message.error { color: var(--error); background: rgba(255, 59, 48, 0.1); }
+.status-message.warning { color: var(--warning); background: rgba(255, 214, 10, 0.1); }
+.status-message.info { color: var(--text-secondary); }
+
+/* -- Shift Info -- */
+.shift-active {
+    background: rgba(52, 199, 89, 0.1);
+    border: 1px solid rgba(52, 199, 89, 0.3);
+    border-radius: var(--radius);
+    padding: 14px;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.no-shift {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 12px;
+}
+
+/* -- Employee Greeting -- */
+#employee-greeting {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+/* ========== ADMIN DASHBOARD ========== */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.admin-header h1 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.admin-actions .btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+/* -- Stats Bar -- */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+}
+
+.stat-card .stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.stat-card .stat-label {
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+/* -- Filters -- */
+.filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: end;
+    margin-bottom: 20px;
+    padding: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.filters .form-group {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 140px;
+}
+
+.filters .form-group input,
+.filters .form-group select {
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.filter-check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding-top: 22px;
+}
+
+.filter-check input[type="checkbox"] { cursor: pointer; }
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+    padding-top: 22px;
+}
+
+.filter-actions .btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 11px;
+}
+
+/* -- Active Shifts Section -- */
+.section-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.active-shifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.active-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+}
+.active-card.flagged { border-color: var(--flag-border); background: var(--flag-bg); }
+
+.active-name { font-weight: 700; font-size: 14px; }
+.active-detail { font-size: 11px; color: var(--text-secondary); margin: 4px 0; }
+.active-time { font-size: 12px; color: var(--accent); }
+
+.flag-badge {
+    font-size: 10px;
+    color: var(--error);
+    margin-top: 6px;
+    padding: 4px 6px;
+    background: rgba(255, 59, 48, 0.1);
+    border-radius: 3px;
+}
+
+/* -- Table -- */
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+thead th {
+    background: var(--surface);
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+tbody tr:hover { background: var(--surface); }
+tbody tr.row-flagged { background: var(--flag-bg); }
+tbody tr.row-flagged:hover { background: #4A1F1F; }
+
+.active-badge {
+    background: var(--success);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.flag-icon { color: var(--error); font-size: 11px; }
+.ok-icon { color: var(--success); }
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 24px;
+    font-size: 13px;
+}
+
+/* -- Responsive -- */
+@media (max-width: 600px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .filters { flex-direction: column; }
+    .admin-header { flex-direction: column; align-items: flex-start; }
+}

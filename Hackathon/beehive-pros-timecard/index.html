@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Beehive Pro's Time Card</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Beehive Pro's Time Card</h1>
+            <p class="subtitle">Ferris Development Group</p>
+            <div class="live-clock" id="current-time">--:--:--</div>
+        </div>
+
+        <!-- Status Message -->
+        <div id="status-message" class="status-message"></div>
+
+        <!-- Login Section -->
+        <div id="login-section">
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="employee-name">Full Name</label>
+                    <input type="text" id="employee-name" placeholder="John Smith" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="employee-phone">Phone Number</label>
+                    <input type="tel" id="employee-phone" placeholder="(617) 555-1234" required autocomplete="tel">
+                </div>
+                <div class="form-group">
+                    <label for="employee-trade">Trade</label>
+                    <select id="employee-trade">
+                        <option value="electrician">Electrician</option>
+                        <option value="plumber">Plumber</option>
+                        <option value="hvac">HVAC Technician</option>
+                        <option value="general">General</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Continue</button>
+            </form>
+        </div>
+
+        <!-- Clock In/Out Section -->
+        <div id="clock-section" class="hidden">
+            <div id="employee-greeting"></div>
+            <div id="gps-status" class="gps-status acquiring">Acquiring GPS...</div>
+
+            <div class="form-group">
+                <label for="job-site-select">Job Site</label>
+                <select id="job-site-select">
+                    <option value="">-- Select Job Site --</option>
+                </select>
+            </div>
+
+            <div id="shift-info"></div>
+
+            <button id="clock-in-btn" class="btn btn-clock-in">CLOCK IN</button>
+            <button id="clock-out-btn" class="btn btn-clock-out disabled" disabled>CLOCK OUT</button>
+
+            <button id="logout-btn" class="btn btn-secondary" style="margin-top: 16px;">Switch Employee</button>
+        </div>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <!-- App Scripts -->
+    <script src="js/config.js?v=4"></script>
+    <script src="js/geo.js?v=4"></script>
+    <script src="js/app.js?v=4"></script>
+</body>
+</html>
